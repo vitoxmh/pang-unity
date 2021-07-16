@@ -9,6 +9,8 @@ TagManager:
   - pared
   - ball
   - cuerpo
+  - techo
+  - arma
   layers:
   - Default
   - TransparentFX

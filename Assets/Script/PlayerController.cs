@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
     private float vertical;
     private Animator Animator;
     public bool usingLadder = false;
+    public GameObject armPreFabs;
 
     void Start()
     {
@@ -62,12 +63,18 @@ public class PlayerController : MonoBehaviour
     private void fire()
     {
 
+         
         if (Input.GetKeyDown(KeyCode.E))
         {
 
             deltaStop = Time.time + timeStop;
-            
-            Debug.Log("Inicia disparo");
+
+
+
+
+
+            GameObject bala = Instantiate(armPreFabs, new Vector3(transform.position.x, transform.position.y - 5f, 6f), Quaternion.identity);
+
         }
 
     }

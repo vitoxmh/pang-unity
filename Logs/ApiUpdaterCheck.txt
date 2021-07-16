@@ -258,3 +258,43 @@ C# parse time         : 260ms
 candidates check time : 45ms
 console write time    : 0ms
 
+[api-updater (non-obsolete-error-filter)] 15-07-2021 23:12:29 : Starting C:/Users/sheik/AppData/Local/Programs/Microsoft%20VS%20Code/2020.3.13f1/Editor/Data/Tools/ScriptUpdater/APIUpdater.NonObsoleteApiUpdaterDetector.exe
+[api-updater (non-obsolete-error-filter)] 
+----------------------------------
+jit/startup time      : 364,5375ms
+moved types parse time: 88ms
+candidates parse time : 2ms
+C# parse time         : 369ms
+candidates check time : 53ms
+console write time    : 2ms
+
+[api-updater (non-obsolete-error-filter)] 15-07-2021 23:19:06 : Starting C:/Users/sheik/AppData/Local/Programs/Microsoft%20VS%20Code/2020.3.13f1/Editor/Data/Tools/ScriptUpdater/APIUpdater.NonObsoleteApiUpdaterDetector.exe
+[api-updater (non-obsolete-error-filter)] 
+----------------------------------
+jit/startup time      : 94,9472ms
+moved types parse time: 85ms
+candidates parse time : 2ms
+C# parse time         : 299ms
+candidates check time : 41ms
+console write time    : 0ms
+
+[api-updater (non-obsolete-error-filter)] 16-07-2021 1:25:36 : Starting C:/Users/sheik/AppData/Local/Programs/Microsoft%20VS%20Code/2020.3.13f1/Editor/Data/Tools/ScriptUpdater/APIUpdater.NonObsoleteApiUpdaterDetector.exe
+[api-updater (non-obsolete-error-filter)] 
+----------------------------------
+jit/startup time      : 95,0246ms
+moved types parse time: 58ms
+candidates parse time : 1ms
+C# parse time         : 245ms
+candidates check time : 38ms
+console write time    : 0ms
+
+[api-updater (non-obsolete-error-filter)] 16-07-2021 2:15:18 : Starting C:/Users/sheik/AppData/Local/Programs/Microsoft%20VS%20Code/2020.3.13f1/Editor/Data/Tools/ScriptUpdater/APIUpdater.NonObsoleteApiUpdaterDetector.exe
+[api-updater (non-obsolete-error-filter)] 
+----------------------------------
+jit/startup time      : 136,2342ms
+moved types parse time: 57ms
+candidates parse time : 1ms
+C# parse time         : 273ms
+candidates check time : 38ms
+console write time    : 0ms
+
