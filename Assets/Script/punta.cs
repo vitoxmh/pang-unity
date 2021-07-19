@@ -5,6 +5,8 @@ using UnityEngine;
 public class punta : MonoBehaviour
 {
     // Start is called before the first frame update
+    public GameObject chainGFX;
+
     void Start()
     {
         
@@ -13,16 +15,19 @@ public class punta : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        transform.position += Vector3.up * 6f * Time.deltaTime;
+
     }
 
 
     void OnTriggerEnter2D(Collider2D col)
    {
-       if (col.CompareTag("techo")){
+        if (col.CompareTag("ball") || col.CompareTag("techo"))
+        {
 
-           Destroy(gameObject, (float)0);
+            Destroy(gameObject, (float)0);
+            Debug.Log("Mueres");
 
-       }
-   }
+        }
+    }
 }

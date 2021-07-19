@@ -69,11 +69,8 @@ public class PlayerController : MonoBehaviour
 
             deltaStop = Time.time + timeStop;
 
-
-
-
-
-            GameObject bala = Instantiate(armPreFabs, new Vector3(transform.position.x, transform.position.y - 5f, 6f), Quaternion.identity);
+          Instantiate(armPreFabs, new Vector3(transform.position.x + 3.4f, transform.position.y+4.25f, 1f), Quaternion.identity);
+          
 
         }
 
