@@ -12,12 +12,14 @@ public class PlayerController : MonoBehaviour
     private float vertical;
     private Animator Animator;
     public bool usingLadder = false;
-    public GameObject armPreFabs;
+    public GameObject[] armPreFabs;
+    public int typeArms;
 
     void Start()
     {
         rg = GetComponent<Rigidbody2D>();
         Animator = GetComponent<Animator>();
+        typeArms = 0;
     }
 
     // Update is called once per frame
@@ -37,7 +39,7 @@ public class PlayerController : MonoBehaviour
 
     }
 
-
+   
     private void FixedUpdate()
     {
 
@@ -69,7 +71,7 @@ public class PlayerController : MonoBehaviour
 
             deltaStop = Time.time + timeStop;
 
-          Instantiate(armPreFabs, new Vector3(transform.position.x + 3.4f, transform.position.y+4.25f, 1f), Quaternion.identity);
+          Instantiate(armPreFabs[typeArms], new Vector3(transform.position.x, transform.position.y - 0.6f, 1f), Quaternion.identity);
           
 
         }

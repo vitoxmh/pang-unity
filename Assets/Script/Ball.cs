@@ -20,6 +20,7 @@ public class Ball : MonoBehaviour
     public float timeInvisible;
     private float deltaInvisible;
     private int maxExplotion;
+    public GameObject[] explotionPreFabs;
 
     void Start()
     {
@@ -75,10 +76,9 @@ public class Ball : MonoBehaviour
         transform.localScale = size;
 
         // Carga la textura de la Bola seleccionada
-        // 0 - Azul / 1 - Rojo / 2 - Verde
+        // 0 - Azul / 1 - Verde / 2 - Rojo
         sr.sprite = textures[colorBall];
 
-       
     }
 
 
@@ -164,22 +164,19 @@ public class Ball : MonoBehaviour
                 newBall02 = Instantiate(newBall, rb.position, Quaternion.identity);
                 
                 // Hace un salto 
-                newBall01.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 3f);
-                newBall02.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 3f);
+                newBall01.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 3.5f);
+                newBall02.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 3.5f);
                 maxExplotion++;
 
             }
-          
+
+            GameObject newExplotion = Instantiate(explotionPreFabs[colorBall], rb.position, Quaternion.identity);
+            newExplotion.transform.localScale = size;
 
             Destroy(gameObject, (float)0);
         }
 
     }
-
-
-
-
-
 
     void OnTriggerExit2D(Collider2D other)
     {

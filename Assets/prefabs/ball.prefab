@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 4077583726159980922}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -5.821779, y: 1.7164916, z: 0}
-  m_LocalScale: {x: 4.0225, y: 5, z: 4}
+  m_LocalScale: {x: 5, y: 6, z: 4}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -136,3 +136,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   starForce: 3
   colorBall: 0
+  directionBallLeft: 0
+  sizeBall: 0
+  timeInvisible: 0
+  explotionPreFabs:
+  - {fileID: 2181084323587011076, guid: 740289b4dd638444791dca1fcf0abaff, type: 3}
+  - {fileID: 2995121909577618481, guid: 5f4617cb1a8d3b34ca71c91abe0af5f5, type: 3}
+  - {fileID: 7282617009057660278, guid: 42a98f46a4944834b8748d82325f1064, type: 3}
