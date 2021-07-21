@@ -21,6 +21,7 @@ public class Ball : MonoBehaviour
     private float deltaInvisible;
     private int maxExplotion;
     public GameObject[] explotionPreFabs;
+   
 
     void Start()
     {
@@ -29,6 +30,8 @@ public class Ball : MonoBehaviour
         circle = GetComponent<CircleCollider2D>();
         sr = GetComponent<SpriteRenderer>();
         
+        
+
         getSizeBall();
 
         // Indica la direccion de la Bola al iniciar
@@ -167,8 +170,11 @@ public class Ball : MonoBehaviour
                 newBall01.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 3.5f);
                 newBall02.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 3.5f);
                 maxExplotion++;
+               
 
             }
+
+            
 
             GameObject newExplotion = Instantiate(explotionPreFabs[colorBall], rb.position, Quaternion.identity);
             newExplotion.transform.localScale = size;
