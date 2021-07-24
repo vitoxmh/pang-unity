@@ -11,8 +11,9 @@ public class chain : MonoBehaviour
     private float heightChain;
     private SpriteRenderer sr;
     private Sprite[] textures;
+    
 
-
+     
     void Start()
     {
         sprite = GetComponent<SpriteRenderer>();

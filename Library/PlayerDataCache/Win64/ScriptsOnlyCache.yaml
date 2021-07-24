@@ -5,6 +5,7 @@ ScriptsOnlyBuild:
     - BallBang
     - PlayerController
     - chain
+    - chainGancho
     - ladderMovement
     Unity.2D.Animation.Editor.dll:
     - UnityEditor.U2D.Animation.BoneGizmo
@@ -15,6 +16,8 @@ ScriptsOnlyBuild:
     - UnityEditor.U2D.IK.IKEditorManagerHelper
     Unity.2D.Tilemap.Editor.dll:
     - UnityEditor.Tilemaps.GridPaintingState
+    - UnityEditor.Tilemaps.GridPaletteBrushes
+    - UnityEditor.Tilemaps.GridPalettes
     - UnityEditor.Tilemaps.SceneViewGridManager
     - UnityEditor.Tilemaps.SceneViewOpenTilePaletteHelper
     - UnityEditor.Tilemaps.TileDragAndDropManager
@@ -74,11 +77,13 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 2076}
     - Class: 114
-      Script: {instanceID: 3648}
+      Script: {instanceID: 3224}
     - Class: 114
-      Script: {instanceID: 3806}
+      Script: {instanceID: 3650}
     - Class: 114
-      Script: {instanceID: 5190}
+      Script: {instanceID: 3808}
+    - Class: 114
+      Script: {instanceID: 5192}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 157
@@ -330,6 +335,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.TestRunner.dll
     namespaceName: UnityEngine.TestTools.TestRunner.Callbacks
     className: TestResultRendererCallback
+  - hash:
+      serializedVersion: 2
+      Hash: 54840bc0354a719958abc7d6638ad610
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: chainGancho
   - hash:
       serializedVersion: 2
       Hash: 748dd2a2a28da4e618912da5ac45684b

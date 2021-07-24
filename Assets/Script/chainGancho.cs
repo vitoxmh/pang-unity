@@ -11,7 +11,13 @@ public class chainGancho : MonoBehaviour
     private Sprite[] textures;
     private bool touchCeiling;
     private Animator Animator;
+    public AudioSource[] EffectsSource;
 
+    private void Awake()
+    {
+        EffectsSource[0].Play();
+
+    }
 
     void Start()
     {
@@ -28,8 +34,6 @@ public class chainGancho : MonoBehaviour
     {
 
 
-      
-
         if (!touchCeiling)
         {
             heightChain = heightChain - 0.013f;
@@ -37,22 +41,18 @@ public class chainGancho : MonoBehaviour
         }
         
 
-       
-
-       
-
-
     }
 
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.CompareTag("techo"))
+        if (col.CompareTag("techo") || col.CompareTag("piso"))
         {
 
   
             touchCeiling = true;
             Animator.SetBool("techo", true);
+            EffectsSource[1].Play();
 
         }
 

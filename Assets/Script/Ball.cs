@@ -21,7 +21,8 @@ public class Ball : MonoBehaviour
     private float deltaInvisible;
     private int maxExplotion;
     public GameObject[] explotionPreFabs;
-   
+    private ContactPoint2D[] contacts = new ContactPoint2D[10];
+
 
     void Start()
     {
@@ -114,7 +115,7 @@ public class Ball : MonoBehaviour
                 break;
             case 3:
                 size = new Vector3(0.5f, 0.5f, 1f);
-                speedBall = 0.6f;
+                speedBall = 0.4f;
                 ballBounce = 6f;
                 break;
         }
@@ -124,32 +125,48 @@ public class Ball : MonoBehaviour
 
 
 
-    void OnTriggerEnter2D(Collider2D col)
+    void OnCollisionEnter2D(Collision2D col)
     {
 
-        if (col.CompareTag("pared"))
+
+
+    
+
+        if (col.gameObject.tag == "piso")
         {
-            x = x * -1f;
-            
+           
+
+            if(col.contacts[0].normal.y > 0)
+            {
+                rb.velocity = new Vector2(0, ballBounce);
+
+            }else if (col.contacts[0].normal.y < 0)
+            {
+                rb.velocity = new Vector2(0, -2);
+            }
+
+            if (col.contacts[0].normal.x > 0)
+            {
+                 x = speedBall;
+            }
+            else if (col.contacts[0].normal.x < 0)
+            {
+
+                x = -speedBall;
+            }
+
+
+              
+           
         }
 
-        if (col.CompareTag("piso"))
-        {
-            rb.velocity = new Vector2(0, ballBounce);
-        }
+     
 
-
-        if (col.CompareTag("techo"))
-        {
-            rb.velocity = new Vector2(0, -ballBounce);
-        }
-
-
-        if (col.CompareTag("arma"))
+        if (col.gameObject.tag == "arma")
         {
 
             // Clona una bola mas chica hasta que sea la mas chica
-
+ 
             GameObject newBall = gameObject;
 
             if (gameObject.GetComponent<Ball>().sizeBall < 3 && maxExplotion == 0)
@@ -184,15 +201,46 @@ public class Ball : MonoBehaviour
 
     }
 
-    void OnTriggerExit2D(Collider2D other)
+    void OnTriggerEnter2D(Collider2D col)
     {
 
 
-        if (other.CompareTag("cuerpo"))
-        {
-            
 
-           
+        if (col.CompareTag("arma"))
+        {
+
+            // Clona una bola mas chica hasta que sea la mas chica
+
+            GameObject newBall = gameObject;
+
+            if (gameObject.GetComponent<Ball>().sizeBall < 3 && maxExplotion == 0)
+            {
+                GameObject newBall01;
+                GameObject newBall02;
+
+                newBall.transform.localScale = new Vector3(2f, 2.5f, 0);
+                newBall.GetComponent<Ball>().directionBallLeft = true;
+                newBall.GetComponent<Ball>().sizeBall += 1;
+
+                newBall01 = Instantiate(newBall, rb.position + Vector2.left, Quaternion.identity);
+
+                newBall.GetComponent<Ball>().directionBallLeft = false;
+                newBall02 = Instantiate(newBall, rb.position, Quaternion.identity);
+
+                // Hace un salto 
+                newBall01.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 3.5f);
+                newBall02.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 3.5f);
+                maxExplotion++;
+
+
+            }
+
+
+
+            GameObject newExplotion = Instantiate(explotionPreFabs[colorBall], rb.position, Quaternion.identity);
+            newExplotion.transform.localScale = size;
+
+            Destroy(gameObject, (float)0);
         }
 
     }
