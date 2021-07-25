@@ -129,9 +129,6 @@ public class Ball : MonoBehaviour
     {
 
 
-
-    
-
         if (col.gameObject.tag == "piso")
         {
            
@@ -153,19 +150,15 @@ public class Ball : MonoBehaviour
             {
 
                 x = -speedBall;
-            }
-
-
-              
+            }    
            
         }
 
-     
-
+    
         if (col.gameObject.tag == "arma")
         {
 
-            // Clona una bola mas chica hasta que sea la mas chica
+            // Clona una bola  hasta que sea la mas chica
  
             GameObject newBall = gameObject;
 
