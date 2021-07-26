@@ -14,12 +14,16 @@ public class PlayerController : MonoBehaviour
     public bool usingLadder = false;
     public GameObject[] armPreFabs;
     public int typeArms;
+    public int maxFire;
+    private int deltaFire;
+
+
 
     void Start()
     {
         rg = GetComponent<Rigidbody2D>();
         Animator = GetComponent<Animator>();
-       
+
     }
 
     // Update is called once per frame
@@ -33,17 +37,17 @@ public class PlayerController : MonoBehaviour
         if (horizontal < 0.0f) transform.localScale = new Vector3(-4.0f, 4.0f, 4.0f);
         else if (horizontal > 0.0f) transform.localScale = new Vector3(4.0f, 4.0f, 4.0f);
 
- 
+
         Animator.SetBool("run", horizontal != 0.0f);
         fire();
+        countBall();
 
     }
 
-   
+
     private void FixedUpdate()
     {
 
-        
 
         if (deltaStop >= Time.time)
         {
@@ -60,21 +64,46 @@ public class PlayerController : MonoBehaviour
 
     }
 
-     
+
 
     private void fire()
     {
 
-         
+
         if (Input.GetKeyDown(KeyCode.E))
         {
 
             deltaStop = Time.time + timeStop;
 
-          Instantiate(armPreFabs[typeArms], new Vector3(transform.position.x, transform.position.y - 0.6f, 1f), Quaternion.identity);
-          
+            Instantiate(armPreFabs[typeArms], new Vector3(transform.position.x, transform.position.y - 0.6f, 1f), Quaternion.identity);
+
 
         }
 
     }
+
+
+    public void countBall()
+    {
+
+      
+
+        Debug.Log("N ball: " + GameObject.FindGameObjectsWithTag("ball").Length);
+
+
+    }
+
+    void OnCollisionEnter2D(Collision2D col)
+    {
+
+       
+    }
+
+
+    void OnTriggerEnter2D(Collider2D col)
+    {
+
+        
+    }
+
 }

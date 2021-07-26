@@ -115,7 +115,7 @@ public class Ball : MonoBehaviour
                 break;
             case 3:
                 size = new Vector3(0.5f, 0.5f, 1f);
-                speedBall = 0.4f;
+                speedBall = 0.5f;
                 ballBounce = 6f;
                 break;
         }
@@ -155,7 +155,7 @@ public class Ball : MonoBehaviour
         }
 
     
-        if (col.gameObject.tag == "arma")
+        if (col.gameObject.tag == "arma" || col.gameObject.tag == "shield")
         {
 
             // Clona una bola  hasta que sea la mas chica
@@ -199,7 +199,7 @@ public class Ball : MonoBehaviour
 
 
 
-        if (col.CompareTag("arma"))
+        if (col.CompareTag("arma") || col.CompareTag("shield"))
         {
 
             // Clona una bola mas chica hasta que sea la mas chica

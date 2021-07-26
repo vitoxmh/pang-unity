@@ -46,9 +46,10 @@ public class typeArms : MonoBehaviour
         {
             Destroy(gameObject, (float)0);
             col.gameObject.GetComponent<PlayerController>().typeArms = typeArm;
+            Debug.Log("Trigger");
         }
 
-        Debug.Log("Toca");
+     
 
     }
 
@@ -68,6 +69,7 @@ public class typeArms : MonoBehaviour
         {
             Destroy(gameObject, (float)0);
             col.gameObject.GetComponent<PlayerController>().typeArms = typeArm;
+        
         }
     }
 
