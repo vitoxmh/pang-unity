@@ -14,6 +14,10 @@ TagManager:
   - bloque
   - shield
   - item
+  - ladderFooter
+  - ladderTop
+  - ladderOut
+  - ladderExit
   layers:
   - Default
   - TransparentFX

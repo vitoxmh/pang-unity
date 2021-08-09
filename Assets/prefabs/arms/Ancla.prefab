@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 7709317473113769807}
   - component: {fileID: -880501573211574704}
   - component: {fileID: -5105586990840624162}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Ancla
   m_TagString: arma
   m_Icon: {fileID: 0}

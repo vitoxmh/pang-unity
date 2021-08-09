@@ -5,20 +5,14 @@ using UnityEngine;
 public class ladderMovement : MonoBehaviour
 {
     // Start is called before the first frame update
-    private Rigidbody2D rg;
-    private float vertical;
-    private Animator Animator;
-    //PlayerController controller;
- 
-    public bool onLadder = false;
+
     public float climbSpeed;
-    public float exitHop = 3f;
+    private GameObject tope;
 
 
     void Start()
     {
-        rg = GetComponent<Rigidbody2D>();
-        Animator = GetComponent<Animator>();
+      
 
         //controller = GetComponent<PlayerController>();
     }
@@ -35,55 +29,55 @@ public class ladderMovement : MonoBehaviour
        
     }
 
-    private void OnTriggerStay2D(Collider2D col)
+    private void OnTriggerStay2D(Collider2D other)
     {
-        if (col.CompareTag("ladder"))
+       
+        if(other.tag == "Player" && Input.GetAxisRaw("Vertical") != 0)
         {
-           
-            if (Input.GetAxisRaw("Vertical") != 0)
-            {
-                rg.velocity = new Vector2(rg.velocity.x, Input.GetAxisRaw("Vertical") * climbSpeed);
-                rg.gravityScale = 0;
-                onLadder = true;
-                col.gameObject.GetComponent<BoxCollider>();
-                col.gameObject.GetComponents<BoxCollider2D>()[1].enabled = false;
-                Animator.SetBool("upLadder", true);
-                Animator.SetBool("UpladderIdle", false);
+            other.GetComponent<Rigidbody2D>().velocity = new Vector2(0, Input.GetAxisRaw("Vertical"));
+            other.GetComponent<Rigidbody2D>().gravityScale = 0;
+            //transform.GetChild(1).GetComponent<BoxCollider2D>().enabled = false;
+            tope = transform.GetChild(0).gameObject;
+            tope.GetComponent<BoxCollider2D>().enabled = false;
+            //transform.GetChild(1).
 
 
-            }
-            else if(Input.GetAxisRaw("Vertical") == 0 && onLadder)
-            {
-                rg.velocity = new Vector2(rg.velocity.x, 0);
-                Animator.SetBool("UpladderIdle", true);
-                Animator.SetBool("upLadder", true);
+            Debug.Log("00");
+        }
 
-
-
-            }
-
-  
+        else if (other.tag == "Player" && Input.GetAxisRaw("Vertical") == 0)
+        {
+            other.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
+            Debug.Log("02");
         }
 
 
-        
+
     }
 
 
     private void OnTriggerExit2D(Collider2D other)
     {
-
-        if (other.CompareTag("ladder") && onLadder)
+        if (other.tag == "Player")
         {
-          
-            rg.gravityScale = 1;
-            onLadder = false;
-            other.gameObject.GetComponents<BoxCollider2D>()[1].enabled = true;
-            Animator.SetBool("upLadder", false);
-            Animator.SetBool("UpladderIdle", false);
-            Debug.Log("Sale de la escaler");
+            other.GetComponent<Rigidbody2D>().gravityScale = 1;
 
         }
+
+
+    }
+
+
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+
+        if (other.tag == "Player")
+        {
+            other.GetComponent<Rigidbody2D>().gravityScale = 1;
+
+        }
+
     }
 
 

@@ -46,7 +46,7 @@ public class chainGancho : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.CompareTag("piso") || col.CompareTag("piso"))
+        if (col.CompareTag("piso"))
         {
 
   

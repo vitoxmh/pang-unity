@@ -9,6 +9,7 @@ public class typeArms : MonoBehaviour
     public int typeArm;
     private BoxCollider2D collider;
     public AudioSource[] EffectsSource;
+    public int MaxShot;
 
     void Start()
     {
@@ -69,7 +70,8 @@ public class typeArms : MonoBehaviour
         {
             Destroy(gameObject, (float)0);
             col.gameObject.GetComponent<PlayerController>().typeArms = typeArm;
-        
+            col.gameObject.GetComponent<PlayerController>().maxShot = MaxShot;
+
         }
     }
 
