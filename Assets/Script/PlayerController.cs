@@ -156,8 +156,15 @@ public class PlayerController : MonoBehaviour
         {
 
             deltaStop = Time.time + timeStop;
-
-            Instantiate(armPreFabs[typeArms], new Vector3(transform.position.x, transform.position.y - 0.6f, 1f), Quaternion.identity);
+            if(typeArms == 2)
+            {
+                Instantiate(armPreFabs[typeArms], new Vector3(transform.position.x, transform.position.y, 1f), Quaternion.identity);
+            }
+            else
+            {
+                Instantiate(armPreFabs[typeArms], new Vector3(transform.position.x, transform.position.y - 0.6f, 1f), Quaternion.identity);
+            }
+           
 
 
         }
