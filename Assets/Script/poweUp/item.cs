@@ -22,13 +22,21 @@ public class item : MonoBehaviour
     void OnCollisionEnter2D(Collision2D col)
     {
 
-       
+        GameObject item = null;
 
         if (col.gameObject.tag == "Player")
         {
 
+            if(typeItem == 0)
+            {
+                item = Instantiate(itemPreFabs[typeItem], new Vector3(col.gameObject.transform.position.x + 0.1f, col.gameObject.transform.position.y, 1f), Quaternion.identity);
+            }
+            else
+            {
+                item = Instantiate(itemPreFabs[typeItem], new Vector3(col.gameObject.transform.position.x + 0.1f, col.gameObject.transform.position.y, 1f), Quaternion.identity);
 
-            GameObject item = Instantiate(itemPreFabs[typeItem], new Vector3(col.gameObject.transform.position.x + 0.1f, col.gameObject.transform.position.y, 1f), Quaternion.identity);
+            }
+            
             item.transform.parent = col.gameObject.transform;
             Destroy(gameObject, (float)0);
 

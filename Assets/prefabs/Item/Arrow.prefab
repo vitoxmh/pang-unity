@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1672336536213165799}
   m_Layer: 9
   m_Name: Arrow
-  m_TagString: Untagged
+  m_TagString: item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -145,5 +145,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   typeArm: 0
-  EffectsSource: []
   MaxShot: 2

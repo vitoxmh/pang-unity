@@ -23,7 +23,7 @@ public class gun : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.CompareTag("piso"))
+        if (col.CompareTag("piso") || col.CompareTag("block"))
         {
 
             Instantiate(bulletExplotion, new Vector3(transform.position.x, transform.position.y + 0.05f, 1f), Quaternion.identity);

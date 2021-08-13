@@ -59,17 +59,19 @@
     <Compile Include="Assets\Script\BallBang.cs" />
     <Compile Include="Assets\Script\ladderMovement.cs" />
     <Compile Include="Assets\Script\arm.cs" />
+    <Compile Include="Assets\Script\arm\gun.cs" />
     <Compile Include="Assets\Script\Stage\block.cs" />
+    <Compile Include="Assets\Script\BallMaterial.cs" />
     <Compile Include="Assets\Script\arm\chainGancho.cs" />
     <Compile Include="Assets\Script\poweUp\typeArms.cs" />
     <Compile Include="Assets\Script\Ball.cs" />
+    <Compile Include="Assets\Script\arm\bullet\bulletDestroy.cs" />
     <Compile Include="Assets\Script\arm\chain.cs" />
     <Compile Include="Assets\test.cs" />
     <Compile Include="Assets\Script\poweUp\shield.cs" />
     <Compile Include="Assets\Script\poweUp\item.cs" />
     <Compile Include="Assets\Script\PlayerController.cs" />
-    <Compile Include="Assets\Script\arm\gun.cs" />
-    <Compile Include="Assets\Script\arm\bullet\bulletDestroy.cs" />
+    <Compile Include="Assets\Script\SoundManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

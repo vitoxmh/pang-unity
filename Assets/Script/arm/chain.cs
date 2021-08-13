@@ -48,7 +48,7 @@ public class chain : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.CompareTag("ball") || col.CompareTag("piso"))
+        if (col.CompareTag("ball") || col.CompareTag("piso") || col.CompareTag("block"))
         {
 
             Destroy(gameObject, (float)0);

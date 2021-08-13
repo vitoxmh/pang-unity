@@ -8,21 +8,21 @@ public class typeArms : MonoBehaviour
     private float touchFloor;
     public int typeArm;
     private BoxCollider2D collider;
-    public AudioSource[] EffectsSource;
     public int MaxShot;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         collider = GetComponent<BoxCollider2D>();
+
         //touchFloor = 6f;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
-  
+
+
     }
      
     void FixedUpdate()
@@ -43,12 +43,7 @@ public class typeArms : MonoBehaviour
         }
 
 
-        if (col.CompareTag("Player"))
-        {
-            Destroy(gameObject, (float)0);
-            col.gameObject.GetComponent<PlayerController>().typeArms = typeArm;
-            Debug.Log("Trigger");
-        }
+
 
      
 
@@ -68,9 +63,15 @@ public class typeArms : MonoBehaviour
     {
         if (col.gameObject.tag == "Player")
         {
-            Destroy(gameObject, (float)0);
+
+
             col.gameObject.GetComponent<PlayerController>().typeArms = typeArm;
             col.gameObject.GetComponent<PlayerController>().maxShot = MaxShot;
+           
+            Destroy(gameObject, (float)0f);
+            Debug.Log("aCA 01");
+            //EffectsSource.Play();
+
 
         }
     }

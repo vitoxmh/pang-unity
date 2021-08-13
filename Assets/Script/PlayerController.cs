@@ -25,6 +25,7 @@ public class PlayerController : MonoBehaviour
     private SpriteRenderer sr;
     public int downLadder;
     public int maxShot;
+    public AudioSource audio;
 
     /************************************
     
@@ -152,10 +153,11 @@ public class PlayerController : MonoBehaviour
 
         //Debug.Log(maxShot + "====" + GameObject.FindGameObjectsWithTag("arma").Length);
 
-        if (Input.GetKeyDown(KeyCode.E) && (GameObject.FindGameObjectsWithTag("arma").Length < maxShot))
+        if (Input.GetKeyDown(KeyCode.E) && (GameObject.FindGameObjectsWithTag("arma").Length < maxShot) && Grounded)
         {
 
             deltaStop = Time.time + timeStop;
+
             if(typeArms == 2)
             {
                 Instantiate(armPreFabs[typeArms], new Vector3(transform.position.x, transform.position.y, 1f), Quaternion.identity);
@@ -165,9 +167,25 @@ public class PlayerController : MonoBehaviour
                 Instantiate(armPreFabs[typeArms], new Vector3(transform.position.x, transform.position.y - 0.6f, 1f), Quaternion.identity);
             }
            
+        }
+        else if (Input.GetKeyDown(KeyCode.E) && (GameObject.FindGameObjectsWithTag("arma").Length < maxShot) && !Grounded && onLadder)
+        {
 
+            deltaStop = Time.time + timeStop;
+
+            if (typeArms == 2)
+            {
+                Instantiate(armPreFabs[typeArms], new Vector3(transform.position.x, transform.position.y, 1f), Quaternion.identity);
+            }
+            else
+            {
+                Instantiate(armPreFabs[typeArms], new Vector3(transform.position.x, transform.position.y - 0.6f, 1f), Quaternion.identity);
+            }
 
         }
+
+
+
 
     }
 
@@ -222,6 +240,16 @@ public class PlayerController : MonoBehaviour
         }
 
 
+    }
+
+
+    void OnCollisionEnter2D(Collision2D col)
+    {
+        if (col.gameObject.tag == "item")
+        {
+            AudioSource audio = GetComponent<AudioSource>();
+            audio.Play();
+        }
     }
 
 

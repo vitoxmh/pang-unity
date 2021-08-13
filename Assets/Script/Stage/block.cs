@@ -7,6 +7,9 @@ public class block : MonoBehaviour
     // Start is called before the first frame update
     private Animator Animator;
     private GameObject objeto;
+    public GameObject[] item;
+    public bool getIten;
+    public int typeItem;
 
     void Start()
     {
@@ -34,8 +37,9 @@ public class block : MonoBehaviour
         if (col.CompareTag("arma"))
         {
 
+            AudioSource audio = GetComponent<AudioSource>();
+            audio.Play();
             objeto = col.gameObject;
-
             Animator.SetBool("broken", true);
 
         }
@@ -44,8 +48,15 @@ public class block : MonoBehaviour
 
     void DestroyBlock()
     {
+
+        
         Destroy(gameObject, (float)0);
         Destroy(objeto, (float)0);
+
+        if (getIten)
+        {
+            Instantiate(item[typeItem], new Vector3(transform.position.x, transform.position.y, 1f), Quaternion.identity);
+        }
     }
 
 

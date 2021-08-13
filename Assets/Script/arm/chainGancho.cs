@@ -53,8 +53,23 @@ public class chainGancho : MonoBehaviour
             touchCeiling = true;
             Animator.SetBool("techo", true);
             EffectsSource[1].Play();
+   
 
         }
+
+
+        if (col.CompareTag("block"))
+        {
+
+
+            touchCeiling = true;
+            Animator.SetBool("techo", true);
+           
+
+
+        }
+
+
 
 
         if (col.CompareTag("ball"))
