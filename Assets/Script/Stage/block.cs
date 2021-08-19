@@ -37,8 +37,8 @@ public class block : MonoBehaviour
         if (col.CompareTag("arma"))
         {
 
-            AudioSource audio = GetComponent<AudioSource>();
-            audio.Play();
+            GameObject.FindGameObjectWithTag("SoundManager").GetComponent<SoundManager>().play("Brokenblock");
+            GetComponent<BoxCollider2D>().enabled = false;
             objeto = col.gameObject;
             Animator.SetBool("broken", true);
 

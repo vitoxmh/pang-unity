@@ -8,6 +8,7 @@ public class bulletDestroy : MonoBehaviour
     void Start()
     {
         
+        GameObject.FindGameObjectWithTag("SoundManager").GetComponent<SoundManager>().play("BulletCrush");
     }
 
     // Update is called once per frame

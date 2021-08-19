@@ -29,7 +29,7 @@ public class chain : MonoBehaviour
 
         int index = (int)(Time.timeSinceLevelLoad * 6);
 
-        heightChain = heightChain - 0.013f;
+        heightChain = heightChain - speedChain;
         sprite.size = new Vector2(sprite.size.x, heightChain);
 
         index = index % 2;

@@ -29,11 +29,11 @@ public class item : MonoBehaviour
 
             if(typeItem == 0)
             {
-                item = Instantiate(itemPreFabs[typeItem], new Vector3(col.gameObject.transform.position.x + 0.1f, col.gameObject.transform.position.y, 1f), Quaternion.identity);
+                item = Instantiate(itemPreFabs[typeItem], new Vector3(col.gameObject.transform.position.x, col.gameObject.transform.position.y, 0.171f), Quaternion.identity);
             }
             else
             {
-                item = Instantiate(itemPreFabs[typeItem], new Vector3(col.gameObject.transform.position.x + 0.1f, col.gameObject.transform.position.y, 1f), Quaternion.identity);
+                item = Instantiate(itemPreFabs[typeItem], new Vector3(col.gameObject.transform.position.x + 0.1f, col.gameObject.transform.position.y,0f), Quaternion.identity);
 
             }
             

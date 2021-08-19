@@ -19,6 +19,8 @@ TagManager:
   - ladderOut
   - ladderExit
   - block
+  - SoundManager
+  - ladderTopExit
   layers:
   - Default
   - TransparentFX
