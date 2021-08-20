@@ -159,38 +159,49 @@ public class Ball : MonoBehaviour
         {
 
             // Clona una bola  hasta que sea la mas chica
- 
-            GameObject newBall = gameObject;
+            bangBall();
 
-            if (gameObject.GetComponent<Ball>().sizeBall < 3 && maxExplotion == 0)
-            {
-                GameObject newBall01;
-                GameObject newBall02;
 
-                newBall.transform.localScale = new Vector3(2f, 2.5f, 0);
-                newBall.GetComponent<Ball>().directionBallLeft = true;
-                newBall.GetComponent<Ball>().sizeBall += 1;
-
-                newBall01 = Instantiate(newBall, rb.position + Vector2.left, Quaternion.identity);
-
-                newBall.GetComponent<Ball>().directionBallLeft = false;
-                newBall02 = Instantiate(newBall, rb.position, Quaternion.identity);
-                
-                // Hace un salto 
-                newBall01.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 3.5f);
-                newBall02.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 3.5f);
-                maxExplotion++;
-               
-
-            }
-
-            
-
-            GameObject newExplotion = Instantiate(explotionPreFabs[colorBall], rb.position, Quaternion.identity);
-            newExplotion.transform.localScale = size;
-
-            Destroy(gameObject, (float)0);
         }
+
+    }
+
+
+
+    public void bangBall()
+    {
+
+        GameObject newBall = gameObject;
+
+        if (gameObject.GetComponent<Ball>().sizeBall < 3 && maxExplotion == 0)
+        {
+            GameObject newBall01;
+            GameObject newBall02;
+
+            newBall.transform.localScale = new Vector3(2f, 2.5f, 0);
+            newBall.GetComponent<Ball>().directionBallLeft = true;
+            newBall.GetComponent<Ball>().sizeBall += 1;
+
+            newBall01 = Instantiate(newBall, rb.position + Vector2.left, Quaternion.identity);
+
+            newBall.GetComponent<Ball>().directionBallLeft = false;
+            newBall02 = Instantiate(newBall, rb.position, Quaternion.identity);
+
+            // Hace un salto 
+            newBall01.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 3.5f);
+            newBall02.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 3.5f);
+            maxExplotion++;
+
+
+        }
+
+
+
+        GameObject newExplotion = Instantiate(explotionPreFabs[colorBall], rb.position, Quaternion.identity);
+        newExplotion.transform.localScale = size;
+
+        Destroy(gameObject, (float)0);
+
 
     }
 

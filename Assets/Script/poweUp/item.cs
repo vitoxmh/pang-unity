@@ -7,14 +7,20 @@ public class item : MonoBehaviour
     // Start is called before the first frame update
     public int typeItem;
     public GameObject[] itemPreFabs;
+    public bool AllBang;
+    private float detalDelayBang;
     void Start()
     {
-        
+        AllBang = false;
+        detalDelayBang = Time.time;
+
     }
 
     // Update is called once per frame
     void Update()
     {
+
+
         
     }
 
@@ -30,6 +36,13 @@ public class item : MonoBehaviour
             if(typeItem == 0)
             {
                 item = Instantiate(itemPreFabs[typeItem], new Vector3(col.gameObject.transform.position.x, col.gameObject.transform.position.y, 0.171f), Quaternion.identity);
+                item.transform.parent = col.gameObject.transform;
+            }
+            else if (typeItem == 1)
+            {
+                col.gameObject.GetComponent<PlayerController>().AllBang = true;
+
+                Debug.Log("Destuye Bolas");
             }
             else
             {
@@ -37,7 +50,7 @@ public class item : MonoBehaviour
 
             }
             
-            item.transform.parent = col.gameObject.transform;
+           
             Destroy(gameObject, (float)0);
 
 
@@ -46,8 +59,6 @@ public class item : MonoBehaviour
 
 
     }
-
-
 
 
 }

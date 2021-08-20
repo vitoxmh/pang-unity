@@ -169,5 +169,6 @@ MonoBehaviour:
   - {fileID: 3690883411461718196, guid: 56e1687d540403a4b839f6b9435a8faf, type: 3}
   - {fileID: 2820574576096664664, guid: d34d76feff69cc64fb9bb46c424fcb3b, type: 3}
   - {fileID: 1543830153421988308, guid: 3d63f95d8683c1a409e8312103c9feaa, type: 3}
+  - {fileID: 8324778753603231864, guid: 0636c1ffc6cab064199e7071882fff35, type: 3}
   getIten: 1
   typeItem: 2

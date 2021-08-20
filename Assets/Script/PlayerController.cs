@@ -30,6 +30,8 @@ public class PlayerController : MonoBehaviour
     public bool ladderTop;
     public bool ladderExit;
     public bool ladderTopExit;
+    public bool AllBang;
+    private float detalDelayBang;
 
 
 
@@ -55,6 +57,8 @@ public class PlayerController : MonoBehaviour
         ladderTop = false;
         ladderExit = false;
         ladderTopExit = false;
+        AllBang = false;
+        detalDelayBang = Time.time;
 
 
 
@@ -91,6 +95,13 @@ public class PlayerController : MonoBehaviour
 
 
             ladder();
+
+        }
+
+
+        if (AllBang)
+        {
+            BangAllBall();
 
         }
 
@@ -230,79 +241,6 @@ public class PlayerController : MonoBehaviour
 
         }
 
-
-       
-
-
-        /*
-        //if (onLadder && Grounded && vertical > 0 && horizontal == 0)
-        if ((horizontal == 0 && !onLadder && vertical == 0) || (horizontal == 0 && onLadder && Grounded && vertical == 0))
-        {
-            Animator.SetInteger("PlayerAnimation", 0);
-            transform.Translate(0, 0, 0);
-            Debug.Log("01");
-
-        }
-        if (horizontal > 0 && vertical == 0 && !onLadder)
-        {
-            Animator.SetInteger("PlayerAnimation", 1);
-            transform.Translate(2 * Time.deltaTime * Speed, 0, 0);
-            Debug.Log("02");
-
-
-
-        }
-        else if (horizontal < 0 && vertical == 0 && !onLadder)
-        {
-            Animator.SetInteger("PlayerAnimation", 1);
-            transform.Translate(-2 * Time.deltaTime * Speed, 0, 0);
-            Debug.Log("03");
-
-
-        }
-        else if (horizontal > 0 && vertical == 0 && onLadder)
-        {
-            Animator.SetInteger("PlayerAnimation", 1);
-            transform.Translate(2 * Time.deltaTime * Speed, 0, 0);
-            Debug.Log("04");
-
-
-        }
-        else if (horizontal < 0 && vertical == 0 && onLadder)
-        {
-            Animator.SetInteger("PlayerAnimation", 1);
-            transform.Translate(-2 * Time.deltaTime * Speed, 0, 0);
-            Debug.Log("05");
-
-
-        }
-        else if (vertical > 0 && onLadder)
-        {
-            transform.Translate(0, 2 * Time.deltaTime * Speed, 0);
-            Debug.Log("06");
-        }
-        else if (vertical > 0 && onLadder)
-        {
-            transform.Translate(0, 2 * Time.deltaTime * Speed, 0);
-            Debug.Log("06");
-            rg.velocity = Vector2.zero;
-        }
-        else if (vertical < 0 && onLadder)
-        {
-            transform.Translate(0, -2 * Time.deltaTime * Speed, 0);
-            rg.velocity = Vector2.zero;
-            Debug.Log("06");
-        }
-        else if (vertical == 0 && onLadder)
-        {
-            transform.Translate(0, 0, 0);
-            Debug.Log("06");
-        }
-        else
-        {
-
-
-        }*/
 
     }
 
@@ -516,6 +454,34 @@ public class PlayerController : MonoBehaviour
     public void exitLadder()
     {
         ladderTopExit = false;
+    }
+
+
+
+    public void BangAllBall()
+    {
+
+        if (Time.time > detalDelayBang)
+        {
+
+
+            detalDelayBang = Time.time + 0.35f;
+
+            GameObject[] arrayBall = GameObject.FindGameObjectsWithTag("ball");
+
+            for (int i = 0; i <= arrayBall.Length; i++)
+            {
+
+                if (arrayBall[i].GetComponent<Ball>().sizeBall < 3)
+                {
+                    arrayBall[i].GetComponent<Ball>().bangBall();
+                }
+
+
+            }
+
+        }
+
     }
 
 
