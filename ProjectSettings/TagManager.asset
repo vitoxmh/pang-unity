@@ -21,6 +21,7 @@ TagManager:
   - block
   - SoundManager
   - ladderTopExit
+  - BallManager
   layers:
   - Default
   - TransparentFX

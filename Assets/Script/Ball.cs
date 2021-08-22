@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class Ball : MonoBehaviour
 {
-
+     
     public float starForce;
+    public GameObject[] explotionPreFabs;
+    public bool isFreeze;
     private SpriteRenderer sr;
     private Rigidbody2D rb;
     private CircleCollider2D circle;
@@ -20,8 +22,9 @@ public class Ball : MonoBehaviour
     public float timeInvisible;
     private float deltaInvisible;
     private int maxExplotion;
-    public GameObject[] explotionPreFabs;
     private ContactPoint2D[] contacts = new ContactPoint2D[10];
+    public Vector2 currentVelocity;
+    private bool starBounce;
 
 
     void Start()
@@ -30,12 +33,16 @@ public class Ball : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         circle = GetComponent<CircleCollider2D>();
         sr = GetComponent<SpriteRenderer>();
-        
-        
+        starBounce = false;
+
+
+
 
         getSizeBall();
 
         // Indica la direccion de la Bola al iniciar
+
+       
         if (directionBallLeft)
         {
             x = speedBall * -1f;
@@ -69,13 +76,33 @@ public class Ball : MonoBehaviour
             circle.enabled = false;
         }
 
+        if (isFreeze) {
+
+            
+            rb.isKinematic = true;   
+            rb.velocity = Vector2.zero;
+            starBounce = true;
+        }
+        else
+        {
+            rb.isKinematic = false;
+
             Vector3 temp = transform.position;
+            // Movimiento de la Bola de Derecha a Izquierda
+            if (starBounce)
+            {
+                rb.velocity = currentVelocity;
+                starBounce = false;
+                Debug.Log("iNICIA rEBOTE"+ currentVelocity);
+            } 
+            
+            temp.x = temp.x + (starForce * Time.deltaTime * x);
+            transform.position = temp;
 
-        // Movimiento de la Bola de Derecha a Izquierda
-        temp.x = temp.x + (starForce * Time.deltaTime * x);
-
-        transform.position = temp;
+        }
         
+
+
         // Escala de la Bola
         transform.localScale = size;
 
@@ -84,6 +111,12 @@ public class Ball : MonoBehaviour
         sr.sprite = textures[colorBall];
 
     }
+
+
+
+
+
+    
 
 
     private void FixedUpdate()
@@ -261,6 +294,22 @@ public class Ball : MonoBehaviour
             
     }
 
+
+
+    public void freezeBall() {
+
+        isFreeze = true;
+        currentVelocity = rb.velocity;
+        Debug.Log("Inicio congela,iento");
+       
+
+    }
+
+
+    public void unfreezeBall()
+    {
+        isFreeze = false;
+    }
 
 
 

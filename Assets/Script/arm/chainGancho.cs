@@ -15,7 +15,9 @@ public class chainGancho : MonoBehaviour
 
     private void Awake()
     {
-        GameObject.FindGameObjectWithTag("SoundManager").GetComponent<SoundManager>().play("Firehook");
+        //GameObject.FindGameObjectWithTag("SoundManager").GetComponent<SoundManager>().play("Firehook");
+
+        SoundManager.sm.play("Firehook");
 
     }
 
@@ -49,7 +51,8 @@ public class chainGancho : MonoBehaviour
         if (col.CompareTag("piso"))
         {
 
-            GameObject.FindGameObjectWithTag("SoundManager").GetComponent<SoundManager>().play("HookAnchored");
+            //GameObject.FindGameObjectWithTag("SoundManager").GetComponent<SoundManager>().play("HookAnchored");
+            SoundManager.sm.play("HookAnchored");
             touchCeiling = true;
             Animator.SetBool("techo", true);
             

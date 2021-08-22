@@ -30,7 +30,6 @@ public class PlayerController : MonoBehaviour
     public bool ladderTop;
     public bool ladderExit;
     public bool ladderTopExit;
-    public bool AllBang;
     private float detalDelayBang;
 
 
@@ -57,7 +56,6 @@ public class PlayerController : MonoBehaviour
         ladderTop = false;
         ladderExit = false;
         ladderTopExit = false;
-        AllBang = false;
         detalDelayBang = Time.time;
 
 
@@ -99,11 +97,7 @@ public class PlayerController : MonoBehaviour
         }
 
 
-        if (AllBang)
-        {
-            BangAllBall();
-
-        }
+       
 
 
     }
@@ -308,13 +302,15 @@ public class PlayerController : MonoBehaviour
             if(typeArms == 2)
             {
                 Instantiate(armPreFabs[typeArms], new Vector3(transform.position.x, transform.position.y, 1f), Quaternion.identity);
-                GameObject.FindGameObjectWithTag("SoundManager").GetComponent<SoundManager>().play("FireBullet");
+                //GameObject.FindGameObjectWithTag("SoundManager").GetComponent<SoundManager>().play("FireBullet");
+                SoundManager.sm.play("FireBullet");
 
             }
             else
             {
                 Instantiate(armPreFabs[typeArms], new Vector3(transform.position.x, transform.position.y - 0.6f, 1f), Quaternion.identity);
-                GameObject.FindGameObjectWithTag("SoundManager").GetComponent<SoundManager>().play("Firehook");
+                //GameObject.FindGameObjectWithTag("SoundManager").GetComponent<SoundManager>().play("Firehook");
+                SoundManager.sm.play("Firehook");
 
 
 
@@ -329,13 +325,15 @@ public class PlayerController : MonoBehaviour
             if (typeArms == 2)
             {
                 Instantiate(armPreFabs[typeArms], new Vector3(transform.position.x, transform.position.y, 1f), Quaternion.identity);
-                GameObject.FindGameObjectWithTag("SoundManager").GetComponent<SoundManager>().play("FireBullet");
+                //GameObject.FindGameObjectWithTag("SoundManager").GetComponent<SoundManager>().play("FireBullet");
+                SoundManager.sm.play("FireBullet");
 
             }
             else
             {
                 Instantiate(armPreFabs[typeArms], new Vector3(transform.position.x, transform.position.y - 0.6f, 1f), Quaternion.identity);
-                GameObject.FindGameObjectWithTag("SoundManager").GetComponent<SoundManager>().play("Firehook");
+                //GameObject.FindGameObjectWithTag("SoundManager").GetComponent<SoundManager>().play("Firehook");
+                SoundManager.sm.play("Firehook");
             }
 
         }
@@ -442,7 +440,8 @@ public class PlayerController : MonoBehaviour
     {
         if (col.gameObject.tag == "item")
         {
-            GameObject.FindGameObjectWithTag("SoundManager").GetComponent<SoundManager>().play("GetItem");
+            //GameObject.FindGameObjectWithTag("SoundManager").GetComponent<SoundManager>().play("GetItem");
+            SoundManager.sm.play("GetItem");
         }
     }
 

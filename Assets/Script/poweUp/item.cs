@@ -40,11 +40,20 @@ public class item : MonoBehaviour
             }
             else if (typeItem == 1)
             {
-                col.gameObject.GetComponent<PlayerController>().AllBang = true;
-
+                
+                BallManager.bm.isBallBang = true;
                 Debug.Log("Destuye Bolas");
+
             }
-            else
+            else if (typeItem == 2)
+            {
+
+      
+                BallManager.bm.StartFreeze();
+
+               
+
+            }else
             {
                 item = Instantiate(itemPreFabs[typeItem], new Vector3(col.gameObject.transform.position.x + 0.1f, col.gameObject.transform.position.y,0f), Quaternion.identity);
 
