@@ -60,7 +60,8 @@ public class BallManager : MonoBehaviour
         if (!freeze)
         {
             StartCoroutine(FreezeTime());
-           
+
+
         }
             
     
@@ -70,18 +71,35 @@ public class BallManager : MonoBehaviour
 
     public IEnumerator FreezeTime()
     {
-        Debug.Log("DSSSSSSS");
+    
         freeze = true;
         freezeTime = TimeFreezeInit;
         freezeBall();
-
+        int count = 0;
         FreezeTimeCount.SetActive(true);
+        bool initPalpate = false;
 
+        float deltaNextState = Time.time;
 
         while (freezeTime > 0)
         {
             freezeTime -= Time.deltaTime;
-            FreezeTimeText.text = freezeTime.ToString("f2");
+            FreezeTimeText.text = "TIME: "+freezeTime.ToString("f2");
+ 
+            if (!initPalpate && deltaNextState <= Time.time && freezeTime < 2.5f)
+            {
+                InvisibleAllBall();
+                deltaNextState = 0.13f + Time.time;
+                initPalpate = true;
+            }
+
+            if(initPalpate && deltaNextState <= Time.time && freezeTime < 2.5f)
+            {
+                noInvisibleAllBall();
+                deltaNextState = 0.13f + Time.time;
+                initPalpate = false;
+            }
+           
             yield return null;
         }
 
@@ -116,6 +134,40 @@ public class BallManager : MonoBehaviour
         }
 
     }
+
+
+    public void InvisibleAllBall()
+    {
+
+        GameObject[] arrayBall = GameObject.FindGameObjectsWithTag("ball");
+
+        for (int i = 0; i < arrayBall.Length; i++)
+        {
+
+            arrayBall[i].GetComponent<Ball>().Invisible();
+
+        }
+
+    }
+
+    public void noInvisibleAllBall()
+    {
+
+        GameObject[] arrayBall = GameObject.FindGameObjectsWithTag("ball");
+
+        for (int i = 0; i < arrayBall.Length; i++)
+        {
+
+            arrayBall[i].GetComponent<Ball>().NoInvisible();
+
+        }
+
+    }
+
+
+
+
+
 
 
     public void freezeBall()

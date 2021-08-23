@@ -114,11 +114,6 @@ public class Ball : MonoBehaviour
 
 
 
-
-
-    
-
-
     private void FixedUpdate()
     {
 
@@ -294,21 +289,31 @@ public class Ball : MonoBehaviour
             
     }
 
-
-
     public void freezeBall() {
 
         isFreeze = true;
         currentVelocity = rb.velocity;
-        Debug.Log("Inicio congela,iento");
-       
-
+        
     }
 
 
     public void unfreezeBall()
     {
+        sr.enabled = true;
         isFreeze = false;
+    }
+
+
+
+    public void Invisible()
+    {
+        sr.enabled = false;
+    }
+
+
+    public void NoInvisible()
+    {
+        sr.enabled = true;
     }
 
 
