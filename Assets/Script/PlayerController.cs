@@ -21,7 +21,7 @@ public class PlayerController : MonoBehaviour
     public float climbSpeed;
     public float exitHop = 3f;
     public bool Grounded;
-    public GameObject posLadder;
+    public Vector2 posLadder;
     private Sprite[] textures;
     private SpriteRenderer sr;
     public int downLadder;
@@ -146,7 +146,7 @@ public class PlayerController : MonoBehaviour
         {
             if(vertical > 0)
             {
-                transform.position = new Vector2(posLadder.transform.position.x, transform.position.y + 0.05f);
+                transform.position = new Vector2(posLadder.x, transform.position.y + 0.05f);
                  
                 //transform.Translate(0, 2 * Time.deltaTime * Speed, 0);
                 Animator.SetInteger("PlayerAnimation", 3);
@@ -243,32 +243,35 @@ public class PlayerController : MonoBehaviour
     private void isGrounded()
    {
 
-        Debug.DrawRay(transform.position, Vector3.down * 0.67f, Color.red);
+        Debug.DrawRay(new Vector2(transform.position.x, transform.position.y - 0.3f), Vector3.down * 0.4f, Color.red);
 
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector3.down, 0.67f);
+        RaycastHit2D hit = Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y - 0.4f), Vector3.down, 0.3f);
   
         if (hit.collider != null)
         {
-
+            Debug.Log(hit.collider.tag + "<====");
             if (hit.collider.tag == "piso" || hit.collider.tag == "ladderTop" || hit.collider.tag == "block" || hit.collider.tag == "ladderFooter")
             {
 
                 Grounded = true;
-                Debug.Log("0001");
 
+                Debug.Log("Baja Escalera");
             }
             else
             {
                 Grounded = false;
-                Debug.Log("0002");
+               
             }
 
 
             if(hit.collider.tag == "ladderTop" && vertical < 0.0f)
             {
-                
+
+               
+                posLadder = hit.collider.gameObject.transform.position;
                 hit.collider.gameObject.GetComponentInChildren<BoxCollider2D >().enabled = false;
-                transform.position = new Vector2(posLadder.transform.position.x, transform.position.y - 0.05f);
+
+                transform.position = new Vector2(posLadder.x, transform.position.y - 0.05f);
                 ladderTop = true;
 
 
@@ -367,7 +370,7 @@ public class PlayerController : MonoBehaviour
         {
             onLadder = true;
             //posLadder = new Vector2(other.gameObject.transform.position.x + 0.05f, transform.position.y);
-            posLadder = other.gameObject;
+            posLadder = other.gameObject.transform.position;
             rg.gravityScale = 0;
             other.gameObject.transform.GetChild(0).GetComponent<BoxCollider2D>().enabled = false;
         }
@@ -406,6 +409,7 @@ public class PlayerController : MonoBehaviour
             rg.gravityScale = 1;
             
             other.gameObject.transform.GetChild(0).GetComponent<BoxCollider2D>().enabled = true;
+         
         }
 
 

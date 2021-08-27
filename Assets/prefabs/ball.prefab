@@ -135,11 +135,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   starForce: 3
-  colorBall: 0
-  directionBallLeft: 0
-  sizeBall: 0
-  timeInvisible: 0
   explotionPreFabs:
   - {fileID: 2181084323587011076, guid: 740289b4dd638444791dca1fcf0abaff, type: 3}
   - {fileID: 7282617009057660278, guid: 42a98f46a4944834b8748d82325f1064, type: 3}
   - {fileID: 2995121909577618481, guid: 5f4617cb1a8d3b34ca71c91abe0af5f5, type: 3}
+  isFreeze: 0
+  colorBall: 0
+  directionBallLeft: 0
+  sizeBall: 0
+  timeInvisible: 0
+  currentVelocity: {x: 0, y: 0}

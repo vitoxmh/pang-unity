@@ -13,18 +13,25 @@ public class Ball : MonoBehaviour
     private CircleCollider2D circle;
     private float x, y;
     private Sprite[] textures;
+    public bool stateSlow;
     public int colorBall;
     public bool directionBallLeft;
     public int sizeBall;
     private Vector3 size;
     private float speedBall;
-    private float ballBounce;
+    public float ballBounce;
     public float timeInvisible;
     private float deltaInvisible;
     private int maxExplotion;
     private ContactPoint2D[] contacts = new ContactPoint2D[10];
     public Vector2 currentVelocity;
     private bool starBounce;
+
+
+    void Awake()
+    {
+        Application.targetFrameRate = 100;
+    }
 
 
     void Start()
@@ -34,7 +41,7 @@ public class Ball : MonoBehaviour
         circle = GetComponent<CircleCollider2D>();
         sr = GetComponent<SpriteRenderer>();
         starBounce = false;
-
+        stateSlow = false;
 
 
 
@@ -94,9 +101,18 @@ public class Ball : MonoBehaviour
                 rb.velocity = currentVelocity;
                 starBounce = false;
                 Debug.Log("iNICIA rEBOTE"+ currentVelocity);
-            } 
-            
-            temp.x = temp.x + (starForce * Time.deltaTime * x);
+            }
+            if (stateSlow)
+            {
+                temp.x = temp.x + ((starForce / 1.5f) * Time.deltaTime * x);
+
+            }
+            else
+            {
+                temp.x = temp.x + (starForce * Time.deltaTime * x);
+
+            }
+           
             transform.position = temp;
 
         }
@@ -163,11 +179,31 @@ public class Ball : MonoBehaviour
 
             if(col.contacts[0].normal.y > 0)
             {
-                rb.velocity = new Vector2(0, ballBounce);
+               
+                if (stateSlow)
+                {
 
-            }else if (col.contacts[0].normal.y < 0)
+                   
+                    rb.velocity = new Vector2(0, ballBounce * 0.7f);
+
+                }
+                else
+                {
+                    rb.velocity = new Vector2(0, ballBounce);
+                }
+
+            }
+            else if (col.contacts[0].normal.y < 0)
             {
-                rb.velocity = new Vector2(0, -2);
+                if (stateSlow)
+                {
+                    rb.velocity = new Vector2(0, -1);
+                }
+                else
+                {
+                    rb.velocity = new Vector2(0, -2);
+                }
+                
             }
 
             if (col.contacts[0].normal.x > 0)
@@ -254,11 +290,11 @@ public class Ball : MonoBehaviour
                 newBall.GetComponent<Ball>().directionBallLeft = true;
                 newBall.GetComponent<Ball>().sizeBall += 1;
 
-                newBall01 = Instantiate(newBall, rb.position + Vector2.left, Quaternion.identity);
+                newBall01 = Instantiate(newBall, new Vector2(rb.position.x - 0.15f, rb.position.y), Quaternion.identity);
 
                 newBall.GetComponent<Ball>().directionBallLeft = false;
-                newBall02 = Instantiate(newBall, rb.position, Quaternion.identity);
-
+                newBall02 = Instantiate(newBall, new Vector2(rb.position.x + 0.15f, rb.position.y), Quaternion.identity);
+    
                 // Hace un salto 
                 newBall01.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 3.5f);
                 newBall02.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 3.5f);
@@ -301,6 +337,31 @@ public class Ball : MonoBehaviour
     {
         sr.enabled = true;
         isFreeze = false;
+    }
+
+
+
+    public void slowBall()
+    {
+        Debug.Log("Baja gravedad");
+
+
+        //rb.velocity = new Vector2(0, ballBounce / 1.5f);
+        stateSlow = true;
+        rb.gravityScale = 0.5f;
+       
+       
+
+    }
+
+
+
+    public void unSlowBall()
+    {
+
+        rb.gravityScale = 1f;
+        stateSlow = false;
+
     }
 
 

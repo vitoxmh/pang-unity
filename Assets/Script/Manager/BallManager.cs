@@ -14,9 +14,12 @@ public class BallManager : MonoBehaviour
     public Text FreezeTimeText;
     public GameObject FreezeTimeCount;
     public float freezeTime;
+    public float slowTime;
     private float detalDelayBang;
     public bool freeze;
-    public float TimeFreezeInit; 
+    public float TimeFreezeInit;
+    public float TimeSlowInit;
+    public bool isSlowBall;
 
 
     private void Awake()
@@ -51,6 +54,20 @@ public class BallManager : MonoBehaviour
             BangAllBall();
 
         }
+
+
+
+
+
+    }
+
+
+
+    public void startSlowBall()
+    {
+
+        StartCoroutine(SlowTime());
+
     }
 
 
@@ -61,11 +78,56 @@ public class BallManager : MonoBehaviour
         {
             StartCoroutine(FreezeTime());
 
-
         }
             
     
     
+    }
+
+
+    public IEnumerator SlowTime()
+    {
+
+
+        slowTime = TimeSlowInit;
+
+
+        GameObject[] arrayBall = GameObject.FindGameObjectsWithTag("ball");
+
+        Debug.Log("Slow Ball");
+
+        for (int i = 0; i < arrayBall.Length; i++)
+        {
+
+            arrayBall[i].GetComponent<Ball>().slowBall();
+
+
+        }
+
+
+
+
+        while (slowTime > 0)
+        {
+            slowTime -= Time.deltaTime;
+
+
+            yield return null;
+        }
+
+
+
+        for (int i = 0; i < arrayBall.Length; i++)
+        {
+
+            arrayBall[i].GetComponent<Ball>().unSlowBall();
+
+
+        }
+
+
+
+
     }
 
 
@@ -163,10 +225,6 @@ public class BallManager : MonoBehaviour
         }
 
     }
-
-
-
-
 
 
 

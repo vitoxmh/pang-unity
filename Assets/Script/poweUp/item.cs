@@ -51,9 +51,19 @@ public class item : MonoBehaviour
       
                 BallManager.bm.StartFreeze();
 
-               
 
-            }else
+
+            }
+            else if (typeItem == 3)
+            {
+
+
+                BallManager.bm.startSlowBall();
+
+
+
+            }
+            else
             {
                 item = Instantiate(itemPreFabs[typeItem], new Vector3(col.gameObject.transform.position.x + 0.1f, col.gameObject.transform.position.y,0f), Quaternion.identity);
 
