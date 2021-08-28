@@ -25,7 +25,7 @@ public class gun : MonoBehaviour
     {
         if (col.CompareTag("piso") || col.CompareTag("block"))
         {
-
+            ManagerScore.ms.combo = 0;
             Instantiate(bulletExplotion, new Vector3(transform.position.x, transform.position.y + 0.05f, 1f), Quaternion.identity);
             Destroy(gameObject, (float)0);
 
@@ -36,7 +36,16 @@ public class gun : MonoBehaviour
         if (col.CompareTag("ball"))
         {
 
-           
+
+            ManagerScore.ms.combo++;
+
+            int sizeBall = col.gameObject.GetComponent<Ball>().scoreBall;
+            int scoreCombo = ManagerScore.ms.comboScore[ManagerScore.ms.combo];
+
+            int totalScore = scoreCombo + sizeBall;
+
+            ManagerScore.ms.UpdateScore(totalScore);
+
             Destroy(gameObject, (float)0);
 
 

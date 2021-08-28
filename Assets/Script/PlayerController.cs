@@ -32,10 +32,6 @@ public class PlayerController : MonoBehaviour
     public bool ladderTopExit;
     private float detalDelayBang;
 
-
-
-
-
     /************************************
     
     Animation: 

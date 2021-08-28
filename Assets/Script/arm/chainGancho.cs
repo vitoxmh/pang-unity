@@ -51,7 +51,7 @@ public class chainGancho : MonoBehaviour
         if (col.CompareTag("piso"))
         {
 
-            //GameObject.FindGameObjectWithTag("SoundManager").GetComponent<SoundManager>().play("HookAnchored");
+            ManagerScore.ms.combo = 0;
             SoundManager.sm.play("HookAnchored");
             touchCeiling = true;
             Animator.SetBool("techo", true);
@@ -64,7 +64,7 @@ public class chainGancho : MonoBehaviour
         if (col.CompareTag("block"))
         {
 
-
+            ManagerScore.ms.combo = 0;
             touchCeiling = true;
             Animator.SetBool("techo", true);
            
@@ -77,6 +77,16 @@ public class chainGancho : MonoBehaviour
 
         if (col.CompareTag("ball"))
         {
+
+            ManagerScore.ms.combo++;
+
+            int sizeBall = col.gameObject.GetComponent<Ball>().scoreBall;
+            int scoreCombo = ManagerScore.ms.comboScore[ManagerScore.ms.combo];
+
+            int totalScore = scoreCombo + sizeBall;
+
+            ManagerScore.ms.UpdateScore(totalScore);
+
 
             Destroy(gameObject, (float)0);
           

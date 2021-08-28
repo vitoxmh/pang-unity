@@ -17,6 +17,7 @@ public class Ball : MonoBehaviour
     public int colorBall;
     public bool directionBallLeft;
     public int sizeBall;
+    public int scoreBall; 
     private Vector3 size;
     private float speedBall;
     public float ballBounce;
@@ -26,6 +27,7 @@ public class Ball : MonoBehaviour
     private ContactPoint2D[] contacts = new ContactPoint2D[10];
     public Vector2 currentVelocity;
     private bool starBounce;
+   
 
 
     void Awake()
@@ -146,21 +148,26 @@ public class Ball : MonoBehaviour
                 size = new Vector3(5f, 6f, 1f);
                 speedBall = 1f;
                 ballBounce = 11.5f;
+                scoreBall = 50;
                 break;
             case 1:
                 size = new Vector3(2.5f, 3f, 1f);
                 speedBall = 0.8f;
                 ballBounce = 9.5f;
+                scoreBall = 100;
                 break;
             case 2:
                 size = new Vector3(1.25f, 1.5f, 1f);
                 speedBall = 0.7f;
                 ballBounce = 7f;
+                scoreBall = 150;
                 break;
             case 3:
                 size = new Vector3(0.5f, 0.5f, 1f);
                 speedBall = 0.5f;
                 ballBounce = 6f;
+                scoreBall = 200;
+
                 break;
         }
 

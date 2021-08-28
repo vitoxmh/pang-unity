@@ -10,12 +10,22 @@ public class typeArms : MonoBehaviour
     private BoxCollider2D collider;
     public int MaxShot;
 
-    void Start()
+    CurrentShotItem getItemShot;
+
+    private void Awake()
+    {
+
+        getItemShot = FindObjectOfType<CurrentShotItem>();
+
+
+    }
+
+        void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         collider = GetComponent<BoxCollider2D>();
 
-        //touchFloor = 6f;
+    
     }
 
     // Update is called once per frame
@@ -64,13 +74,13 @@ public class typeArms : MonoBehaviour
         if (col.gameObject.tag == "Player")
         {
 
+            getItemShot.CurrentShot(typeArm);
 
             col.gameObject.GetComponent<PlayerController>().typeArms = typeArm;
             col.gameObject.GetComponent<PlayerController>().maxShot = MaxShot;
-           
+
             Destroy(gameObject, (float)0f);
-            Debug.Log("aCA 01");
-            //EffectsSource.Play();
+
 
 
         }

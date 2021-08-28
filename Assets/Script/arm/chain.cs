@@ -48,12 +48,45 @@ public class chain : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col)
     {
+
+        if (col.CompareTag("piso") || col.CompareTag("block"))
+        {
+
+
+            ManagerScore.ms.combo = 0;
+
+           
+        }
+
+
+        if (col.CompareTag("ball"))
+        {
+
+
+           
+            ManagerScore.ms.combo++;
+
+            int sizeBall = col.gameObject.GetComponent<Ball>().scoreBall;
+            int scoreCombo = ManagerScore.ms.comboScore[ManagerScore.ms.combo];
+
+            int totalScore = scoreCombo + sizeBall;
+
+            ManagerScore.ms.UpdateScore(totalScore);
+
+
+
+
+        }
+
+
         if (col.CompareTag("ball") || col.CompareTag("piso") || col.CompareTag("block"))
         {
 
-            Destroy(gameObject, (float)0);
- 
+            
 
+            Destroy(gameObject, (float)0);
+           
+            
         }
     }
 }
