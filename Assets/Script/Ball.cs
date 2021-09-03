@@ -204,11 +204,11 @@ public class Ball : MonoBehaviour
             {
                 if (stateSlow)
                 {
-                    rb.velocity = new Vector2(0, -1);
+                    rb.velocity = new Vector2(0, -0.5f);
                 }
                 else
                 {
-                    rb.velocity = new Vector2(0, -2);
+                    rb.velocity = new Vector2(0, -1f);
                 }
                 
             }

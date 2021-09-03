@@ -157,3 +157,5 @@ MonoBehaviour:
   typeItem: 0
   itemPreFabs:
   - {fileID: 1729826456350207183, guid: 08c5650e65034ca4cbbaea8b9a947f37, type: 3}
+  AllBang: 0
+  TimeLife: 5

@@ -9,10 +9,15 @@ public class item : MonoBehaviour
     public GameObject[] itemPreFabs;
     public bool AllBang;
     private float detalDelayBang;
+    public float TimeLife;
+    private SpriteRenderer sr;
+
     void Start()
     {
         AllBang = false;
         detalDelayBang = Time.time;
+        StartCoroutine(timeLifeDead());
+        sr = GetComponent<SpriteRenderer>();
 
     }
 
@@ -24,6 +29,41 @@ public class item : MonoBehaviour
         
     }
 
+
+    public IEnumerator timeLifeDead()
+    {
+
+        bool initPalpate = false;
+        float deltaNextState = Time.time;
+
+
+        while (TimeLife > 0)
+        {
+            TimeLife -= Time.deltaTime;
+
+
+            if (!initPalpate && deltaNextState <= Time.time && TimeLife < 2.5f)
+            {
+                sr.enabled = true;
+                deltaNextState = 0.13f + Time.time;
+                initPalpate = true;
+            }
+
+            if (initPalpate && deltaNextState <= Time.time && TimeLife < 2.5f)
+            {
+                sr.enabled = false;
+                deltaNextState = 0.13f + Time.time;
+                initPalpate = false;
+            }
+
+
+            yield return null;
+        }
+
+
+        Destroy(gameObject, (float)0f);
+
+    }
 
     void OnCollisionEnter2D(Collision2D col)
     {

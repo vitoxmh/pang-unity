@@ -26,13 +26,39 @@ public class MusicManager : MonoBehaviour
     }
     void Start()
     {
-        AudioSource audio = GetComponent<AudioSource>();
-        audio.PlayOneShot(music[setMusic], 1f);
+       
+       
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+
+
+
+
+    public void play(string Mymusic)
+    {
+        AudioSource audio;
+
+        audio = GetComponent<AudioSource>();
+
+
+        switch (Mymusic)
+        {
+            case "MrFuji":
+                audio.PlayOneShot(music[0], 1f);
+             break;
+            case "Barcelona":
+                audio.PlayOneShot(music[1], 1f);
+            break;
+            case "Esmerald":
+                audio.PlayOneShot(music[2], 1f);
+            break;
+            
+        }
+
     }
 }

@@ -115,7 +115,7 @@ public class BallManager : MonoBehaviour
             yield return null;
         }
 
-
+        arrayBall = GameObject.FindGameObjectsWithTag("ball");
 
         for (int i = 0; i < arrayBall.Length; i++)
         {
@@ -138,7 +138,7 @@ public class BallManager : MonoBehaviour
         freezeTime = TimeFreezeInit;
         freezeBall();
         int count = 0;
-        FreezeTimeCount.SetActive(true);
+
         bool initPalpate = false;
 
         float deltaNextState = Time.time;
@@ -146,7 +146,7 @@ public class BallManager : MonoBehaviour
         while (freezeTime > 0)
         {
             freezeTime -= Time.deltaTime;
-            FreezeTimeText.text = "TIME: "+freezeTime.ToString("f2");
+            
  
             if (!initPalpate && deltaNextState <= Time.time && freezeTime < 2.5f)
             {
@@ -260,7 +260,7 @@ public class BallManager : MonoBehaviour
         }
 
         freeze = false;
-        FreezeTimeCount.SetActive(false);
+       
 
     }
 

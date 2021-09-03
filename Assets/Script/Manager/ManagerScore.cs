@@ -47,7 +47,11 @@ public class ManagerScore : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+     
+        if(combo >= 15)
+        {
+            combo = 0;
+        }
     }
 
 

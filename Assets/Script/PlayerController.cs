@@ -31,6 +31,7 @@ public class PlayerController : MonoBehaviour
     public bool ladderExit;
     public bool ladderTopExit;
     private float detalDelayBang;
+    public bool stateFreeze;
 
     /************************************
     
@@ -53,7 +54,7 @@ public class PlayerController : MonoBehaviour
         ladderExit = false;
         ladderTopExit = false;
         detalDelayBang = Time.time;
-
+     
 
 
 
@@ -67,33 +68,44 @@ public class PlayerController : MonoBehaviour
 
         horizontal = Input.GetAxisRaw("Horizontal");
         vertical = Input.GetAxisRaw("Vertical");
+        if (!stateFreeze)
+        {
 
-        if (horizontal < 0.0f) transform.localScale = new Vector3(-4.0f, 4.0f, 4.0f);
-        else if (horizontal > 0.0f) transform.localScale = new Vector3(4.0f, 4.0f, 4.0f);
+            if (horizontal < 0.0f) transform.localScale = new Vector3(-4.0f, 4.0f, 4.0f);
+            else if (horizontal > 0.0f) transform.localScale = new Vector3(4.0f, 4.0f, 4.0f);
 
-        fire();
+        }
+
+        if (!stateFreeze)
+        {
+            fire();
+        }
         countBall();
         isGrounded();
-       
 
-        if (deltaStop >= Time.time)
+        if (!stateFreeze)
         {
-            rg.velocity = Vector2.zero;
-            //Animator.SetBool("fire", true);
-            Animator.SetInteger("PlayerAnimation", 2);
-            Debug.Log("01");
+            if (deltaStop >= Time.time)
+            {
+                rg.velocity = Vector2.zero;
+           
+                Animator.SetInteger("PlayerAnimation", 2);
+           
 
+            }
+            else
+            {
+
+           
+
+                    ladder();
+            
+
+            }
         }
-        else
-        {
 
 
-            ladder();
 
-        }
-
-
-       
 
 
     }
@@ -144,7 +156,7 @@ public class PlayerController : MonoBehaviour
             {
                 transform.position = new Vector2(posLadder.x, transform.position.y + 0.05f);
                  
-                //transform.Translate(0, 2 * Time.deltaTime * Speed, 0);
+               
                 Animator.SetInteger("PlayerAnimation", 3);
             }
             else
@@ -245,13 +257,13 @@ public class PlayerController : MonoBehaviour
   
         if (hit.collider != null)
         {
-            Debug.Log(hit.collider.tag + "<====");
+      
             if (hit.collider.tag == "piso" || hit.collider.tag == "ladderTop" || hit.collider.tag == "block" || hit.collider.tag == "ladderFooter")
             {
 
                 Grounded = true;
 
-                Debug.Log("Baja Escalera");
+               
             }
             else
             {
@@ -282,7 +294,7 @@ public class PlayerController : MonoBehaviour
         else
         {
             Grounded = false;
-            Debug.Log("0002");
+         
         }
     }
 
@@ -291,7 +303,7 @@ public class PlayerController : MonoBehaviour
     {
 
 
-        //Debug.Log(maxShot + "====" + GameObject.FindGameObjectsWithTag("arma").Length);
+    
 
         if (Input.GetKeyDown(KeyCode.E) && (GameObject.FindGameObjectsWithTag("arma").Length < maxShot) && Grounded)
         {
@@ -331,7 +343,7 @@ public class PlayerController : MonoBehaviour
             else
             {
                 Instantiate(armPreFabs[typeArms], new Vector3(transform.position.x, transform.position.y - 0.6f, 1f), Quaternion.identity);
-                //GameObject.FindGameObjectWithTag("SoundManager").GetComponent<SoundManager>().play("Firehook");
+         
                 SoundManager.sm.play("Firehook");
             }
 
@@ -482,6 +494,7 @@ public class PlayerController : MonoBehaviour
         }
 
     }
+
 
 
 }

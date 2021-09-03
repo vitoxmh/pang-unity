@@ -9,6 +9,8 @@ public class typeArms : MonoBehaviour
     public int typeArm;
     private BoxCollider2D collider;
     public int MaxShot;
+    private SpriteRenderer sr;
+    public float TimeLife;
 
     CurrentShotItem getItemShot;
 
@@ -16,7 +18,7 @@ public class typeArms : MonoBehaviour
     {
 
         getItemShot = FindObjectOfType<CurrentShotItem>();
-
+        sr = GetComponent<SpriteRenderer>();
 
     }
 
@@ -24,8 +26,48 @@ public class typeArms : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         collider = GetComponent<BoxCollider2D>();
+        StartCoroutine(timeLifeDead());
 
-    
+
+
+
+    }
+
+
+
+    public IEnumerator timeLifeDead()
+    {
+
+        bool initPalpate = false;
+        float deltaNextState = Time.time;
+
+
+        while (TimeLife > 0)
+        {
+            TimeLife -= Time.deltaTime;
+
+
+            if (!initPalpate && deltaNextState <= Time.time && TimeLife < 2.5f)
+            {
+                sr.enabled = true;
+                deltaNextState = 0.13f + Time.time;
+                initPalpate = true;
+            }
+
+            if (initPalpate && deltaNextState <= Time.time && TimeLife < 2.5f)
+            {
+                sr.enabled = false;
+                deltaNextState = 0.13f + Time.time;
+                initPalpate = false;
+            }
+
+
+            yield return null;
+        }
+
+
+        Destroy(gameObject, (float)0f);
+
     }
 
     // Update is called once per frame
@@ -39,6 +81,8 @@ public class typeArms : MonoBehaviour
     {
        // transform.position += Vector3.down * touchFloor * Time.deltaTime;
     }
+
+
 
 
     void OnTriggerEnter2D(Collider2D col)
