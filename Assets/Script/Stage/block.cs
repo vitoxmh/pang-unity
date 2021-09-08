@@ -7,9 +7,8 @@ public class block : MonoBehaviour
     // Start is called before the first frame update
     private Animator Animator;
     private GameObject objeto;
-    public GameObject[] item;
     public bool getIten;
-    public int typeItem;
+    public string typeItem;
 
     void Start()
     {
@@ -56,7 +55,8 @@ public class block : MonoBehaviour
 
         if (getIten)
         {
-            Instantiate(item[typeItem], new Vector3(transform.position.x, transform.position.y, 1f), Quaternion.identity);
+            //Instantiate(item[typeItem], new Vector3(transform.position.x, transform.position.y, 1f), Quaternion.identity);
+            ItemManager.im.createItem(typeItem, transform);
         }
     }
 

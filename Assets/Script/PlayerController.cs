@@ -12,7 +12,6 @@ public class PlayerController : MonoBehaviour
     private float vertical;
     private Animator Animator;
     private int deltaFire;
-   
     public bool usingLadder = false;
     public GameObject[] armPreFabs;
     public int typeArms;
@@ -309,8 +308,8 @@ public class PlayerController : MonoBehaviour
         {
 
             deltaStop = Time.time + timeStop;
-
-            if(typeArms == 2)
+            Instantiate(armPreFabs[3], new Vector3(transform.position.x, transform.position.y+0.81f, -1f), Quaternion.identity);
+            if (typeArms == 2)
             {
                 Instantiate(armPreFabs[typeArms], new Vector3(transform.position.x, transform.position.y, 1f), Quaternion.identity);
                 //GameObject.FindGameObjectWithTag("SoundManager").GetComponent<SoundManager>().play("FireBullet");
@@ -332,7 +331,7 @@ public class PlayerController : MonoBehaviour
         {
 
             deltaStop = Time.time + timeStop;
-
+            Instantiate(armPreFabs[3], new Vector3(transform.position.x, transform.position.y+ 0.81f, -1f), Quaternion.identity);
             if (typeArms == 2)
             {
                 Instantiate(armPreFabs[typeArms], new Vector3(transform.position.x, transform.position.y, 1f), Quaternion.identity);

@@ -307,6 +307,10 @@ public class Ball : MonoBehaviour
                 newBall02.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 3.5f);
                 maxExplotion++;
 
+                ItemManager.im.createItemRandom(transform);
+
+
+
 
             }
 

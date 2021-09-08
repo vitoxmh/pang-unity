@@ -11,8 +11,6 @@ public class BallManager : MonoBehaviour
 
     public bool isBallBang;
     public bool isFreeze;
-    public Text FreezeTimeText;
-    public GameObject FreezeTimeCount;
     public float freezeTime;
     public float slowTime;
     private float detalDelayBang;
@@ -37,7 +35,7 @@ public class BallManager : MonoBehaviour
 
     void Start()
     {
-        FreezeTimeCount.SetActive(false);
+
         detalDelayBang = Time.time;
         freeze = false;
 
