@@ -1,13 +1,18 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
+    - AnimationStart
     - Ball
     - BallBang
     - BallManager
     - CurrentShotItem
+    - Destello
+    - DontDestroy
     - GameManager
+    - ItemManager
     - ManagerScore
     - MusicManager
+    - PlayGame
     - PlayerController
     - SoundManager
     - block
@@ -16,7 +21,6 @@ ScriptsOnlyBuild:
     - chainGancho
     - gun
     - item
-    - nball
     - shield
     - typeArms
     Unity.2D.Animation.Editor.dll:
@@ -44,21 +48,25 @@ ScriptsOnlyBuild:
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
     - UnityEditor.TestTools.TestRunner.TestListCacheData
     - UnityEditor.TestTools.TestRunner.TestRun.TestJobDataHolder
     UnityEngine.UI.dll:
+    - UnityEngine.EventSystems.EventSystem
+    - UnityEngine.EventSystems.StandaloneInputModule
     - UnityEngine.UI.CanvasScaler
     - UnityEngine.UI.GraphicRaycaster
     - UnityEngine.UI.Image
     - UnityEngine.UI.Outline
     - UnityEngine.UI.Text
   sceneClasses:
-    Assets/Scenes/SampleScene.unity:
+    Assets/Scenes/Stage01.unity:
     - Class: 1
       Script: {instanceID: 0}
     - Class: 4
@@ -70,8 +78,6 @@ ScriptsOnlyBuild:
     - Class: 28
       Script: {instanceID: 0}
     - Class: 48
-      Script: {instanceID: 0}
-    - Class: 49
       Script: {instanceID: 0}
     - Class: 50
       Script: {instanceID: 0}
@@ -102,8 +108,6 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1664}
     - Class: 114
-      Script: {instanceID: 1840}
-    - Class: 114
       Script: {instanceID: 1958}
     - Class: 114
       Script: {instanceID: 2018}
@@ -112,45 +116,114 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 2134}
     - Class: 114
+      Script: {instanceID: 2236}
+    - Class: 114
+      Script: {instanceID: 2432}
+    - Class: 114
+      Script: {instanceID: 2652}
+    - Class: 114
+      Script: {instanceID: 3028}
+    - Class: 114
+      Script: {instanceID: 3120}
+    - Class: 114
+      Script: {instanceID: 3262}
+    - Class: 114
+      Script: {instanceID: 3382}
+    - Class: 114
+      Script: {instanceID: 3690}
+    - Class: 114
+      Script: {instanceID: 3692}
+    - Class: 114
+      Script: {instanceID: 3734}
+    - Class: 114
+      Script: {instanceID: 3850}
+    - Class: 114
+      Script: {instanceID: 4000}
+    - Class: 114
+      Script: {instanceID: 4144}
+    - Class: 114
+      Script: {instanceID: 4524}
+    - Class: 114
+      Script: {instanceID: 4760}
+    - Class: 114
+      Script: {instanceID: 4762}
+    - Class: 114
+      Script: {instanceID: 4978}
+    - Class: 114
+      Script: {instanceID: 5136}
+    - Class: 114
+      Script: {instanceID: 5248}
+    - Class: 115
+      Script: {instanceID: 0}
+    - Class: 128
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 196
+      Script: {instanceID: 0}
+    - Class: 212
+      Script: {instanceID: 0}
+    - Class: 213
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
+      Script: {instanceID: 0}
+    Assets/Scenes/Start.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
+      Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 49
+      Script: {instanceID: 0}
+    - Class: 74
+      Script: {instanceID: 0}
+    - Class: 81
+      Script: {instanceID: 0}
+    - Class: 82
+      Script: {instanceID: 0}
+    - Class: 83
+      Script: {instanceID: 0}
+    - Class: 91
+      Script: {instanceID: 0}
+    - Class: 95
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 1840}
+    - Class: 114
+      Script: {instanceID: 1958}
+    - Class: 114
       Script: {instanceID: 2228}
     - Class: 114
       Script: {instanceID: 2236}
     - Class: 114
-      Script: {instanceID: 2650}
+      Script: {instanceID: 2652}
     - Class: 114
-      Script: {instanceID: 3026}
+      Script: {instanceID: 2812}
     - Class: 114
-      Script: {instanceID: 3118}
+      Script: {instanceID: 3028}
     - Class: 114
-      Script: {instanceID: 3260}
+      Script: {instanceID: 3276}
     - Class: 114
-      Script: {instanceID: 3380}
+      Script: {instanceID: 4726}
     - Class: 114
-      Script: {instanceID: 3688}
+      Script: {instanceID: 5106}
     - Class: 114
-      Script: {instanceID: 3690}
+      Script: {instanceID: 27668}
     - Class: 114
-      Script: {instanceID: 3732}
-    - Class: 114
-      Script: {instanceID: 3848}
-    - Class: 114
-      Script: {instanceID: 3998}
-    - Class: 114
-      Script: {instanceID: 4142}
-    - Class: 114
-      Script: {instanceID: 4444}
-    - Class: 114
-      Script: {instanceID: 4522}
-    - Class: 114
-      Script: {instanceID: 4724}
-    - Class: 114
-      Script: {instanceID: 4758}
-    - Class: 114
-      Script: {instanceID: 4760}
-    - Class: 114
-      Script: {instanceID: 5102}
-    - Class: 114
-      Script: {instanceID: 5242}
+      Script: {instanceID: 31172}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -268,7 +341,7 @@ ScriptsOnlyBuild:
     className: SoundManager
   - hash:
       serializedVersion: 2
-      Hash: a54ffd738a9ee6373b759b68ec0edcfc
+      Hash: d839d9b9966dac41fc9453cfbd060074
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: GameManager
@@ -332,6 +405,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: RawImage
+  - hash:
+      serializedVersion: 2
+      Hash: 2eefb21d67b98b4b4f01f1afcfa280a8
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ItemManager
   - hash:
       serializedVersion: 2
       Hash: cfdd0010efd7b54c2b7512656dbc9119
@@ -424,7 +503,7 @@ ScriptsOnlyBuild:
     className: LimbSolver2D
   - hash:
       serializedVersion: 2
-      Hash: f2145e86b4871a6c6b5aceb4510d3c19
+      Hash: f86e84199935e536e1d6f7302cb1bcef
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: block
@@ -592,7 +671,7 @@ ScriptsOnlyBuild:
     className: PositionAsUV1
   - hash:
       serializedVersion: 2
-      Hash: e0450cb6a72615a467883fdcf77662af
+      Hash: c0cda9933898f115105786241f745582
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: BallManager
@@ -736,7 +815,7 @@ ScriptsOnlyBuild:
     className: TMP_Settings
   - hash:
       serializedVersion: 2
-      Hash: 8e8b3c1d08e8108841fd063239a994c5
+      Hash: b57605b0596bc9fab13172457de55481
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: ManagerScore
@@ -772,10 +851,22 @@ ScriptsOnlyBuild:
     className: TMP_SubMeshUI
   - hash:
       serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: DontDestroy
+  - hash:
+      serializedVersion: 2
       Hash: fd68d84f33fad85aac38f2739c0ee270
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TMP_SpriteAsset
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Destello
   - hash:
       serializedVersion: 2
       Hash: e7a73f5f78ba6445195ec23b74a1ce2d
@@ -784,7 +875,7 @@ ScriptsOnlyBuild:
     className: TMP_ScrollbarEventHandler
   - hash:
       serializedVersion: 2
-      Hash: 687b581dabad5228ba58df6f2cf5ae93
+      Hash: fbcba7e4ba921c5e1573d1bbf85b8f6e
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlayerController
@@ -824,7 +915,20 @@ ScriptsOnlyBuild:
     assemblyName: Unity.2D.IK.Runtime.dll
     namespaceName: UnityEngine.U2D.IK
     className: FabrikSolver2D
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: AnimationStart
+  - hash:
+      serializedVersion: 2
+      Hash: 230d4bed6581043bc7fba7375b0a7c8d
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: PlayGame
   platform: 19
   scenePathNames:
-  - Assets/Scenes/SampleScene.unity
-  playerPath: C:/Users/sheik/OneDrive/Desktop/pABG2/Pang.exe
+  - Assets/Scenes/Start.unity
+  - Assets/Scenes/Stage01.unity
+  playerPath: C:/Users/sheik/OneDrive/Desktop/Pang/Pang.exe

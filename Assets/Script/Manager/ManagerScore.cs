@@ -11,8 +11,11 @@ public class ManagerScore : MonoBehaviour
     public Text ScorePlayer01;
     public Text ScorePlayer02;
     public int combo;
-    private int countScore;
-    public int[] comboScore; 
+    public int countScore;
+    public int[] comboScore;
+    private string scorePresName = "Score";
+    private string lifePresName = "Lifes";
+
 
 
 
@@ -24,6 +27,7 @@ public class ManagerScore : MonoBehaviour
         if (ms == null)
         {
             ms = this;
+            DontDestroyOnLoad(gameObject);
         }
         else if (ms != null)
         {
@@ -64,4 +68,21 @@ public class ManagerScore : MonoBehaviour
 
 
     }
+
+
+    private void saveData()
+    {
+        PlayerPrefs.SetInt(scorePresName, countScore);
+        PlayerPrefs.SetInt(lifePresName, 3);
+
+    }
+
+
+    private void loadData()
+    {
+
+        
+
+    }
+
 }

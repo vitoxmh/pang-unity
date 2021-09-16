@@ -22,6 +22,8 @@ TagManager:
   - SoundManager
   - ladderTopExit
   - BallManager
+  - Wall
+  - RebootStage
   layers:
   - Default
   - TransparentFX

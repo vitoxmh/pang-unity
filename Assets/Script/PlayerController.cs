@@ -31,6 +31,8 @@ public class PlayerController : MonoBehaviour
     public bool ladderTopExit;
     private float detalDelayBang;
     public bool stateFreeze;
+    private int nRebote;
+
 
     /************************************
     
@@ -53,7 +55,7 @@ public class PlayerController : MonoBehaviour
         ladderExit = false;
         ladderTopExit = false;
         detalDelayBang = Time.time;
-     
+        nRebote = 0;
 
 
 
@@ -75,12 +77,17 @@ public class PlayerController : MonoBehaviour
 
         }
 
+
+
         if (!stateFreeze)
         {
             fire();
         }
-        countBall();
+
+
         isGrounded();
+
+
 
         if (!stateFreeze)
         {
@@ -354,15 +361,6 @@ public class PlayerController : MonoBehaviour
     }
 
 
-    public void countBall()
-    {
-
-     
-        Debug.Log("N ball: " + GameObject.FindGameObjectsWithTag("ball").Length);
-
-
-    }
-
     private void OnTriggerStay2D(Collider2D col)
     {
        
@@ -402,7 +400,35 @@ public class PlayerController : MonoBehaviour
 
         }
 
-        
+
+        if ((other.tag == "piso") && nRebote == 0)
+        {
+
+            //rg.AddForce(new Vector2(30, 0), ForceMode2D.Impulse);
+
+            //rg.velocity /= 3;
+
+
+            //rg.AddForce(new Vector2(-10, 20), ForceMode2D.Impulse);
+            rg.velocity = new Vector2(-1f, 5f);
+            
+            
+
+            Debug.Log("Rebota");
+            nRebote++;
+
+        }
+
+
+
+        if ((other.tag == "Wall") && GameManager.gm.Lose && (nRebote == 0 || nRebote == 1))
+        {
+
+            rg.velocity *= -1;
+            //rg.velocity = new Vector2(2f, 5f);
+            nRebote++;
+        }
+
 
 
 
@@ -444,6 +470,14 @@ public class PlayerController : MonoBehaviour
         }
 
 
+        if (other.tag == "RebootStage")
+        {
+
+            GameManager.gm.inicio();
+
+        }
+
+
     }
 
 
@@ -454,8 +488,65 @@ public class PlayerController : MonoBehaviour
             //GameObject.FindGameObjectWithTag("SoundManager").GetComponent<SoundManager>().play("GetItem");
             SoundManager.sm.play("GetItem");
         }
+
+
+        if (col.gameObject.tag == "ball")
+        {
+
+            Debug.Log("DFFDFDFD");
+
+            dead();
+            
+        }
     }
 
+
+
+    public void dead()
+    {
+        GameManager.gm.frezzerAll();
+        GameManager.gm.Lose = true;
+
+        Animator.speed = 0;
+
+        BallManager.bm.unTriggerColliderBall();
+
+        StartCoroutine(throwPlayer());
+
+
+    }
+
+
+    public IEnumerator throwPlayer()
+    {
+
+
+        yield return new WaitForSeconds(1f);
+        SoundManager.sm.play("Lose");
+        gameObject.GetComponent<BoxCollider2D>().isTrigger = true;
+        rg.isKinematic = false;
+
+        Animator.SetInteger("PlayerAnimation", 10);
+        rg.gravityScale = 3f;
+        if (transform.position.x <= 0)
+        {
+            //rg.velocity = new Vector2(-2f, 7f);
+            rg.isKinematic = false;
+            rg.AddForce(new Vector2(-4,40), ForceMode2D.Impulse);
+
+        }
+        else
+        {
+            //rg.velocity = new Vector2(2f, 7f);
+            rg.isKinematic = false;
+            rg.AddForce(new Vector2(4, 40), ForceMode2D.Impulse);
+
+        }
+        
+
+
+
+    }
 
 
 
@@ -465,6 +556,8 @@ public class PlayerController : MonoBehaviour
     {
         ladderTopExit = false;
     }
+
+
 
 
 

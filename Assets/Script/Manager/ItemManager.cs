@@ -18,12 +18,14 @@ public class ItemManager : MonoBehaviour
         if (im == null)
         {
             im = this;
+           
         }
         else if (im != null)
         {
             Destroy(gameObject);
         }
 
+        
     }
 
     

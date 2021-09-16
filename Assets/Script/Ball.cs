@@ -180,7 +180,7 @@ public class Ball : MonoBehaviour
     {
 
 
-        if (col.gameObject.tag == "piso" || col.gameObject.tag == "block")
+        if (col.gameObject.tag == "piso" || col.gameObject.tag == "block" || col.gameObject.tag == "Wall")
         {
            
 

@@ -9,6 +9,7 @@ public class MusicManager : MonoBehaviour
 
     public AudioClip[] music;
     public int setMusic;
+    private AudioSource audio;
 
 
     private void Awake()
@@ -22,12 +23,14 @@ public class MusicManager : MonoBehaviour
             Destroy(gameObject);
         }
 
-
+        DontDestroyOnLoad(gameObject);
     }
     void Start()
     {
-       
-       
+
+        audio = GetComponent<AudioSource>();
+        audio.Stop();
+
     }
 
     // Update is called once per frame
@@ -37,15 +40,19 @@ public class MusicManager : MonoBehaviour
     }
 
 
+    public void stop()
+    {
+
+        audio.Stop();
+
+    }
 
 
     public void play(string Mymusic)
     {
-        AudioSource audio;
+       
 
-        audio = GetComponent<AudioSource>();
-
-
+        
         switch (Mymusic)
         {
             case "MrFuji":

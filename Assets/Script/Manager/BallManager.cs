@@ -25,12 +25,14 @@ public class BallManager : MonoBehaviour
         if(bm == null)
         {
             bm = this;
-        }else if (bm != null)
+            
+        }
+        else if (bm != null)
         {
             Destroy(gameObject);
         }
-
         
+
     }
 
     void Start()
@@ -230,7 +232,6 @@ public class BallManager : MonoBehaviour
     {
 
         GameObject[] arrayBall = GameObject.FindGameObjectsWithTag("ball");
-        Debug.Log("Funcion congela");
 
         for (int i = 0; i < arrayBall.Length; i++)
         {
@@ -259,6 +260,21 @@ public class BallManager : MonoBehaviour
 
         freeze = false;
        
+
+    }
+
+
+
+    public void unTriggerColliderBall()
+    {
+
+        GameObject[] arrayBall = GameObject.FindGameObjectsWithTag("ball");
+
+        for (int i = 0; i < arrayBall.Length; i++)
+        {
+            arrayBall[i].GetComponent<CircleCollider2D>().isTrigger = true;
+        }
+
 
     }
 

@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     public Text FreezeTimeText;
     public float StartStage;
     public GameObject TimeCount;
+    public bool Lose;
 
   
 
@@ -20,12 +21,26 @@ public class GameManager : MonoBehaviour
         if (gm == null)
         { 
             gm = this;
+           
         }
         else if (gm != null)
         {
             Destroy(gameObject);
         }
 
+
+
+
+    }
+
+
+
+
+    public void inicio()
+    {
+
+        MusicManager.mn.stop();
+        Application.LoadLevel("Start");
 
     }
 
@@ -40,10 +55,43 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            //Application.LoadLevel(Application.loadedLevel);
+            Application.LoadLevel("Stage02");
+        }
+
+
+
+        nBall();
+
+
     }
 
 
+
+    private void nBall()
+    {
+
+        if(GameObject.FindGameObjectsWithTag("ball").Length == 0)
+        {
+
+            StartCoroutine(NextStage());
+        }
+    }
+
+
+    public IEnumerator NextStage()
+    {
+
+        yield return new WaitForSeconds(1f);
+
+        MusicManager.mn.stop();
+        Application.LoadLevel("Stage02");
+
+    }
+        
 
     public IEnumerator timeGame()
     {
@@ -94,7 +142,7 @@ public class GameManager : MonoBehaviour
         }
          
 
-        MusicManager.mn.play("Barcelona");
+        MusicManager.mn.play("MrFuji");
         unFrezzerAll();
         TimeCount.SetActive(false);
         StartCoroutine(timeGame());
@@ -105,7 +153,7 @@ public class GameManager : MonoBehaviour
 
 
 
-    private void frezzerAll()
+    public void frezzerAll()
     {
 
 
@@ -163,5 +211,15 @@ public class GameManager : MonoBehaviour
 
 
     }
+
+
+    public void rebootStage()
+    {
+
+    }
+
+
+
+
 
 }

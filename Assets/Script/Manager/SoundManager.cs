@@ -19,7 +19,7 @@ public class SoundManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
-
+        DontDestroyOnLoad(gameObject);
 
     }
 
@@ -61,6 +61,12 @@ public class SoundManager : MonoBehaviour
             break;
             case "BulletCrush":
                 audio.PlayOneShot(sound[6], 1f);
+            break;
+            case "Lose":
+                audio.PlayOneShot(sound[7], 1f);
+            break;
+            case "Coin":
+                audio.PlayOneShot(sound[8], 1f);
             break;
         }
     }
