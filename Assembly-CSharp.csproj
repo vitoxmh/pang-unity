@@ -64,11 +64,13 @@
     <Compile Include="Assets\Script\arm.cs" />
     <Compile Include="Assets\Script\arm\gun.cs" />
     <Compile Include="Assets\Script\Manager\ItemManager.cs" />
+    <Compile Include="Assets\Script\Start\AnimationStart.cs" />
     <Compile Include="Assets\Script\Stage\block.cs" />
     <Compile Include="Assets\Script\BallMaterial.cs" />
     <Compile Include="Assets\Script\arm\chainGancho.cs" />
     <Compile Include="Assets\Script\poweUp\typeArms.cs" />
     <Compile Include="Assets\Script\Ball.cs" />
+    <Compile Include="Assets\Script\Start\PlayGame.cs" />
     <Compile Include="Assets\Script\arm\bullet\bulletDestroy.cs" />
     <Compile Include="Assets\Script\arm\chain.cs" />
     <Compile Include="Assets\Script\Manager\BallManager.cs" />
@@ -81,8 +83,8 @@
     <Compile Include="Assets\Script\Manager\DontDestroy.cs" />
     <Compile Include="Assets\Script\arm\Destello.cs" />
     <Compile Include="Assets\Script\PlayerController.cs" />
-    <Compile Include="Assets\Script\Start\AnimationStart.cs" />
-    <Compile Include="Assets\Script\Start\PlayGame.cs" />
+    <Compile Include="Assets\Script\ChangeStage\starChangeStage.cs" />
+    <Compile Include="Assets\Script\ChangeStage\changeStage.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

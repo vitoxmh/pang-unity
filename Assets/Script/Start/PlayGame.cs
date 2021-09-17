@@ -60,7 +60,7 @@ public class PlayGame : MonoBehaviour
         yield return new WaitForSeconds(1.5f);
 
         coinText.enabled = true;
-
+         
 
     }
 

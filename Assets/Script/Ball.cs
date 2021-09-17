@@ -5,6 +5,7 @@ using UnityEngine;
 public class Ball : MonoBehaviour
 {
      
+
     public float starForce;
     public GameObject[] explotionPreFabs;
     public bool isFreeze;

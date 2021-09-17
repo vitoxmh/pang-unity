@@ -404,12 +404,6 @@ public class PlayerController : MonoBehaviour
         if ((other.tag == "piso") && nRebote == 0)
         {
 
-            //rg.AddForce(new Vector2(30, 0), ForceMode2D.Impulse);
-
-            //rg.velocity /= 3;
-
-
-            //rg.AddForce(new Vector2(-10, 20), ForceMode2D.Impulse);
             rg.velocity = new Vector2(-1f, 5f);
             
             

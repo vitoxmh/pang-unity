@@ -88,7 +88,7 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(1f);
 
         MusicManager.mn.stop();
-        Application.LoadLevel("Stage02");
+        Application.LoadLevel("ChangeStage");
 
     }
         

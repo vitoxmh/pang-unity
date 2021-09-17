@@ -64,7 +64,10 @@ public class MusicManager : MonoBehaviour
             case "Esmerald":
                 audio.PlayOneShot(music[2], 1f);
             break;
-            
+            case "StageComplete":
+                audio.PlayOneShot(music[3], 1f);
+            break;
+
         }
 
     }
