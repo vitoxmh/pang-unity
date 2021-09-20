@@ -69,6 +69,7 @@ public class Ball : MonoBehaviour
         maxExplotion = 0;
 
 
+
     }
 
     // Update is called once per frame
@@ -340,7 +341,9 @@ public class Ball : MonoBehaviour
     public void freezeBall() {
 
         isFreeze = true;
-        currentVelocity = rb.velocity;
+        currentVelocity = GetComponent<Rigidbody2D>().velocity;
+    
+
         
     }
 

@@ -1,14 +1,27 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class changeStage : MonoBehaviour
 {
     // Start is called before the first frame update
+    
+    public Text textStage;
+
     void Start()
     {
 
         MusicManager.mn.play("StageComplete");
+
+        string currentStage = ManagerStage.ms.stage[ManagerStage.ms.currentStage];
+
+        textStage.text = "STAGE " + currentStage + " COMPLETE";
+
+        ManagerStage.ms.currentStage++;
+        
+        
+
         StartCoroutine(stageChange());
 
     }
@@ -20,8 +33,8 @@ public class changeStage : MonoBehaviour
 
 
         yield return new WaitForSeconds(3.5f);
-
-        Application.LoadLevel("Stage02");
+        
+        Application.LoadLevel(ManagerStage.ms.stage[ManagerStage.ms.currentStage]);
 
     }
 

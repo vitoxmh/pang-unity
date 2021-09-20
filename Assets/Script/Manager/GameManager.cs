@@ -48,20 +48,39 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         
+
+
+
         TimeCount.SetActive(true);
+        
+        TimeGame = infoStage.si.time;
+
+        FreezeTimeText.text = "TIME:" + TimeGame.ToString("N");
+
+
         StartCoroutine(starGame());
+
+
+
+        if (infoStage.si.country != "")
+        {
+
+            GameObject.FindGameObjectWithTag("textLocation").GetComponent<UnityEngine.UI.Text>().text = infoStage.si.country.ToString();
+            GameObject.FindGameObjectWithTag("textStage").GetComponent<UnityEngine.UI.Text>().text = infoStage.si.stage.ToString() + " STAGE";
+
+
+        }
+
+
+
+
+
+
     }
 
     // Update is called once per frame
     void Update()
     {
-
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            //Application.LoadLevel(Application.loadedLevel);
-            Application.LoadLevel("Stage02");
-        }
-
 
 
         nBall();
@@ -77,17 +96,22 @@ public class GameManager : MonoBehaviour
         if(GameObject.FindGameObjectsWithTag("ball").Length == 0)
         {
 
+           
             StartCoroutine(NextStage());
         }
+
     }
 
 
     public IEnumerator NextStage()
     {
 
+       
+ 
         yield return new WaitForSeconds(1f);
 
         MusicManager.mn.stop();
+ 
         Application.LoadLevel("ChangeStage");
 
     }
@@ -113,6 +137,7 @@ public class GameManager : MonoBehaviour
 
 
         frezzerAll();
+
         bool initPalpate = false;
         float deltaNextState = Time.time;
 
@@ -141,8 +166,10 @@ public class GameManager : MonoBehaviour
             yield return null;
         }
          
+        
+        MusicManager.mn.play(infoStage.si.musicStage);
 
-        MusicManager.mn.play("MrFuji");
+
         unFrezzerAll();
         TimeCount.SetActive(false);
         StartCoroutine(timeGame());
@@ -160,26 +187,29 @@ public class GameManager : MonoBehaviour
 
         GameObject[] arrayBall = GameObject.FindGameObjectsWithTag("ball");
 
-        for (int i = 0; i < arrayBall.Length; i++)
+
+
+        foreach (GameObject ball in arrayBall)
         {
 
-            arrayBall[i].GetComponent<Ball>().freezeBall();
-
+            ball.GetComponent<Ball>().freezeBall();
 
         }
 
 
+       
         GameObject[] arrayPlayer = GameObject.FindGameObjectsWithTag("Player");
 
-        for (int i = 0; i < arrayPlayer.Length; i++)
+
+
+        foreach (GameObject player in arrayPlayer)
         {
 
-            arrayPlayer[i].GetComponent<PlayerController>().stateFreeze = true;
-
+            player.GetComponent<PlayerController>().stateFreeze = true;
 
         }
 
-
+      
     }
 
 
@@ -217,8 +247,6 @@ public class GameManager : MonoBehaviour
     {
 
     }
-
-
 
 
 

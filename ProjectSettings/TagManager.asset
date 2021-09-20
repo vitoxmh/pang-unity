@@ -24,6 +24,8 @@ TagManager:
   - BallManager
   - Wall
   - RebootStage
+  - textLocation
+  - textStage
   layers:
   - Default
   - TransparentFX

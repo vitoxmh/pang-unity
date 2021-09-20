@@ -46,7 +46,9 @@ public class PlayGame : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Return) && coin > 0)
         {
-            Application.LoadLevel("Stage01");
+            
+            Application.LoadLevel(ManagerStage.ms.stage[0]);
+
         }
 
 

@@ -4,10 +4,30 @@ using UnityEngine;
 
 public class CurrentShotItem : MonoBehaviour
 {
+    public static CurrentShotItem cs;
     public GameObject itemArrow;
     public GameObject itemAncle;
     public GameObject itemGun;
-    
+
+
+
+    private void Awake()
+    {
+        if (cs == null)
+        {
+            cs = this;
+
+        }
+        else if (cs != null)
+        {
+            Destroy(gameObject);
+        }
+
+
+
+
+    }
+
     public void CurrentShot(int item)
     {
 
