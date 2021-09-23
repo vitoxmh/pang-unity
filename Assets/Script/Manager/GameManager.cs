@@ -2,7 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
- 
+using UnityEngine.SceneManagement;
+
+
 public class GameManager : MonoBehaviour
 {
     // Start is called before the first frame update
@@ -12,8 +14,9 @@ public class GameManager : MonoBehaviour
     public float StartStage;
     public GameObject TimeCount;
     public bool Lose;
-
-  
+    public bool gameOver;
+    LifeManager lm;
+    
 
 
     private void Awake()
@@ -28,19 +31,38 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }
 
-
-
+        lm = FindObjectOfType<LifeManager>();
+        lm.updateUiLife();
 
     }
 
 
 
 
-    public void inicio()
+    public void respawn()
     {
 
         MusicManager.mn.stop();
-        Application.LoadLevel("Start");
+        lm.life(-1);
+
+        if(lm.lifesPlayer1 == 0)
+        {
+
+            lm.continueGame();
+            
+            
+        }
+        else
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            lm.updateUiLife();
+
+        }
+
+       
+
+
+
 
     }
 
@@ -55,7 +77,9 @@ public class GameManager : MonoBehaviour
         
         TimeGame = infoStage.si.time;
 
-        FreezeTimeText.text = "TIME:" + TimeGame.ToString("N");
+        int seconds = Mathf.RoundToInt(TimeGame);
+
+        FreezeTimeText.text = "TIME:" + seconds.ToString("000");
 
 
         StartCoroutine(starGame());
@@ -90,6 +114,10 @@ public class GameManager : MonoBehaviour
 
 
 
+
+
+
+
     private void nBall()
     {
 
@@ -119,12 +147,25 @@ public class GameManager : MonoBehaviour
 
     public IEnumerator timeGame()
     {
-
+         
 
         while (TimeGame > 0)
         {
-            TimeGame -= Time.deltaTime;
-            FreezeTimeText.text = "TIME:" + TimeGame.ToString("N");
+            if (!GameManager.gm.Lose)
+            {
+                TimeGame -= Time.deltaTime;
+            }
+
+
+           
+
+            int seconds = Mathf.RoundToInt(TimeGame);
+
+            FreezeTimeText.text = "TIME:" + seconds.ToString("000");
+
+
+
+
             yield return null;
         }
 
@@ -143,9 +184,10 @@ public class GameManager : MonoBehaviour
 
         while (StartStage > 0)
         {
-            StartStage -= Time.deltaTime;
 
-
+          
+             StartStage -= Time.deltaTime;
+            
             if (!initPalpate && deltaNextState <= Time.time && StartStage < 1f)
             {
                
@@ -242,11 +284,6 @@ public class GameManager : MonoBehaviour
 
     }
 
-
-    public void rebootStage()
-    {
-
-    }
 
 
 

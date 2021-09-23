@@ -783,8 +783,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 297, y: 186}
-  m_SizeDelta: {x: 184.8, y: 30}
+  m_AnchoredPosition: {x: 322, y: 186}
+  m_SizeDelta: {x: 271.6, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &566447414
 MonoBehaviour:
@@ -834,7 +834,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: time:60
+  m_Text: time:100
 --- !u!222 &566447416
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1617,6 +1617,7 @@ MonoBehaviour:
   StartStage: 1
   TimeCount: {fileID: 620400504}
   Lose: 0
+  gameOver: 0
 --- !u!1001 &1158530871
 PrefabInstance:
   m_ObjectHideFlags: 0

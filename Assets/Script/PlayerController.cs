@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+   
     public float Speed;
     public float timeStop;
     private float deltaStop;
@@ -467,7 +468,8 @@ public class PlayerController : MonoBehaviour
         if (other.tag == "RebootStage")
         {
 
-            GameManager.gm.inicio();
+
+            GameManager.gm.respawn();
 
         }
 
@@ -479,7 +481,7 @@ public class PlayerController : MonoBehaviour
     {
         if (col.gameObject.tag == "item")
         {
-            //GameObject.FindGameObjectWithTag("SoundManager").GetComponent<SoundManager>().play("GetItem");
+            
             SoundManager.sm.play("GetItem");
         }
 

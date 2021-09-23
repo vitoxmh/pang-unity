@@ -67,6 +67,12 @@ public class MusicManager : MonoBehaviour
             case "StageComplete":
                 audio.PlayOneShot(music[3], 1f);
             break;
+            case "Continue":
+                audio.PlayOneShot(music[4], 1f);
+            break;
+            case "GameOver":
+                audio.PlayOneShot(music[4], 1f);
+            break;
 
         }
 

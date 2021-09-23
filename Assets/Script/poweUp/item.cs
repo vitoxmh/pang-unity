@@ -11,6 +11,7 @@ public class item : MonoBehaviour
     private float detalDelayBang;
     public float TimeLife;
     private SpriteRenderer sr;
+    LifeManager lm;
 
     void Start()
     {
@@ -18,6 +19,7 @@ public class item : MonoBehaviour
         detalDelayBang = Time.time;
         StartCoroutine(timeLifeDead());
         sr = GetComponent<SpriteRenderer>();
+        lm = FindObjectOfType<LifeManager>();
 
     }
 
@@ -101,6 +103,11 @@ public class item : MonoBehaviour
                 BallManager.bm.startSlowBall();
 
 
+
+            }else if (typeItem == 4)
+            {
+
+                lm.life(1);
 
             }
             else
