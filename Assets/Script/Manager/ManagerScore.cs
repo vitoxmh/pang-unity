@@ -78,10 +78,11 @@ public class ManagerScore : MonoBehaviour
     }
 
 
-    private void loadData()
+    public void resetData()
     {
 
-        
+        countScore = 0;
+        UpdateScore(0);
 
     }
 

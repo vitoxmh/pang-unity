@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayGame : MonoBehaviour
 {
@@ -9,10 +10,9 @@ public class PlayGame : MonoBehaviour
     public Text coinText;
     public Text creditText;
     // Start is called before the first frame update
-    private int coin;
     void Start()
     {
-        coin = 0;
+
         StartCoroutine(insertCoin());
         coinText.enabled = false;
         creditText.enabled = false;
@@ -23,31 +23,25 @@ public class PlayGame : MonoBehaviour
     {
 
 
-        if (Input.GetKeyDown(KeyCode.F5))
-        {
-
-            SoundManager.sm.play("Coin");
-        
-            coin++;
-
-        }
+       
 
 
 
-        if(coin > 0)
+        if(ManagerCoin.mc.coin > 0)
         {
             coinText.enabled = true;
             creditText.enabled = true;
-            coinText.text = "PUSH START BUTTON "+coin.ToString();
-            creditText.text = "CREDIT "+coin;
+            coinText.text = "PUSH START BUTTON "+ ManagerCoin.mc.coin.ToString();
+            creditText.text = "CREDIT "+ ManagerCoin.mc.coin;
         }
 
 
 
-        if (Input.GetKeyDown(KeyCode.Return) && coin > 0)
+        if (Input.GetKeyDown(KeyCode.Return) && ManagerCoin.mc.coin > 0)
         {
             
-            Application.LoadLevel(ManagerStage.ms.stage[0]);
+            //Application.LoadLevel(ManagerStage.ms.stage[0]);
+            SceneManager.LoadScene(ManagerStage.ms.stage[0]);
 
         }
 

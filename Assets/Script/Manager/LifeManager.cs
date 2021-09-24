@@ -16,7 +16,7 @@ public class LifeManager : MonoBehaviour
     public Text lifeText;
     public Text countContinue;
     public GameObject itenBox;
-
+    public float timeContinue;
     public static LifeManager lm;
 
 
@@ -155,6 +155,7 @@ public class LifeManager : MonoBehaviour
         textContinue.SetActive(true);
         itenBox.SetActive(false);
         MusicManager.mn.play("Continue");
+        textContinue.transform.GetChild(0).gameObject.GetComponent<Text>().text = "CONTINUE?";
         StartCoroutine(countContinueGame());
 
 
@@ -165,7 +166,7 @@ public class LifeManager : MonoBehaviour
     public IEnumerator countContinueGame()
     {
 
-        float timeContinue = 10f;
+        countContinue.enabled = true;
 
         while (timeContinue > 1)
         {
@@ -178,10 +179,68 @@ public class LifeManager : MonoBehaviour
             yield return null;
         }
 
+
+
+        float timeGameOver = 3f;
+        
+        textContinue.transform.GetChild(0).gameObject.GetComponent<Text>().text = "GAME OVER";
+        countContinue.enabled = false; 
+
+        while (timeGameOver > 1)
+        {
+
+            timeGameOver -= Time.deltaTime;
+            yield return null;
+        }
+
+        MusicManager.mn.stop();
+
+        MusicManager.mn.play("GameOver");
+
+
+        while (timeGameOver > 1)
+        {
+
+            timeGameOver -= Time.deltaTime;
+            yield return null;
+        }
+
+        float timeGameOverText = 6f;
+
+
+        ManagerStage.ms.showTextgameOver();
+
+        while (timeGameOverText > 1)
+        {
+
+            timeGameOverText -= Time.deltaTime;
+            yield return null;
+        }
+
         Application.LoadLevel("Start");
+        reset();
+        
 
     }
 
+
+
+    public void reset()
+    {
+
+        ManagerStage.ms.hideTextgameOver();
+        MusicManager.mn.stop();
+        ManagerStage.ms.currentStage = 0;
+        lifesPlayer1 = 1;
+        showDollLifes();
+        ManagerScore.ms.resetData();
+        updateUiLife();
+        itenBox.SetActive(true);
+        textContinue.SetActive(false);
+        timeContinue = 9f;
+
+
+    }
 
 
 

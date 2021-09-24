@@ -9,6 +9,7 @@ public class ManagerStage : MonoBehaviour
     public static ManagerStage ms;
     public string[] stage;
     public int currentStage;
+    public GameObject txtGameOver;
 
     private void Awake()
     {
@@ -34,8 +35,10 @@ public class ManagerStage : MonoBehaviour
         stage[1] = "1-2";
         stage[2] = "1-3";
         stage[3] = "2-1";
+        txtGameOver.SetActive(false);
 
-      
+
+
     }
 
     // Update is called once per frame
@@ -57,6 +60,26 @@ public class ManagerStage : MonoBehaviour
 
     public void setStage()
     {
+
+
+    }
+
+
+    public void showTextgameOver()
+    {
+
+
+        txtGameOver.SetActive(true);
+
+
+    }
+
+
+    public void hideTextgameOver()
+    {
+
+
+        txtGameOver.SetActive(false);
 
 
     }

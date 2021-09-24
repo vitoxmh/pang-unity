@@ -117,9 +117,9 @@ public class typeArms : MonoBehaviour
     {
         if (col.gameObject.tag == "Player")
         {
-
+            Debug.Log("Colision al item");
             getItemShot.CurrentShot(typeArm);
-
+             
             col.gameObject.GetComponent<PlayerController>().typeArms = typeArm;
             col.gameObject.GetComponent<PlayerController>().maxShot = MaxShot;
 
