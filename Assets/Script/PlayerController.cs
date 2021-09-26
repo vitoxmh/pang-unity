@@ -460,7 +460,7 @@ public class PlayerController : MonoBehaviour
         {
 
             ladderTopExit = false;
-            Debug.Log("tOCA CIELO");
+
 
         }
 
@@ -488,8 +488,6 @@ public class PlayerController : MonoBehaviour
 
         if (col.gameObject.tag == "ball")
         {
-
-            Debug.Log("DFFDFDFD");
 
             dead();
             

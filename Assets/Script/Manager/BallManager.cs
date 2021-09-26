@@ -143,27 +143,36 @@ public class BallManager : MonoBehaviour
 
         float deltaNextState = Time.time;
 
-        while (freezeTime > 0)
-        {
-            freezeTime -= Time.deltaTime;
+       
+       
+
+            while (freezeTime > 0)
+            {
+
+                if (!GameManager.gm.Lose)
+                {
+
+                    freezeTime -= Time.deltaTime;
             
  
-            if (!initPalpate && deltaNextState <= Time.time && freezeTime < 2.5f)
-            {
-                InvisibleAllBall();
-                deltaNextState = 0.13f + Time.time;
-                initPalpate = true;
-            }
+                    if (!initPalpate && deltaNextState <= Time.time && freezeTime < 2.5f)
+                    {
+                        InvisibleAllBall();
+                        deltaNextState = 0.13f + Time.time;
+                        initPalpate = true;
+                    }
 
-            if(initPalpate && deltaNextState <= Time.time && freezeTime < 2.5f)
-            {
-                noInvisibleAllBall();
-                deltaNextState = 0.13f + Time.time;
-                initPalpate = false;
+                    if(initPalpate && deltaNextState <= Time.time && freezeTime < 2.5f)
+                    {
+                        noInvisibleAllBall();
+                        deltaNextState = 0.13f + Time.time;
+                        initPalpate = false;
+                    }
+                }
+
+                yield return null;
             }
-           
-            yield return null;
-        }
+        
 
 
         unfreezeBall();
@@ -250,16 +259,20 @@ public class BallManager : MonoBehaviour
 
         GameObject[] arrayBall = GameObject.FindGameObjectsWithTag("ball");
 
-        for (int i = 0; i < arrayBall.Length; i++)
-        {
+        if (!GameManager.gm.Lose) {
 
-            arrayBall[i].GetComponent<Ball>().unfreezeBall();
+            for (int i = 0; i < arrayBall.Length; i++)
+            {
 
+                arrayBall[i].GetComponent<Ball>().unfreezeBall();
+
+
+            }
+
+            freeze = false;
 
         }
 
-        freeze = false;
-       
 
     }
 

@@ -44,25 +44,31 @@ public class typeArms : MonoBehaviour
 
         while (TimeLife > 0)
         {
-            TimeLife -= Time.deltaTime;
 
-
-            if (!initPalpate && deltaNextState <= Time.time && TimeLife < 2.5f)
+            if (!GameManager.gm.Lose)
             {
-                sr.enabled = true;
-                deltaNextState = 0.13f + Time.time;
-                initPalpate = true;
+
+            
+                TimeLife -= Time.deltaTime;
+
+
+                if (!initPalpate && deltaNextState <= Time.time && TimeLife < 2.5f)
+                {
+                    sr.enabled = true;
+                    deltaNextState = 0.13f + Time.time;
+                    initPalpate = true;
+                }
+
+                if (initPalpate && deltaNextState <= Time.time && TimeLife < 2.5f)
+                {
+                    sr.enabled = false;
+                    deltaNextState = 0.13f + Time.time;
+                    initPalpate = false;
+                }
+
+
+                yield return null;
             }
-
-            if (initPalpate && deltaNextState <= Time.time && TimeLife < 2.5f)
-            {
-                sr.enabled = false;
-                deltaNextState = 0.13f + Time.time;
-                initPalpate = false;
-            }
-
-
-            yield return null;
         }
 
 

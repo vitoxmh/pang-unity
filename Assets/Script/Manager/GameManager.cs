@@ -16,7 +16,10 @@ public class GameManager : MonoBehaviour
     public bool Lose;
     public bool gameOver;
     LifeManager lm;
-    
+    private bool GettingLateTime;
+    private bool OutOfTime;
+
+
 
 
     private void Awake()
@@ -33,6 +36,8 @@ public class GameManager : MonoBehaviour
 
         lm = FindObjectOfType<LifeManager>();
         lm.updateUiLife();
+        GettingLateTime = false;
+        OutOfTime = false;
 
     }
 
@@ -43,6 +48,7 @@ public class GameManager : MonoBehaviour
     {
 
         MusicManager.mn.stop();
+
         lm.life(-1);
 
         if(lm.lifesPlayer1 == 0)
@@ -58,11 +64,6 @@ public class GameManager : MonoBehaviour
             lm.updateUiLife();
 
         }
-
-       
-
-
-
 
     }
 
@@ -161,13 +162,31 @@ public class GameManager : MonoBehaviour
 
             int seconds = Mathf.RoundToInt(TimeGame);
 
+
+
+            if(seconds == 50 && !GettingLateTime)
+            {
+                MusicManager.mn.stop();
+                MusicManager.mn.play("GettingLate");
+                GettingLateTime = true;
+            }
+
+
+            if (seconds == 40 && !OutOfTime)
+            {
+                MusicManager.mn.stop();
+                MusicManager.mn.play("OutOfTime");
+                OutOfTime = true;
+            }
+
             FreezeTimeText.text = "TIME:" + seconds.ToString("000");
-
-
-
 
             yield return null;
         }
+
+
+
+
 
     }
 

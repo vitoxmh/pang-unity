@@ -26,20 +26,24 @@ public class chain : MonoBehaviour
     void Update()
     {
 
-
-        int index = (int)(Time.timeSinceLevelLoad * 6);
-
-        heightChain = heightChain - speedChain;
-        sprite.size = new Vector2(sprite.size.x, heightChain);
-
-        index = index % 2;
-        if(index == 0 || index == 2 || index == 3)
+        if (!GameManager.gm.Lose)
         {
-            transform.localScale = new Vector3(-4.0f, transform.localScale.y, transform.localScale.z);
-        }
-        else
-        {
-            transform.localScale = new Vector3(4.0f, transform.localScale.y, transform.localScale.z);
+
+            int index = (int)(Time.timeSinceLevelLoad * 6);
+
+            heightChain = heightChain - speedChain;
+            sprite.size = new Vector2(sprite.size.x, heightChain);
+
+            index = index % 2;
+            if (index == 0 || index == 2 || index == 3)
+            {
+                transform.localScale = new Vector3(-4.0f, transform.localScale.y, transform.localScale.z);
+            }
+            else
+            {
+                transform.localScale = new Vector3(4.0f, transform.localScale.y, transform.localScale.z);
+            }
+
         }
        
 

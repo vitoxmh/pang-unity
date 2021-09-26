@@ -8,16 +8,30 @@ public class gun : MonoBehaviour
     public float Speed;
     private Rigidbody2D rb;
     public GameObject bulletExplotion;
+    private Animator Animator;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        Animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        rb.velocity = new Vector2(rb.velocity.x, Speed);
+        if (GameManager.gm.Lose)
+        {
+            rb.isKinematic = true;
+            rb.velocity = Vector2.zero;
+            Animator.speed = 0;
+
+
+        }
+        else
+        {
+            rb.velocity = new Vector2(rb.velocity.x, Speed);
+        }
+        
     }
 
 

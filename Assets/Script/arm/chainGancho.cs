@@ -35,11 +35,21 @@ public class chainGancho : MonoBehaviour
     void Update()
     {
 
-
-        if (!touchCeiling)
+        if (!GameManager.gm.Lose)
         {
-            heightChain = heightChain - speedChain;
-            sprite.size = new Vector2(sprite.size.x, heightChain);
+
+            if (!touchCeiling)
+            {
+                heightChain = heightChain - speedChain;
+                sprite.size = new Vector2(sprite.size.x, heightChain);
+            }
+
+        }
+
+
+        if (GameManager.gm.Lose)
+        {
+            Animator.speed = 0;
         }
         
 

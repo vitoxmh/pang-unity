@@ -358,15 +358,13 @@ public class Ball : MonoBehaviour
 
     public void slowBall()
     {
-        Debug.Log("Baja gravedad");
 
 
-        //rb.velocity = new Vector2(0, ballBounce / 1.5f);
+        rb.velocity = new Vector2(0, ballBounce / 1.5f);
         stateSlow = true;
         rb.gravityScale = 0.5f;
        
        
-
     }
 
 

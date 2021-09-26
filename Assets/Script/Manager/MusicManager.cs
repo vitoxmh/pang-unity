@@ -73,6 +73,15 @@ public class MusicManager : MonoBehaviour
             case "GameOver":
                 audio.PlayOneShot(music[5], 1f);
             break;
+            case "GettingLate":
+                audio.PlayOneShot(music[6], 1f);
+            break;
+            case "OutOfTime":
+                audio.PlayOneShot(music[7], 1f);
+            break;
+
+
+
 
         }
 
