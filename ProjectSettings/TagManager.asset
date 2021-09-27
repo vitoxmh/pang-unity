@@ -26,6 +26,8 @@ TagManager:
   - RebootStage
   - textLocation
   - textStage
+  - UI
+  - DontDestroy
   layers:
   - Default
   - TransparentFX

@@ -19,8 +19,7 @@ public class GameManager : MonoBehaviour
     private bool GettingLateTime;
     private bool OutOfTime;
 
-    public System.Object Application { get; private set; }
-
+    
     private void Awake()
     {
         if (gm == null)
@@ -37,9 +36,40 @@ public class GameManager : MonoBehaviour
         lm.updateUiLife();
         GettingLateTime = false;
         OutOfTime = false;
-
+       
     }
 
+
+
+    void Start()
+    {
+
+
+        TimeCount.SetActive(true);
+
+        TimeGame = infoStage.si.time;
+
+        int seconds = Mathf.RoundToInt(TimeGame);
+
+        FreezeTimeText.text = "TIME:" + seconds.ToString("000");
+
+
+        StartCoroutine(starGame());
+
+
+
+        if (infoStage.si.country != "")
+        {
+
+            GameObject.FindGameObjectWithTag("textLocation").GetComponent<UnityEngine.UI.Text>().text = infoStage.si.country.ToString();
+            GameObject.FindGameObjectWithTag("textStage").GetComponent<UnityEngine.UI.Text>().text = infoStage.si.stage.ToString() + " STAGE";
+
+        }
+
+        DontDestroy.dd.show();
+
+
+    }
 
 
 
@@ -64,49 +94,18 @@ public class GameManager : MonoBehaviour
 
         }
 
-    }
-
-
-    void Start()
-    {
-        
-
-
-
-        TimeCount.SetActive(true);
-        
-        TimeGame = infoStage.si.time;
-
-        int seconds = Mathf.RoundToInt(TimeGame);
-
-        FreezeTimeText.text = "TIME:" + seconds.ToString("000");
-
-
-        StartCoroutine(starGame());
-
-
-
-        if (infoStage.si.country != "")
-        {
-
-            GameObject.FindGameObjectWithTag("textLocation").GetComponent<UnityEngine.UI.Text>().text = infoStage.si.country.ToString();
-            GameObject.FindGameObjectWithTag("textStage").GetComponent<UnityEngine.UI.Text>().text = infoStage.si.stage.ToString() + " STAGE";
-
-
-        }
-
-
-
-
 
 
     }
+
+
+
 
     // Update is called once per frame
     void Update()
     {
 
-
+        
         nBall();
 
 

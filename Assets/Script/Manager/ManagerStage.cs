@@ -11,6 +11,8 @@ public class ManagerStage : MonoBehaviour
     public string[] stage;
     public int currentStage;
     public GameObject txtGameOver;
+    public GameObject nD;
+
 
     private void Awake()
     {
@@ -37,6 +39,10 @@ public class ManagerStage : MonoBehaviour
         stage[2] = "1-3";
         stage[3] = "End";
         txtGameOver.SetActive(false);
+
+
+       
+
 
 
 

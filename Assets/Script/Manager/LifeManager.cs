@@ -93,7 +93,7 @@ public class LifeManager : MonoBehaviour
 
         }
 
-
+         
 
         if(lifesPlayer1 > 4)
         {

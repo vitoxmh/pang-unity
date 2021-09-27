@@ -9,6 +9,7 @@ public class PlayGame : MonoBehaviour
 
     public Text coinText;
     public Text creditText;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -16,6 +17,8 @@ public class PlayGame : MonoBehaviour
         StartCoroutine(insertCoin());
         coinText.enabled = false;
         creditText.enabled = false;
+        DontDestroy.dd.hide();
+        
     }
 
     // Update is called once per frame
@@ -23,11 +26,11 @@ public class PlayGame : MonoBehaviour
     {
 
 
-       
+      
 
 
 
-        if(ManagerCoin.mc.coin > 0)
+        if (ManagerCoin.mc.coin > 0)
         {
             coinText.enabled = true;
             creditText.enabled = true;
