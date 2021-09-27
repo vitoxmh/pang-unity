@@ -245,6 +245,7 @@ public class BallManager : MonoBehaviour
         for (int i = 0; i < arrayBall.Length; i++)
         {
 
+
             arrayBall[i].GetComponent<Ball>().freezeBall();
 
 

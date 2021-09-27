@@ -342,9 +342,11 @@ public class Ball : MonoBehaviour
 
         isFreeze = true;
         currentVelocity = GetComponent<Rigidbody2D>().velocity;
-    
+        GetComponent<CircleCollider2D>().isTrigger = true;
 
-        
+
+
+
     }
 
 
@@ -352,6 +354,7 @@ public class Ball : MonoBehaviour
     {
         sr.enabled = true;
         isFreeze = false;
+        GetComponent<CircleCollider2D>().isTrigger = false;
     }
 
 

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ManagerStage : MonoBehaviour
 {
@@ -16,7 +17,7 @@ public class ManagerStage : MonoBehaviour
         if (ms == null)
         {
             ms = this;
-            DontDestroyOnLoad(gameObject);
+
 
         }
         else if (ms != null)
@@ -34,7 +35,7 @@ public class ManagerStage : MonoBehaviour
         stage[0] = "1-1";
         stage[1] = "1-2";
         stage[2] = "1-3";
-        stage[3] = "2-1";
+        stage[3] = "End";
         txtGameOver.SetActive(false);
 
 

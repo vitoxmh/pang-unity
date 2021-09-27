@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+using UnityEngine.SceneManagement;
 
 public class LifeManager : MonoBehaviour
 {
@@ -217,7 +217,7 @@ public class LifeManager : MonoBehaviour
             yield return null;
         }
 
-        Application.LoadLevel("Start");
+        SceneManager.LoadScene("Start");
         reset();
         
 

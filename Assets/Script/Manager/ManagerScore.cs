@@ -27,7 +27,7 @@ public class ManagerScore : MonoBehaviour
         if (ms == null)
         {
             ms = this;
-            DontDestroyOnLoad(gameObject);
+
         }
         else if (ms != null)
         {

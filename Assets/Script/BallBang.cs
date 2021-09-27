@@ -7,14 +7,11 @@ public class BallBang : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        GameObject.FindGameObjectWithTag("SoundManager").GetComponent<SoundManager>().play("Bang");
+
+        SoundManager.sm.play("Bang");
+
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     public void Bang()
     {

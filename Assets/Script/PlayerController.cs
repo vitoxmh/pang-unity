@@ -486,7 +486,7 @@ public class PlayerController : MonoBehaviour
         }
 
 
-        if (col.gameObject.tag == "ball")
+        if (col.gameObject.tag == "ball" && !BallManager.bm.freeze)
         {
 
             dead();

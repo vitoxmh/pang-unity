@@ -19,8 +19,7 @@ public class GameManager : MonoBehaviour
     private bool GettingLateTime;
     private bool OutOfTime;
 
-
-
+    public System.Object Application { get; private set; }
 
     private void Awake()
     {
@@ -114,11 +113,6 @@ public class GameManager : MonoBehaviour
     }
 
 
-
-
-
-
-
     private void nBall()
     {
 
@@ -140,8 +134,8 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(1f);
 
         MusicManager.mn.stop();
- 
-        Application.LoadLevel("ChangeStage");
+
+        SceneManager.LoadScene("ChangeStage");
 
     }
         
@@ -168,14 +162,16 @@ public class GameManager : MonoBehaviour
             {
                 MusicManager.mn.stop();
                 MusicManager.mn.play("GettingLate");
+                FreezeTimeText.GetComponent<Text>().color = Color.yellow;
                 GettingLateTime = true;
             }
 
 
-            if (seconds == 40 && !OutOfTime)
+            if (seconds == 20 && !OutOfTime)
             {
                 MusicManager.mn.stop();
                 MusicManager.mn.play("OutOfTime");
+                FreezeTimeText.GetComponent<Text>().color = Color.red;
                 OutOfTime = true;
             }
 
