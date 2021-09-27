@@ -19,7 +19,7 @@ public class ManagerCoin : MonoBehaviour
         if (mc == null)
         {
             mc = this;
-            DontDestroyOnLoad(gameObject);
+           
 
         }
         else if (mc != null)
