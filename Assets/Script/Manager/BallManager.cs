@@ -191,6 +191,19 @@ public class BallManager : MonoBehaviour
 
             GameObject[] arrayBall = GameObject.FindGameObjectsWithTag("ball");
 
+            Debug.Log(arrayBall.Length + "<========");
+
+            foreach (GameObject ball in arrayBall)
+            {
+                if (ball.GetComponent<Ball>().sizeBall < 3)
+                {
+                    ball.GetComponent<Ball>().bangBall();
+                }
+            }
+
+
+            /*
+
             for (int i = 0; i <= arrayBall.Length; i++)
             {
 
@@ -200,7 +213,7 @@ public class BallManager : MonoBehaviour
                 }
 
 
-            }
+            }*/
 
         }
 
@@ -277,7 +290,7 @@ public class BallManager : MonoBehaviour
 
     }
 
-
+     
 
     public void unTriggerColliderBall()
     {

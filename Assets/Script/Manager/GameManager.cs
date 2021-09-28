@@ -26,7 +26,7 @@ public class GameManager : MonoBehaviour
         { 
             gm = this;
            
-        }
+        } 
         else if (gm != null)
         {
             Destroy(gameObject);
@@ -35,6 +35,7 @@ public class GameManager : MonoBehaviour
 
         lm = FindObjectOfType<LifeManager>();
         lm.updateUiLife();
+        Debug.Log("ACTUALIZA VIDAS");
         GettingLateTime = false;
         OutOfTime = false;
        
@@ -66,10 +67,6 @@ public class GameManager : MonoBehaviour
             GameObject.FindGameObjectWithTag("textStage").GetComponent<UnityEngine.UI.Text>().text = infoStage.si.stage.ToString() + " STAGE";
 
         }
-
-
-
-       // DontDestroy.dd.show();
 
 
     }

@@ -15,7 +15,7 @@ public class infoStage : MonoBehaviour
 
 
     private void Awake()
-    {
+    { 
         if (si == null)
         {
             si = this;

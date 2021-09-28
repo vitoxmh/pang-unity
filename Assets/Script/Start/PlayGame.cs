@@ -17,9 +17,9 @@ public class PlayGame : MonoBehaviour
         StartCoroutine(insertCoin());
         coinText.enabled = false;
         creditText.enabled = false;
-        DontDestroy.dd.hide();
+  
         
-    }
+    } 
 
     // Update is called once per frame
     void Update()

@@ -60,7 +60,7 @@ public class ManagerStage : MonoBehaviour
 
 
     public void setStage(string nameStage)
-    {
+    { 
 
 
         for (int i = 0; i < stage.Length; i++)
@@ -100,6 +100,11 @@ public class ManagerStage : MonoBehaviour
 
     }
 
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        Debug.Log("Carg Escena");
+    }
 
 
 }
