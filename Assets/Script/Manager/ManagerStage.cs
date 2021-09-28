@@ -40,12 +40,6 @@ public class ManagerStage : MonoBehaviour
         stage[3] = "End";
         txtGameOver.SetActive(false);
 
-
-       
-
-
-
-
     }
 
     // Update is called once per frame
@@ -65,8 +59,23 @@ public class ManagerStage : MonoBehaviour
 
 
 
-    public void setStage()
+    public void setStage(string nameStage)
     {
+
+
+        for (int i = 0; i < stage.Length; i++)
+        {
+            if (stage[i] == nameStage)
+            {
+
+                currentStage = i;
+                Debug.Log("SSSS" + i);
+
+            }
+
+
+            Debug.Log("Name stage" + stage[i]);
+        }
 
 
     }

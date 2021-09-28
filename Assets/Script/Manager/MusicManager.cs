@@ -78,6 +78,9 @@ public class MusicManager : MonoBehaviour
             case "OutOfTime":
                 audio.PlayOneShot(music[7], 1f);
             break;
+            case "End":
+                audio.PlayOneShot(music[8], 1f);
+            break;
 
 
 

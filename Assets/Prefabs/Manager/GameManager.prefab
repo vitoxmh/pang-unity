@@ -48,3 +48,5 @@ MonoBehaviour:
   StartStage: 1
   TimeCount: {fileID: 0}
   Lose: 0
+  gameOver: 0
+  UiMarcador: {fileID: 7769331245629373583, guid: 7851900d86284c742a3399caadf77920, type: 3}

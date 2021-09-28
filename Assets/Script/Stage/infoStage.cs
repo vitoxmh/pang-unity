@@ -39,7 +39,14 @@ public class infoStage : MonoBehaviour
         }
 
 
+        ManagerStage.ms.setStage(stage);
+
         CurrentShotItem.cs.CurrentShot(-1);
+
+
+
+
+
 
     }
 

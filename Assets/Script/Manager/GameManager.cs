@@ -32,6 +32,7 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }
 
+
         lm = FindObjectOfType<LifeManager>();
         lm.updateUiLife();
         GettingLateTime = false;
@@ -66,7 +67,9 @@ public class GameManager : MonoBehaviour
 
         }
 
-        DontDestroy.dd.show();
+
+
+       // DontDestroy.dd.show();
 
 
     }
