@@ -1,6 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+
 
 public class MapManager : MonoBehaviour
 {
@@ -12,6 +15,9 @@ public class MapManager : MonoBehaviour
     public Vector3[] positionMap;
     public GameObject pointMapItem;
     public Vector3 setPoitMap;
+    public float countStart;
+    public Text countText;
+
 
     void Start()
     {
@@ -30,9 +36,9 @@ public class MapManager : MonoBehaviour
                         new Vector3 { x = -2.037f, y = 1.662f, z = 0 }
                        };
 
- 
 
 
+        StartCoroutine(timeInitGame());
     }
 
     // Update is called once per frame
@@ -61,7 +67,36 @@ public class MapManager : MonoBehaviour
         setPoitMap = positionMap[indexPositionMap];
         pointMapItem.transform.position = setPoitMap;
 
+    }
 
+
+
+    public IEnumerator timeInitGame()
+    {
+
+
+        while (countStart > 0)
+        {
+
+            countStart -= Time.deltaTime;
+            countText.text =  countStart.ToString("0");
+
+            yield return null;
+        }
+
+
+        startGame();
+
+    }
+
+
+
+
+    private void startGame()
+    {
+
+
+        SceneManager.LoadScene(setStageMap);
 
 
     }

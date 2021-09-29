@@ -40,6 +40,7 @@ public class LifeManager : MonoBehaviour
 
 
         textContinue.SetActive(false);
+        updateUiLife();
 
 
     }
@@ -80,9 +81,12 @@ public class LifeManager : MonoBehaviour
     {
         int i = 0;
 
-        Debug.Log(lifesPlayer1+"VIDAS" + dollLife.Length);
 
-        /*foreach (GameObject doll in dollLife)
+        GameObject[] arrayDoll = GameObject.FindGameObjectsWithTag("dollLife");
+
+
+
+        foreach (GameObject doll in arrayDoll)
         {
 
             if ((i + 1) <= lifesPlayer1)
@@ -96,37 +100,27 @@ public class LifeManager : MonoBehaviour
 
             i++;
 
-        }*/
-
-            /*
-            for (int i = 0; i < dollLife.Length; i++)
-            {
-
-                if ((i + 1) <= lifesPlayer1)
-                {
-                    dollLife[i].SetActive(true);
-                }
-                else
-                {
-                    dollLife[i].SetActive(false);
-                }
-
-            }*/
+        }
 
 
+        
+        
+
+      
 
         if (lifesPlayer1 > 4)
         {
 
-            textLife.SetActive(true);
+            GameObject.SetActive(true);
 
         }
         else
         {
-            //textLife.SetActive(false);
+            GameObject.SetActive(false);
         }
 
         lifeText.text = lifesPlayer1.ToString();
+
 
     }
 

@@ -34,8 +34,8 @@ public class GameManager : MonoBehaviour
 
 
         lm = FindObjectOfType<LifeManager>();
-        lm.updateUiLife();
-        Debug.Log("ACTUALIZA VIDAS");
+
+
         GettingLateTime = false;
         OutOfTime = false;
        

@@ -69,7 +69,7 @@ public class ManagerStage : MonoBehaviour
             {
 
                 currentStage = i;
-                Debug.Log("SSSS" + i);
+     
 
             }
 

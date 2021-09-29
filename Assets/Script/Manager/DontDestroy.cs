@@ -13,14 +13,14 @@ public class DontDestroy : MonoBehaviour
         if (dd == null)
         {
             dd = this;
-           
+            DontDestroyOnLoad(gameObject);
         }
         else if (dd != null)
         {
             Destroy(gameObject);
         }
 
-        DontDestroyOnLoad(gameObject);
+        
 
     }
 

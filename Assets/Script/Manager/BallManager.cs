@@ -101,7 +101,6 @@ public class BallManager : MonoBehaviour
 
             arrayBall[i].GetComponent<Ball>().slowBall();
 
-
         }
 
 
