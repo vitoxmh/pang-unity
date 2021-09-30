@@ -19,7 +19,7 @@ public class LifeManager : MonoBehaviour
     public float timeContinue;
     public static LifeManager lm;
 
-
+     
     private void Awake()
     {
         if (lm == null)
@@ -34,15 +34,34 @@ public class LifeManager : MonoBehaviour
 
     }
 
-
+     
     void Start()
     {
 
 
+
+
+        inicio();
+
         textContinue.SetActive(false);
 
 
+
     }
+
+
+
+    public void inicio()
+    {
+      
+        //dollLife = GameObject.FindGameObjectsWithTag("dollLife");
+        //lifeText = textLife.GetComponent<Text>();
+        //itenBox = GameObject.Find("CurrentShot");
+        //textContinue = GameObject.Find("continue");
+    }
+
+
+
 
     // Update is called once per frame
     void Update()
@@ -78,11 +97,16 @@ public class LifeManager : MonoBehaviour
 
     public void updateUiLife()
     {
+
+
+
+
+
         int i = 0;
 
-        Debug.Log(lifesPlayer1+"VIDAS" + dollLife.Length);
 
-        /*foreach (GameObject doll in dollLife)
+
+        foreach (GameObject doll in dollLife)
         {
 
             if ((i + 1) <= lifesPlayer1)
@@ -96,24 +120,13 @@ public class LifeManager : MonoBehaviour
 
             i++;
 
-        }*/
-
-            /*
-            for (int i = 0; i < dollLife.Length; i++)
-            {
-
-                if ((i + 1) <= lifesPlayer1)
-                {
-                    dollLife[i].SetActive(true);
-                }
-                else
-                {
-                    dollLife[i].SetActive(false);
-                }
-
-            }*/
+        }
 
 
+        
+        
+
+       
 
         if (lifesPlayer1 > 4)
         {
@@ -123,10 +136,13 @@ public class LifeManager : MonoBehaviour
         }
         else
         {
-            //textLife.SetActive(false);
+            textLife.SetActive(false);
+
+
         }
 
         lifeText.text = lifesPlayer1.ToString();
+
 
     }
 

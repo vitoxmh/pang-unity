@@ -28,6 +28,9 @@ TagManager:
   - textStage
   - UI
   - DontDestroy
+  - dollLife
+  - TextLife
+  - NumberLife
   layers:
   - Default
   - TransparentFX

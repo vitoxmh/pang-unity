@@ -221,6 +221,7 @@ RectTransform:
   m_Children:
   - {fileID: 1885180285}
   - {fileID: 1789537130}
+  - {fileID: 2126081933}
   m_Father: {fileID: 1713692983}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -512,7 +513,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 28.28003, y: -38}
+  m_AnchoredPosition: {x: 28.28003, y: -37.99997}
   m_SizeDelta: {x: 115.57, y: 85.74}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1885180286
@@ -553,6 +554,85 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1885180284}
   m_CullTransparentMesh: 1
+--- !u!1 &2126081930
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2126081933}
+  - component: {fileID: 2126081932}
+  - component: {fileID: 2126081931}
+  m_Layer: 5
+  m_Name: count
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2126081931
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2126081930}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: ef4793663a4bba947b0981920aeba202, type: 3}
+    m_FontSize: 60
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 3
+    m_MaxSize: 60
+    m_Alignment: 1
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 9
+--- !u!222 &2126081932
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2126081930}
+  m_CullTransparentMesh: 1
+--- !u!224 &2126081933
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2126081930}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 674534061}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 139, y: 123}
+  m_SizeDelta: {x: 160, y: 70}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2134424373
 GameObject:
   m_ObjectHideFlags: 0
@@ -644,12 +724,28 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 292658308442463980, guid: 329c2411634d7f646ac84c4644d3d242, type: 3}
+      propertyPath: countText
+      value: 
+      objectReference: {fileID: 2126081931}
+    - target: {fileID: 292658308442463980, guid: 329c2411634d7f646ac84c4644d3d242, type: 3}
+      propertyPath: countStart
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 292658308442463980, guid: 329c2411634d7f646ac84c4644d3d242, type: 3}
       propertyPath: pointMapItem
       value: 
       objectReference: {fileID: 1602575170}
     - target: {fileID: 292658308442463980, guid: 329c2411634d7f646ac84c4644d3d242, type: 3}
       propertyPath: stage.Array.size
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 292658308442463980, guid: 329c2411634d7f646ac84c4644d3d242, type: 3}
+      propertyPath: stage.Array.data[1]
+      value: 2-4
+      objectReference: {fileID: 0}
+    - target: {fileID: 292658308442463980, guid: 329c2411634d7f646ac84c4644d3d242, type: 3}
+      propertyPath: stage.Array.data[2]
+      value: 3-7
       objectReference: {fileID: 0}
     - target: {fileID: 292658308442463980, guid: 329c2411634d7f646ac84c4644d3d242, type: 3}
       propertyPath: stage.Array.data[9]

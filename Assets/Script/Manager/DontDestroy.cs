@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class DontDestroy : MonoBehaviour
 {
@@ -13,6 +14,16 @@ public class DontDestroy : MonoBehaviour
         if (dd == null)
         {
             dd = this;
+            if(SceneManager.GetActiveScene().name == "Start")
+            {
+                Destroy(gameObject);
+            }
+            else
+            {
+
+                DontDestroyOnLoad(gameObject);
+
+            }
            
         }
         else if (dd != null)
@@ -20,7 +31,7 @@ public class DontDestroy : MonoBehaviour
             Destroy(gameObject);
         }
 
-        DontDestroyOnLoad(gameObject);
+        
 
     }
 

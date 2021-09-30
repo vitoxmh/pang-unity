@@ -44,7 +44,7 @@ public class PlayGame : MonoBehaviour
         {
             
             //Application.LoadLevel(ManagerStage.ms.stage[0]);
-            SceneManager.LoadScene(ManagerStage.ms.stage[0]);
+            SceneManager.LoadScene("Map");
 
         }
 

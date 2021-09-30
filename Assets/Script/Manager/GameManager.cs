@@ -15,7 +15,7 @@ public class GameManager : MonoBehaviour
     public GameObject TimeCount;
     public bool Lose;
     public bool gameOver;
-    LifeManager lm;
+    GameObject lm;
     private bool GettingLateTime;
     private bool OutOfTime;
 
@@ -33,18 +33,22 @@ public class GameManager : MonoBehaviour
         }
 
 
-        lm = FindObjectOfType<LifeManager>();
-        lm.updateUiLife();
-        Debug.Log("ACTUALIZA VIDAS");
+       
+
+
         GettingLateTime = false;
         OutOfTime = false;
-       
+      
+
     }
 
 
 
     void Start()
     {
+
+        lm = GameObject.Find("LifeManager");
+
 
 
         TimeCount.SetActive(true);
@@ -69,6 +73,9 @@ public class GameManager : MonoBehaviour
         }
 
 
+        lm.GetComponent<LifeManager>().inicio();
+        lm.GetComponent<LifeManager>().updateUiLife();
+
     }
 
 
@@ -78,19 +85,21 @@ public class GameManager : MonoBehaviour
 
         MusicManager.mn.stop();
 
-        lm.life(-1);
 
-        if(lm.lifesPlayer1 == 0)
+
+        lm.GetComponent<LifeManager>().life(-1);
+
+        if (lm.GetComponent<LifeManager>().lifesPlayer1 == 0)
         {
 
-            lm.continueGame();
+            lm.GetComponent<LifeManager>().continueGame();
             
             
         }
         else
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-            lm.updateUiLife();
+            //lm.GetComponent<LifeManager>().updateUiLife();
 
         }
 
