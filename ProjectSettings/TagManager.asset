@@ -30,6 +30,7 @@ TagManager:
   - DontDestroy
   - dollLife
   - TextLife
+  - NumberLife
   layers:
   - Default
   - TransparentFX

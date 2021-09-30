@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class infoStage : MonoBehaviour
 {
@@ -33,6 +34,12 @@ public class infoStage : MonoBehaviour
     void Start()
     {
 
+
+        if (ManagerCoin.mc.coin == 0)
+        {
+            SceneManager.LoadScene("Start");
+        }
+
         if(time == 0)
         {
             time = 100f;
@@ -42,10 +49,6 @@ public class infoStage : MonoBehaviour
         ManagerStage.ms.setStage(stage);
 
         CurrentShotItem.cs.CurrentShot(-1);
-
-
-
-
 
 
     }

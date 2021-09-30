@@ -1774,22 +1774,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 6478774761031276974, guid: 7851900d86284c742a3399caadf77920, type: 3}
-      propertyPath: m_TagString
-      value: dollLife
-      objectReference: {fileID: 0}
-    - target: {fileID: 6478774761044640924, guid: 7851900d86284c742a3399caadf77920, type: 3}
-      propertyPath: m_TagString
-      value: dollLife
-      objectReference: {fileID: 0}
-    - target: {fileID: 6478774762194118500, guid: 7851900d86284c742a3399caadf77920, type: 3}
-      propertyPath: m_TagString
-      value: dollLife
-      objectReference: {fileID: 0}
-    - target: {fileID: 6478774762305191740, guid: 7851900d86284c742a3399caadf77920, type: 3}
-      propertyPath: m_TagString
-      value: dollLife
-      objectReference: {fileID: 0}
     - target: {fileID: 7655315278556673485, guid: 7851900d86284c742a3399caadf77920, type: 3}
       propertyPath: m_RootOrder
       value: 7
