@@ -84,7 +84,9 @@ public class item : MonoBehaviour
             {
                 
                 BallManager.bm.isBallBang = true;
-                Debug.Log("Destuye Bolas");
+           
+
+
 
             }
             else if (typeItem == 2)

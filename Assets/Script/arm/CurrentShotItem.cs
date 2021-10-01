@@ -31,7 +31,7 @@ public class CurrentShotItem : MonoBehaviour
     public void CurrentShot(int item)
     {
 
-        Debug.Log("Tipoooo" + item);
+
 
         if (item == 0)
         {

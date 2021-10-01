@@ -18,8 +18,9 @@ public class LifeManager : MonoBehaviour
     public GameObject itenBox;
     public float timeContinue;
     public static LifeManager lm;
+    private IEnumerator coroutineContinue;
 
-     
+
     private void Awake()
     {
         if (lm == null)
@@ -39,11 +40,13 @@ public class LifeManager : MonoBehaviour
     {
 
 
-
+        lifesPlayer1 = ConfigGame.cg.lifePlayer1;
+        updateUiLife();
 
         inicio();
 
         textContinue.SetActive(false);
+
 
 
 
@@ -104,7 +107,7 @@ public class LifeManager : MonoBehaviour
 
         int i = 0;
 
-
+        
 
         foreach (GameObject doll in dollLife)
         {
@@ -140,7 +143,7 @@ public class LifeManager : MonoBehaviour
 
 
         }
-
+        Debug.Log("vIDASSS" + lifesPlayer1);
         lifeText.text = lifesPlayer1.ToString();
 
 
@@ -192,7 +195,8 @@ public class LifeManager : MonoBehaviour
         itenBox.SetActive(false);
         MusicManager.mn.play("Continue");
         textContinue.transform.GetChild(0).gameObject.GetComponent<Text>().text = "CONTINUE?";
-        StartCoroutine(countContinueGame());
+        coroutineContinue = countContinueGame();
+        StartCoroutine(coroutineContinue);
 
 
     }
@@ -264,10 +268,12 @@ public class LifeManager : MonoBehaviour
     public void reset()
     {
 
+        StopCoroutine(coroutineContinue);
+         
         ManagerStage.ms.hideTextgameOver();
         MusicManager.mn.stop();
         ManagerStage.ms.currentStage = 0;
-        lifesPlayer1 = 1;
+        lifesPlayer1 = ConfigGame.cg.lifePlayer1;
         showDollLifes();
         ManagerScore.ms.resetData();
         updateUiLife();

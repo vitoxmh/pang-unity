@@ -55,7 +55,10 @@ public class BallManager : MonoBehaviour
 
         }
 
-
+        if (Input.GetKeyDown(KeyCode.Z))
+        {
+            BangAllBallKill();
+        }
 
 
 
@@ -79,9 +82,12 @@ public class BallManager : MonoBehaviour
             StartCoroutine(FreezeTime());
 
         }
-            
-    
-    
+
+       
+
+
+
+
     }
 
 
@@ -94,7 +100,7 @@ public class BallManager : MonoBehaviour
 
         GameObject[] arrayBall = GameObject.FindGameObjectsWithTag("ball");
 
-        Debug.Log("Slow Ball");
+    
 
         for (int i = 0; i < arrayBall.Length; i++)
         {
@@ -182,6 +188,8 @@ public class BallManager : MonoBehaviour
     public void BangAllBall()
     {
 
+
+
         if (Time.time > detalDelayBang)
         {
 
@@ -190,7 +198,6 @@ public class BallManager : MonoBehaviour
 
             GameObject[] arrayBall = GameObject.FindGameObjectsWithTag("ball");
 
-            Debug.Log(arrayBall.Length + "<========");
 
             foreach (GameObject ball in arrayBall)
             {
@@ -198,25 +205,47 @@ public class BallManager : MonoBehaviour
                 {
                     ball.GetComponent<Ball>().bangBall();
                 }
+                
             }
 
 
-            /*
+        }
 
-            for (int i = 0; i <= arrayBall.Length; i++)
+
+    }
+
+
+
+    public void BangAllBallKill()
+    {
+
+
+
+        if (Time.time > detalDelayBang)
+        {
+
+
+            detalDelayBang = Time.time + 0.35f;
+
+            GameObject[] arrayBall = GameObject.FindGameObjectsWithTag("ball");
+
+
+            foreach (GameObject ball in arrayBall)
             {
+                ball.GetComponent<Ball>().bangBall();
 
-                if (arrayBall[i].GetComponent<Ball>().sizeBall < 3)
-                {
-                    arrayBall[i].GetComponent<Ball>().bangBall();
-                }
+            }
 
-
-            }*/
 
         }
 
+
     }
+
+
+
+
+
 
 
     public void InvisibleAllBall()

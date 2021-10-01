@@ -35,10 +35,7 @@ public class infoStage : MonoBehaviour
     {
 
 
-        if (ManagerCoin.mc.coin == 0)
-        {
-            SceneManager.LoadScene("Start");
-        }
+ 
 
         if(time == 0)
         {

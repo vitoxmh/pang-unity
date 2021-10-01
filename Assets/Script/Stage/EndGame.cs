@@ -31,7 +31,7 @@ public class EndGame : MonoBehaviour
         yield return new WaitForSeconds(8f);
 
         MusicManager.mn.stop();
-        SceneManager.LoadScene("Start");
+        SceneManager.LoadScene("Map");
 
 
     }

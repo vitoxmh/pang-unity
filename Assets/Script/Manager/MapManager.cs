@@ -17,6 +17,8 @@ public class MapManager : MonoBehaviour
     public Vector3 setPoitMap;
     public float countStart;
     public Text countText;
+    public Text textCountry;
+    public Text textStage;
 
 
     void Start()
@@ -36,7 +38,12 @@ public class MapManager : MonoBehaviour
                         new Vector3 { x = -2.037f, y = 1.662f, z = 0 }
                        };
 
+        if (GameObject.Find("DontDestroy"))
+        {
 
+            GameObject.Find("DontDestroy").transform.position = new Vector3(0, -1.6f, 0);
+
+        }
 
         StartCoroutine(timeInitGame());
     }
@@ -67,6 +74,19 @@ public class MapManager : MonoBehaviour
         setPoitMap = positionMap[indexPositionMap];
         pointMapItem.transform.position = setPoitMap;
 
+        textCountry.text = ConfigGame.cg.country[indexPositionMap];
+        textStage.text = "STAGE     " +ConfigGame.cg.stages[indexPositionMap];
+
+
+
+
+        if (Input.GetKeyDown(KeyCode.Return))
+        {
+
+            SceneManager.LoadScene(setStageMap);
+
+        }
+
     }
 
 
@@ -80,6 +100,14 @@ public class MapManager : MonoBehaviour
 
             countStart -= Time.deltaTime;
             countText.text =  countStart.ToString("0");
+
+            if(countStart <= 3)
+            {
+
+
+                countText.color = Color.red;
+
+            }
 
             yield return null;
         }

@@ -397,7 +397,7 @@ public class PlayerController : MonoBehaviour
         {
 
             ladderTopExit = true;
-            Debug.Log("tOCA CIELO");
+     
 
         }
 
@@ -407,9 +407,7 @@ public class PlayerController : MonoBehaviour
 
             rg.velocity = new Vector2(-1f, 5f);
             
-            
-
-            Debug.Log("Rebota");
+           
             nRebote++;
 
         }

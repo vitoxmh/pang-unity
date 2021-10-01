@@ -19,7 +19,7 @@ public class GameManager : MonoBehaviour
     private bool GettingLateTime;
     private bool OutOfTime;
 
-    
+
     private void Awake()
     {
         if (gm == null)
@@ -47,11 +47,19 @@ public class GameManager : MonoBehaviour
     void Start()
     {
 
+        if (GameObject.Find("DontDestroy"))
+        {
+
+            GameObject.Find("DontDestroy").transform.position = new Vector3(0, 0, -0.89f);
+
+        }
+        
+
         lm = GameObject.Find("LifeManager");
 
-
-
-        TimeCount.SetActive(true);
+        //lm.GetComponent<LifeManager>().lifesPlayer1 = ConfigGame.cg.lifePlayer1;
+        //lm.GetComponent<LifeManager>().lifesPlayer1 = 9;
+        //TimeCount.SetActive(true);
 
         TimeGame = infoStage.si.time;
 
@@ -93,7 +101,7 @@ public class GameManager : MonoBehaviour
         {
 
             lm.GetComponent<LifeManager>().continueGame();
-            
+            GameManager.gm.Lose = true;
             
         }
         else
@@ -116,6 +124,17 @@ public class GameManager : MonoBehaviour
 
         
         nBall();
+
+
+        if (Input.GetKeyDown(KeyCode.Return) && ManagerCoin.mc.coin > 0)
+        {
+
+            MusicManager.mn.stop();
+            //SceneManager.LoadScene("Map");
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            ManagerCoin.mc.coin--;
+            LifeManager.lm.reset();
+        }
 
 
     }

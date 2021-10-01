@@ -1318,3 +1318,23 @@ C# parse time         : 431ms
 candidates check time : 45ms
 console write time    : 1ms
 
+[api-updater (non-obsolete-error-filter)] 30-09-2021 21:02:06 : Starting C:/Users/sheik/AppData/Local/Programs/Microsoft%20VS%20Code/2020.3.13f1/Editor/Data/Tools/ScriptUpdater/APIUpdater.NonObsoleteApiUpdaterDetector.exe
+[api-updater (non-obsolete-error-filter)] 
+----------------------------------
+jit/startup time      : 1053,8713ms
+moved types parse time: 83ms
+candidates parse time : 14ms
+C# parse time         : 357ms
+candidates check time : 53ms
+console write time    : 1ms
+
+[api-updater (non-obsolete-error-filter)] 01-10-2021 10:58:53 : Starting C:/Users/sheik/AppData/Local/Programs/Microsoft%20VS%20Code/2020.3.13f1/Editor/Data/Tools/ScriptUpdater/APIUpdater.NonObsoleteApiUpdaterDetector.exe
+[api-updater (non-obsolete-error-filter)] 
+----------------------------------
+jit/startup time      : 1148ms
+moved types parse time: 94ms
+candidates parse time : 2ms
+C# parse time         : 505ms
+candidates check time : 66ms
+console write time    : 1ms
+

@@ -17,6 +17,15 @@ public class PlayGame : MonoBehaviour
         StartCoroutine(insertCoin());
         coinText.enabled = false;
         creditText.enabled = false;
+        if (GameObject.Find("DontDestroy"))
+        {
+
+            GameObject.Find("DontDestroy").transform.position = new Vector3(0, -1.6f , 0);
+
+        }
+
+
+       
   
         
     } 
@@ -25,8 +34,9 @@ public class PlayGame : MonoBehaviour
     void Update()
     {
 
+        
 
-      
+
 
 
 
@@ -45,6 +55,7 @@ public class PlayGame : MonoBehaviour
             
             //Application.LoadLevel(ManagerStage.ms.stage[0]);
             SceneManager.LoadScene("Map");
+            ManagerCoin.mc.coin--;
 
         }
 

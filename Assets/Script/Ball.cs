@@ -104,7 +104,7 @@ public class Ball : MonoBehaviour
             {
                 rb.velocity = currentVelocity;
                 starBounce = false;
-                Debug.Log("iNICIA rEBOTE"+ currentVelocity);
+            
             }
             if (stateSlow)
             {
@@ -232,6 +232,7 @@ public class Ball : MonoBehaviour
         {
 
             // Clona una bola  hasta que sea la mas chica
+
             bangBall();
 
 
@@ -243,6 +244,7 @@ public class Ball : MonoBehaviour
 
     public void bangBall()
     {
+
 
         GameObject newBall = gameObject;
 
@@ -342,7 +344,7 @@ public class Ball : MonoBehaviour
 
         isFreeze = true;
         currentVelocity = GetComponent<Rigidbody2D>().velocity;
-        GetComponent<CircleCollider2D>().isTrigger = true;
+        //GetComponent<CircleCollider2D>().isTrigger = true;
 
 
 
@@ -363,7 +365,7 @@ public class Ball : MonoBehaviour
     {
 
 
-        rb.velocity = new Vector2(0, ballBounce / 1.5f);
+        //rb.velocity = new Vector2(0, ballBounce / 1.5f);
         stateSlow = true;
         rb.gravityScale = 0.5f;
        

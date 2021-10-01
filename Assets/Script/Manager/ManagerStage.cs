@@ -73,8 +73,6 @@ public class ManagerStage : MonoBehaviour
 
             }
 
-
-            Debug.Log("Name stage" + stage[i]);
         }
 
 
@@ -103,7 +101,7 @@ public class ManagerStage : MonoBehaviour
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        Debug.Log("Carg Escena");
+       
     }
 
 
