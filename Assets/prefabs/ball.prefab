@@ -104,7 +104,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 1
+  m_CollisionDetection: 0
   m_Constraints: 4
 --- !u!58 &8290887319071112004
 CircleCollider2D:
@@ -116,7 +116,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0.006059706}
@@ -134,8 +134,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 813aa7e512e2d2f48b9c27733d73b72f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  starForce: 1
-  explotionPreFabs: []
+  starForce: 3
+  explotionPreFabs:
+  - {fileID: 2181084323587011076, guid: 740289b4dd638444791dca1fcf0abaff, type: 3}
+  - {fileID: 7282617009057660278, guid: 42a98f46a4944834b8748d82325f1064, type: 3}
+  - {fileID: 2995121909577618481, guid: 5f4617cb1a8d3b34ca71c91abe0af5f5, type: 3}
   isFreeze: 0
   stateSlow: 0
   colorBall: 0
@@ -143,5 +146,5 @@ MonoBehaviour:
   sizeBall: 0
   scoreBall: 0
   ballBounce: 0
-  timeInvisible: 0
+  timeInvisible: 3
   currentVelocity: {x: 0, y: 0}
