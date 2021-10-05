@@ -50,6 +50,7 @@ MonoBehaviour:
   - 2-4
   - 2-5
   - 2-6
+  - End
   currentStage: 0
   txtGameOver: {fileID: 0}
   nD: {fileID: 0}

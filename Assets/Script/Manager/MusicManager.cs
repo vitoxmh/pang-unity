@@ -82,7 +82,10 @@ public class MusicManager : MonoBehaviour
             case "End":
                 audio.PlayOneShot(music[8], 1f);
             break;
-
+            case "MrKeirin":
+                audio.PlayOneShot(music[9], 1f);
+           break;
+                
 
 
 

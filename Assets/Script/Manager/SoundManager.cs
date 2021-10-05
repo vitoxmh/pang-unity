@@ -69,6 +69,9 @@ public class SoundManager : MonoBehaviour
             case "Coin":
                 audio.PlayOneShot(sound[8], 1f);
             break;
+            case "Plane":
+                audio.PlayOneShot(sound[9], 1f);
+            break;
         }
     }
 }

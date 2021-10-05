@@ -97,6 +97,7 @@ public class GameManager : MonoBehaviour
 
         lm.GetComponent<LifeManager>().life(-1);
 
+
         if (lm.GetComponent<LifeManager>().lifesPlayer1 == 0)
         {
 
@@ -162,7 +163,23 @@ public class GameManager : MonoBehaviour
 
         MusicManager.mn.stop();
 
-        SceneManager.LoadScene("ChangeStage");
+
+        // Aca cambia al siguiente Pais
+
+        if (infoStage.si.endCountry)
+        {
+
+            SceneManager.LoadScene("MapChange");
+
+        }
+        else
+        {
+
+            SceneManager.LoadScene("ChangeStage");
+
+        }
+
+        
 
     }
         

@@ -30,15 +30,12 @@ public class ManagerStage : MonoBehaviour
 
 
 
-    }
+    } 
 
     void Start()
     {
-        stage[0] = "1-1";
-        stage[1] = "1-2";
-        stage[2] = "1-3";
-        stage[3] = "End";
-        txtGameOver.SetActive(false);
+
+        txtGameOver.SetActive(false); 
 
     }
 
@@ -96,12 +93,6 @@ public class ManagerStage : MonoBehaviour
         txtGameOver.SetActive(false);
 
 
-    }
-
-
-    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
-    {
-       
     }
 
 

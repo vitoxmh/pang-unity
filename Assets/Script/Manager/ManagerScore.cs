@@ -54,7 +54,7 @@ public class ManagerScore : MonoBehaviour
      
         if(combo >= 15)
         {
-            combo = 0;
+            combo = 15;
         }
     }
 

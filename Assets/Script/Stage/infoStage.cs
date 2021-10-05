@@ -11,7 +11,7 @@ public class infoStage : MonoBehaviour
     public string country;
     public string musicStage;
     public float time;
-
+    public bool endCountry;
     public static infoStage si;
 
 

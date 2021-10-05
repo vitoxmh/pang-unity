@@ -420,7 +420,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 306.7, y: 186}
+  m_AnchoredPosition: {x: 302.2, y: 186}
   m_SizeDelta: {x: 235.2, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &362818436
@@ -984,17 +984,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6381409061006192430, guid: ab8e33f140d60354e936ebd0f8647396, type: 3}
   m_PrefabInstance: {fileID: 6381409062205193555}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1396641410 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8128796886810480205, guid: 7851900d86284c742a3399caadf77920, type: 3}
-  m_PrefabInstance: {fileID: 3568429313045891520}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1474613346
 GameObject:
   m_ObjectHideFlags: 0
@@ -1270,22 +1259,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 6461108754819404704, guid: 7851900d86284c742a3399caadf77920, type: 3}
-      propertyPath: lifeText
-      value: 
-      objectReference: {fileID: 1396641410}
-    - target: {fileID: 6461108754819404704, guid: 7851900d86284c742a3399caadf77920, type: 3}
-      propertyPath: lifesPlayer1
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 6478774761800991317, guid: 7851900d86284c742a3399caadf77920, type: 3}
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 519420031}
-    - target: {fileID: 6478774761800991321, guid: 7851900d86284c742a3399caadf77920, type: 3}
-      propertyPath: m_TagString
-      value: Untagged
-      objectReference: {fileID: 0}
     - target: {fileID: 7655315278556673485, guid: 7851900d86284c742a3399caadf77920, type: 3}
       propertyPath: m_RootOrder
       value: 5
