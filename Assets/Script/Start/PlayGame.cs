@@ -17,17 +17,31 @@ public class PlayGame : MonoBehaviour
         StartCoroutine(insertCoin());
         coinText.enabled = false;
         creditText.enabled = false;
+
+
         if (GameObject.Find("DontDestroy"))
         {
 
-            GameObject.Find("DontDestroy").transform.position = new Vector3(0, -1.6f , 0);
+            GameObject.Find("DontDestroy").transform.position = new Vector3(0, -9f , 0);
+            Canvas canvasFixedUI = GameObject.Find("FixedUI").GetComponent<Canvas>();
+            canvasFixedUI.enabled = false;
+            canvasFixedUI.renderMode = RenderMode.ScreenSpaceCamera;
+            canvasFixedUI.worldCamera = Camera.main;
+
+
+            Canvas canvasUI = GameObject.Find("UI").GetComponent<Canvas>();
+            canvasUI.renderMode = RenderMode.ScreenSpaceCamera;
+            canvasUI.worldCamera = Camera.main;
 
         }
 
 
-       
-  
-        
+
+
+
+
+
+
     } 
 
     // Update is called once per frame

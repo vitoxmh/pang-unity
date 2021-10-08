@@ -99,7 +99,9 @@ public class chainGancho : MonoBehaviour
 
 
             Destroy(gameObject, (float)0);
-          
+
+            ManagerScore.ms.totalBallStage++;
+            ManagerScore.ms.totalBall++;
 
 
         }

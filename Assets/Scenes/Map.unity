@@ -178,6 +178,62 @@ PrefabInstance:
       propertyPath: m_Name
       value: ConfigGame
       objectReference: {fileID: 0}
+    - target: {fileID: 5276734440269908259, guid: a090897741afe774f8d4a0fa75f8b7bd, type: 3}
+      propertyPath: stages.Array.data[1]
+      value: 2~6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5276734440269908259, guid: a090897741afe774f8d4a0fa75f8b7bd, type: 3}
+      propertyPath: stages.Array.data[2]
+      value: 3~9
+      objectReference: {fileID: 0}
+    - target: {fileID: 5276734440269908259, guid: a090897741afe774f8d4a0fa75f8b7bd, type: 3}
+      propertyPath: stages.Array.data[3]
+      value: 4~12
+      objectReference: {fileID: 0}
+    - target: {fileID: 5276734440269908259, guid: a090897741afe774f8d4a0fa75f8b7bd, type: 3}
+      propertyPath: stages.Array.data[4]
+      value: 5~15
+      objectReference: {fileID: 0}
+    - target: {fileID: 5276734440269908259, guid: a090897741afe774f8d4a0fa75f8b7bd, type: 3}
+      propertyPath: stages.Array.data[5]
+      value: 6~18
+      objectReference: {fileID: 0}
+    - target: {fileID: 5276734440269908259, guid: a090897741afe774f8d4a0fa75f8b7bd, type: 3}
+      propertyPath: stages.Array.data[6]
+      value: 7~21
+      objectReference: {fileID: 0}
+    - target: {fileID: 5276734440269908259, guid: a090897741afe774f8d4a0fa75f8b7bd, type: 3}
+      propertyPath: stages.Array.data[7]
+      value: 8~24
+      objectReference: {fileID: 0}
+    - target: {fileID: 5276734440269908259, guid: a090897741afe774f8d4a0fa75f8b7bd, type: 3}
+      propertyPath: stages.Array.data[8]
+      value: 9~27
+      objectReference: {fileID: 0}
+    - target: {fileID: 5276734440269908259, guid: a090897741afe774f8d4a0fa75f8b7bd, type: 3}
+      propertyPath: stages.Array.data[9]
+      value: 10~30
+      objectReference: {fileID: 0}
+    - target: {fileID: 5276734440269908259, guid: a090897741afe774f8d4a0fa75f8b7bd, type: 3}
+      propertyPath: country.Array.data[5]
+      value: TAJ-MAHAL
+      objectReference: {fileID: 0}
+    - target: {fileID: 5276734440269908259, guid: a090897741afe774f8d4a0fa75f8b7bd, type: 3}
+      propertyPath: country.Array.data[6]
+      value: LENINGRAD
+      objectReference: {fileID: 0}
+    - target: {fileID: 5276734440269908259, guid: a090897741afe774f8d4a0fa75f8b7bd, type: 3}
+      propertyPath: country.Array.data[7]
+      value: PARIS
+      objectReference: {fileID: 0}
+    - target: {fileID: 5276734440269908259, guid: a090897741afe774f8d4a0fa75f8b7bd, type: 3}
+      propertyPath: country.Array.data[8]
+      value: LONDON
+      objectReference: {fileID: 0}
+    - target: {fileID: 5276734440269908259, guid: a090897741afe774f8d4a0fa75f8b7bd, type: 3}
+      propertyPath: country.Array.data[9]
+      value: BARCELONA
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a090897741afe774f8d4a0fa75f8b7bd, type: 3}
 --- !u!1 &473950353
@@ -661,8 +717,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 458, y: -254}
-  m_SizeDelta: {x: 550, y: 100}
+  m_AnchoredPosition: {x: 164, y: -250}
+  m_SizeDelta: {x: 300, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1724674782
 MonoBehaviour:
@@ -691,7 +747,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 40
-    m_Alignment: 0
+    m_Alignment: 2
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -1035,7 +1091,7 @@ PrefabInstance:
       objectReference: {fileID: 1724674782}
     - target: {fileID: 292658308442463980, guid: 329c2411634d7f646ac84c4644d3d242, type: 3}
       propertyPath: countStart
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 292658308442463980, guid: 329c2411634d7f646ac84c4644d3d242, type: 3}
       propertyPath: textCountry
@@ -1056,6 +1112,10 @@ PrefabInstance:
     - target: {fileID: 292658308442463980, guid: 329c2411634d7f646ac84c4644d3d242, type: 3}
       propertyPath: stage.Array.data[2]
       value: 3-7
+      objectReference: {fileID: 0}
+    - target: {fileID: 292658308442463980, guid: 329c2411634d7f646ac84c4644d3d242, type: 3}
+      propertyPath: stage.Array.data[3]
+      value: 4-10
       objectReference: {fileID: 0}
     - target: {fileID: 292658308442463980, guid: 329c2411634d7f646ac84c4644d3d242, type: 3}
       propertyPath: stage.Array.data[9]

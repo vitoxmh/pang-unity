@@ -12,9 +12,13 @@ public class ManagerScore : MonoBehaviour
     public Text ScorePlayer02;
     public int combo;
     public int countScore;
+    public int totalBall;
+    public int totalBallStage;
     public int[] comboScore;
+    public int timeBonus;
     private string scorePresName = "Score";
     private string lifePresName = "Lifes";
+
 
 
 

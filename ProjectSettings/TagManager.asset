@@ -32,6 +32,7 @@ TagManager:
   - TextLife
   - NumberLife
   - Ball2
+  - PointMap
   layers:
   - Default
   - TransparentFX

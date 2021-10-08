@@ -76,6 +76,8 @@ public class chain : MonoBehaviour
             int totalScore = scoreCombo + sizeBall;
 
             ManagerScore.ms.UpdateScore(totalScore);
+            ManagerScore.ms.totalBallStage++;
+            ManagerScore.ms.totalBall++;
 
 
 

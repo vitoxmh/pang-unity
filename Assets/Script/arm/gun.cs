@@ -59,6 +59,8 @@ public class gun : MonoBehaviour
             int totalScore = scoreCombo + sizeBall;
 
             ManagerScore.ms.UpdateScore(totalScore);
+            ManagerScore.ms.totalBallStage++;
+            ManagerScore.ms.totalBall++;
 
             Destroy(gameObject, (float)0);
 

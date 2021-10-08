@@ -52,6 +52,16 @@ public class GameManager : MonoBehaviour
 
             GameObject.Find("DontDestroy").transform.position = new Vector3(0, 0, -0.89f);
 
+            Canvas canvasFixedUI = GameObject.Find("FixedUI").GetComponent<Canvas>();
+            canvasFixedUI.renderMode = RenderMode.ScreenSpaceCamera;
+            canvasFixedUI.worldCamera = Camera.main;
+            canvasFixedUI.enabled = true;
+
+            Canvas canvasUI = GameObject.Find("UI").GetComponent<Canvas>();
+            canvasUI.renderMode = RenderMode.ScreenSpaceCamera;
+            canvasUI.worldCamera = Camera.main;
+
+
         }
         
 
@@ -80,9 +90,11 @@ public class GameManager : MonoBehaviour
 
         }
 
-
+        // Actualiza los datos
         lm.GetComponent<LifeManager>().inicio();
         lm.GetComponent<LifeManager>().updateUiLife();
+        ManagerScore.ms.totalBallStage = 0;
+        ManagerScore.ms.combo = 0;
 
     }
 
@@ -157,12 +169,13 @@ public class GameManager : MonoBehaviour
     public IEnumerator NextStage()
     {
 
-       
+        
  
         yield return new WaitForSeconds(1f);
 
         MusicManager.mn.stop();
 
+        ManagerScore.ms.timeBonus = (int)TimeGame;
 
         // Aca cambia al siguiente Pais
 

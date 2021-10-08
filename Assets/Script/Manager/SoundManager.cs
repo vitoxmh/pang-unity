@@ -21,15 +21,17 @@ public class SoundManager : MonoBehaviour
             Destroy(gameObject);
         }
 
-
+         
     }
 
-    void Start()
+    public void stop()
     {
-      
-    }
+        AudioSource audio;
 
-  
+        audio = GetComponent<AudioSource>();
+        audio.Stop();
+
+    }
 
 
     public void play(string mySound)
@@ -71,6 +73,12 @@ public class SoundManager : MonoBehaviour
             break;
             case "Plane":
                 audio.PlayOneShot(sound[9], 1f);
+            break;
+            case "AngkorWat":
+                audio.PlayOneShot(sound[10], 1f);
+            break;
+            case "CountDown":
+                audio.PlayOneShot(sound[10], 1f);
             break;
         }
     }

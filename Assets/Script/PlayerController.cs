@@ -111,7 +111,11 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-
+        if (GameManager.gm.Lose)
+        {
+            rg.gravityScale = 3;
+            
+        }
 
 
 
@@ -286,7 +290,7 @@ public class PlayerController : MonoBehaviour
                 posLadder = hit.collider.gameObject.transform.position;
                 hit.collider.gameObject.GetComponentInChildren<BoxCollider2D >().enabled = false;
 
-                transform.position = new Vector2(posLadder.x, transform.position.y - 0.05f);
+                transform.position = new Vector3(posLadder.x, transform.position.y - 0.05f, -15f);
                 ladderTop = true;
 
 
@@ -377,7 +381,22 @@ public class PlayerController : MonoBehaviour
             onLadder = true;
             //posLadder = new Vector2(other.gameObject.transform.position.x + 0.05f, transform.position.y);
             posLadder = other.gameObject.transform.position;
-            rg.gravityScale = 0;
+
+            if(GameManager.gm.Lose)
+            {
+                rg.gravityScale = 3;
+       
+            }
+            else
+            {
+                rg.gravityScale = 0;
+
+           
+
+            }
+            
+
+
             other.gameObject.transform.GetChild(0).GetComponent<BoxCollider2D>().enabled = false;
         }
 
@@ -433,7 +452,7 @@ public class PlayerController : MonoBehaviour
         {
             onLadder = false;
             rg.gravityScale = 1;
-            
+
             other.gameObject.transform.GetChild(0).GetComponent<BoxCollider2D>().enabled = true;
          
         }
@@ -487,19 +506,27 @@ public class PlayerController : MonoBehaviour
         if (col.gameObject.tag == "ball" && !BallManager.bm.freeze)
         {
 
+            col.gameObject.GetComponent<CircleCollider2D>().isTrigger = true;
+
             dead();
-            
+
+           
+
+
+
         }
     }
 
 
-
+     
     public void dead()
     {
         GameManager.gm.frezzerAll();
         GameManager.gm.Lose = true;
-
+       
         Animator.speed = 0;
+        rg.isKinematic = true;
+
 
         BallManager.bm.unTriggerColliderBall();
 
@@ -514,12 +541,17 @@ public class PlayerController : MonoBehaviour
 
 
         yield return new WaitForSeconds(1f);
+        rg.gravityScale = 3;
         SoundManager.sm.play("Lose");
+
         gameObject.GetComponent<BoxCollider2D>().isTrigger = true;
         rg.isKinematic = false;
 
         Animator.SetInteger("PlayerAnimation", 10);
+        
+
         rg.gravityScale = 3f;
+
         if (transform.position.x <= 0)
         {
             //rg.velocity = new Vector2(-2f, 7f);

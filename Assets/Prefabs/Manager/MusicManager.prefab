@@ -151,4 +151,5 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 0d340c0e5dc72da4589cc69921cc524d, type: 3}
   - {fileID: 8300000, guid: 6df1b6cbfd3c7ec46a04d0916bc067f2, type: 3}
   - {fileID: 8300000, guid: 0c89e6f0387dccb4489d488b5e2cfcb3, type: 3}
+  - {fileID: 8300000, guid: 9e0c5e1ae7e085744a8a5f52900b5282, type: 3}
   setMusic: 0

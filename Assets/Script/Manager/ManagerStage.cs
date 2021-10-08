@@ -29,7 +29,7 @@ public class ManagerStage : MonoBehaviour
 
 
 
-
+         
     } 
 
     void Start()
@@ -81,6 +81,7 @@ public class ManagerStage : MonoBehaviour
 
 
         txtGameOver.SetActive(true);
+        Debug.Log("aCTIVA TXEXTO GAME OVR");
 
 
     }

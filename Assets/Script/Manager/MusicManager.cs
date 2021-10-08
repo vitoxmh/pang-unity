@@ -85,6 +85,9 @@ public class MusicManager : MonoBehaviour
             case "MrKeirin":
                 audio.PlayOneShot(music[9], 1f);
            break;
+           case "AngkorWat":
+                audio.PlayOneShot(music[10], 1f);
+           break;
                 
 
 

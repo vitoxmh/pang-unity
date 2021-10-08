@@ -272,8 +272,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -319, y: -212}
-  m_SizeDelta: {x: 192.1, y: 30}
+  m_AnchoredPosition: {x: -131, y: -212}
+  m_SizeDelta: {x: 500, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &21675389
 MonoBehaviour:
@@ -302,13 +302,13 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 40
-    m_Alignment: 1
+    m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Por @vitoxmh
+  m_Text: Por @vitoxmh @juego_terminado
 --- !u!222 &21675390
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1018,9 +1018,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1203323818160131314, guid: 3123ce284fd779d4aa429f91b94e8473, type: 3}
+      propertyPath: music.Array.size
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1203323818160131314, guid: 3123ce284fd779d4aa429f91b94e8473, type: 3}
+      propertyPath: music.Array.data[11]
+      value: 
+      objectReference: {fileID: 8300000, guid: 902dc485c8227fc4fafd199d82fcfc3f, type: 3}
     - target: {fileID: 1203323818160131315, guid: 3123ce284fd779d4aa429f91b94e8473, type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 1203323818160131315, guid: 3123ce284fd779d4aa429f91b94e8473, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1332,7 +1340,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5276734440269908256, guid: a090897741afe774f8d4a0fa75f8b7bd, type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 5276734440269908256, guid: a090897741afe774f8d4a0fa75f8b7bd, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1377,6 +1385,10 @@ PrefabInstance:
     - target: {fileID: 5276734440269908258, guid: a090897741afe774f8d4a0fa75f8b7bd, type: 3}
       propertyPath: m_Name
       value: ConfigGame
+      objectReference: {fileID: 0}
+    - target: {fileID: 5276734440269908259, guid: a090897741afe774f8d4a0fa75f8b7bd, type: 3}
+      propertyPath: lifePlayer1
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a090897741afe774f8d4a0fa75f8b7bd, type: 3}

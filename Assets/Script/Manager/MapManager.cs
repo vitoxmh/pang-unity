@@ -43,6 +43,11 @@ public class MapManager : MonoBehaviour
 
             GameObject.Find("DontDestroy").transform.position = new Vector3(0, -1.6f, 0);
 
+            Canvas canvasFixedUI = GameObject.Find("FixedUI").GetComponent<Canvas>();
+            canvasFixedUI.renderMode = RenderMode.ScreenSpaceCamera;
+            canvasFixedUI.worldCamera = Camera.main;
+            canvasFixedUI.enabled = false;
+
         }
 
         StartCoroutine(timeInitGame());
@@ -68,6 +73,7 @@ public class MapManager : MonoBehaviour
 
         }
 
+        ConfigGame.cg.positionMap = indexPositionMap;
 
         setStageMap = stage[indexPositionMap];
 
@@ -75,10 +81,11 @@ public class MapManager : MonoBehaviour
         pointMapItem.transform.position = setPoitMap;
 
         textCountry.text = ConfigGame.cg.country[indexPositionMap];
+
         textStage.text = "STAGE     " +ConfigGame.cg.stages[indexPositionMap];
 
 
-
+        Debug.Log(ConfigGame.cg.stages[indexPositionMap]+"===="+ setStageMap);
 
         if (Input.GetKeyDown(KeyCode.Return))
         {
@@ -93,7 +100,7 @@ public class MapManager : MonoBehaviour
 
     public IEnumerator timeInitGame()
     {
-
+        int countDown = 10;
 
         while (countStart > 0)
         {
@@ -101,7 +108,19 @@ public class MapManager : MonoBehaviour
             countStart -= Time.deltaTime;
             countText.text =  countStart.ToString("0");
 
-            if(countStart <= 3)
+            int nv = (int)countStart;
+
+
+            if (nv < countDown)
+             {
+
+                 countDown = nv;
+                 SoundManager.sm.play("CountDown");
+
+             }
+
+
+            if (countStart <= 3)
             {
 
 

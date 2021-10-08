@@ -11,6 +11,7 @@ public class ConfigGame : MonoBehaviour
     public static ConfigGame cg;
     public int lifePlayer1;
     public int plifePlayer2;
+    public int positionMap;
     public string[] stages;
     public string[] country;
 
