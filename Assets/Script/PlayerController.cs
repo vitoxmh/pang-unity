@@ -33,6 +33,10 @@ public class PlayerController : MonoBehaviour
     private float detalDelayBang;
     public bool stateFreeze;
     private int nRebote;
+    public bool wallLeft;
+    public bool wallRigth;
+    public bool fly;
+    public bool newLadder; 
 
 
     /************************************
@@ -68,8 +72,15 @@ public class PlayerController : MonoBehaviour
 
 
 
-        horizontal = Input.GetAxisRaw("Horizontal");
+
         vertical = Input.GetAxisRaw("Vertical");
+        horizontal = Input.GetAxisRaw("Horizontal");
+
+
+
+
+
+
         if (!stateFreeze)
         {
 
@@ -165,7 +176,7 @@ public class PlayerController : MonoBehaviour
         {
             if(vertical > 0)
             {
-                transform.position = new Vector2(posLadder.x, transform.position.y + 0.05f);
+                transform.position = new Vector3(posLadder.x, transform.position.y + 0.05f, transform.position.z);
                  
                
                 Animator.SetInteger("PlayerAnimation", 3);
@@ -182,15 +193,30 @@ public class PlayerController : MonoBehaviour
                 }
                 else if(horizontal < 0)
                 {
-
-                    transform.Translate(-2 * Time.deltaTime * Speed, 0, 0);
+                    if(wallLeft)
+                    {
+                        transform.Translate(0, 0, 0);
+                    }
+                    else
+                    {
+                        transform.Translate(-2 * Time.deltaTime * Speed, 0, 0);
+                    }
+                    
                     Animator.SetInteger("PlayerAnimation", 1);
 
                 }
                 else if (horizontal > 0)
                 {
+                    if (wallRigth)
+                    {
 
-                    transform.Translate(2 * Time.deltaTime * Speed, 0, 0);
+                        transform.Translate(0, 0, 0);
+                    }
+                    else
+                    {
+                        transform.Translate(2 * Time.deltaTime * Speed, 0, 0);
+                    }
+                   
                     Animator.SetInteger("PlayerAnimation", 1);
 
                 }
@@ -235,15 +261,48 @@ public class PlayerController : MonoBehaviour
                 }
                 else if (horizontal < 0)
                 {
-
-                    transform.Translate(-2 * Time.deltaTime * Speed, 0, 0);
+                    if(wallLeft)
+                    {
+                        transform.Translate(0, 0, 0);
+                    }
+                    else
+                    {
+                        if (!fly && !onLadder) { 
+                            transform.Translate(-2 * Time.deltaTime * Speed, 0, 0);
+                            rg.gravityScale = 1;
+                        }
+                        else
+                        {
+                            transform.Translate(-2 * Time.deltaTime * 0.5f, 0, 0);
+                            rg.gravityScale = 3;
+                        }
+                    }
+                   
                     Animator.SetInteger("PlayerAnimation", 1);
 
                 }
                 else if (horizontal > 0)
                 {
 
-                    transform.Translate(2 * Time.deltaTime * Speed, 0, 0);
+
+                    if (wallRigth)
+                    {
+                        transform.Translate(0, 0, 0);
+                    }
+                    else
+                    {
+                        if (!fly && !onLadder) { 
+                            
+                            transform.Translate(2 * Time.deltaTime * Speed, 0, 0);
+                            rg.gravityScale = 1;
+
+                        } else{
+                            transform.Translate(2 * Time.deltaTime * 0.5f, 0, 0);
+                            rg.gravityScale = 3;
+                        }
+                    }
+
+                    
                     Animator.SetInteger("PlayerAnimation", 1);
 
                 }
@@ -265,6 +324,8 @@ public class PlayerController : MonoBehaviour
         Debug.DrawRay(new Vector2(transform.position.x, transform.position.y - 0.3f), Vector3.down * 0.4f, Color.red);
 
         RaycastHit2D hit = Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y - 0.4f), Vector3.down, 0.3f);
+
+
   
         if (hit.collider != null)
         {
@@ -290,7 +351,7 @@ public class PlayerController : MonoBehaviour
                 posLadder = hit.collider.gameObject.transform.position;
                 hit.collider.gameObject.GetComponentInChildren<BoxCollider2D >().enabled = false;
 
-                transform.position = new Vector3(posLadder.x, transform.position.y - 0.05f, -15f);
+                transform.position = new Vector3(posLadder.x, transform.position.y - 0.05f, transform.position.z);
                 ladderTop = true;
 
 
@@ -368,7 +429,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D col)
     {
-       
+
 
     }
 
@@ -490,6 +551,15 @@ public class PlayerController : MonoBehaviour
 
         }
 
+        if (other.tag == "Wall")
+        {
+
+
+            GameManager.gm.respawn();
+
+        }
+
+
 
     }
 
@@ -500,6 +570,9 @@ public class PlayerController : MonoBehaviour
         {
             
             SoundManager.sm.play("GetItem");
+
+
+
         }
 
 
@@ -510,23 +583,102 @@ public class PlayerController : MonoBehaviour
 
             dead();
 
+        }
+
+
+
+        if (col.gameObject.tag == "Wall" || col.gameObject.tag == "blockVertical")
+        {
+
+
+            if (col.contacts[0].normal.x > 0)
+            {
+                wallLeft = true;
+
+            }
+            else if (col.contacts[0].normal.x < 0)
+            {
+                wallRigth = true;
+
+            }
+
+
+        }
+
+
+
+
+
+    }
+
+
+
+    void OnCollisionStay2D(Collision2D col)
+    {
+        if (col.gameObject.tag == "Wall" || col.gameObject.tag == "blockVertical")
+        {
+          
+
+            if (col.contacts[0].normal.x > 0)
+            {
+                wallLeft = true;
+
+            }
+            else if (col.contacts[0].normal.x < 0)
+            {
+                wallRigth = true;
+
+            }
+
+        }
+
+
+
+        if (col.gameObject.tag == "ladderTop" || col.gameObject.tag == "block" || col.gameObject.tag == "piso" || col.gameObject.tag == "blockVertical")
+        {
+            Debug.Log("En escalera");
+
+            fly = false;
+        }
+
+
+
+    }
+
+
+
+    void OnCollisionExit2D(Collision2D col)
+    {
+        if (col.gameObject.tag == "Wall" || col.gameObject.tag == "blockVertical")
+        {
+
+            wallLeft = false;
+            wallRigth = false;
+
+   
+
+
+        }
+
+
+
+        if (col.gameObject.tag == "ladderTop" || col.gameObject.tag == "block" || col.gameObject.tag == "piso" || col.gameObject.tag == "blockVertical")
+        {
            
 
-
-
+            fly = true;
         }
     }
 
 
-     
     public void dead()
     {
         GameManager.gm.frezzerAll();
         GameManager.gm.Lose = true;
-       
+        rg.velocity = Vector2.zero;
         Animator.speed = 0;
         rg.isKinematic = true;
-
+       
 
         BallManager.bm.unTriggerColliderBall();
 
@@ -583,33 +735,6 @@ public class PlayerController : MonoBehaviour
 
 
 
-
-
-    public void BangAllBall()
-    {
-
-        if (Time.time > detalDelayBang)
-        {
-
-
-            detalDelayBang = Time.time + 0.35f;
-
-            GameObject[] arrayBall = GameObject.FindGameObjectsWithTag("ball");
-
-            for (int i = 0; i <= arrayBall.Length; i++)
-            {
-
-                if (arrayBall[i].GetComponent<Ball>().sizeBall < 3)
-                {
-                    arrayBall[i].GetComponent<Ball>().bangBall();
-                }
-
-
-            }
-
-        }
-
-    }
 
 
 

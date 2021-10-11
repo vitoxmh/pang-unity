@@ -10,10 +10,12 @@ public class ManagerScore : MonoBehaviour
 
     public Text ScorePlayer01;
     public Text ScorePlayer02;
+    public Text textHiScore;
     public int combo;
     public int countScore;
     public int totalBall;
     public int totalBallStage;
+    public int hiScore;
     public int[] comboScore;
     public int timeBonus;
     private string scorePresName = "Score";
@@ -49,7 +51,7 @@ public class ManagerScore : MonoBehaviour
 
     void Start()
     {
-        
+        textHiScore.text = "HI" + hiScore.ToString();
     }
 
     // Update is called once per frame
@@ -71,13 +73,37 @@ public class ManagerScore : MonoBehaviour
         ScorePlayer01.text = countScore.ToString();
 
 
+        updateHiScore(countScore);
+
+
+
+
     }
 
 
     private void saveData()
     {
-        PlayerPrefs.SetInt(scorePresName, countScore);
-        PlayerPrefs.SetInt(lifePresName, 3);
+        //PlayerPrefs.SetInt(scorePresName, countScore);
+        //PlayerPrefs.SetInt(lifePresName, 3);
+
+    }
+
+
+
+
+    private void updateHiScore(int score)
+    {
+
+
+        if (countScore > hiScore)
+        {
+
+            hiScore = countScore;
+            textHiScore.text = "HI"+hiScore.ToString();
+            PlayerPrefs.SetInt("hi", hiScore);
+
+        }
+
 
     }
 

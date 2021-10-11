@@ -175,14 +175,14 @@ public class Ball : MonoBehaviour
 
     }
 
-
+     
 
 
     void OnCollisionEnter2D(Collision2D col)
     {
 
 
-        if (col.gameObject.tag == "piso" || col.gameObject.tag == "block" || col.gameObject.tag == "Wall")
+        if (col.gameObject.tag == "piso" || col.gameObject.tag == "block" || col.gameObject.tag == "Wall" || col.gameObject.tag == "ladderTop" || col.gameObject.tag == "blockVertical")
         {
            
 

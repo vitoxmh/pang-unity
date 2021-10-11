@@ -1806,17 +1806,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 667af46ca910c95428fefbaaf4058a6f, type: 3}
---- !u!114 &1396641410 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8128796886810480205, guid: 7851900d86284c742a3399caadf77920, type: 3}
-  m_PrefabInstance: {fileID: 3568429313045891520}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1472499762 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5661881836553806458, guid: 667af46ca910c95428fefbaaf4058a6f, type: 3}
@@ -1872,6 +1861,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 580578078}
     m_Modifications:
+    - target: {fileID: 5661881835718330937, guid: 667af46ca910c95428fefbaaf4058a6f, type: 3}
+      propertyPath: getIten
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5661881835718330937, guid: 667af46ca910c95428fefbaaf4058a6f, type: 3}
+      propertyPath: typeItem
+      value: Life
+      objectReference: {fileID: 0}
     - target: {fileID: 5661881835718330938, guid: 667af46ca910c95428fefbaaf4058a6f, type: 3}
       propertyPath: m_Name
       value: BlockX2Red (4)
@@ -2174,34 +2171,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 6087433255802442798, guid: 7851900d86284c742a3399caadf77920, type: 3}
-      propertyPath: stage.Array.size
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 6087433255802442798, guid: 7851900d86284c742a3399caadf77920, type: 3}
-      propertyPath: stage.Array.data[9]
-      value: 4-10
-      objectReference: {fileID: 0}
-    - target: {fileID: 6087433255802442798, guid: 7851900d86284c742a3399caadf77920, type: 3}
-      propertyPath: stage.Array.data[10]
-      value: End
-      objectReference: {fileID: 0}
-    - target: {fileID: 6461108754819404704, guid: 7851900d86284c742a3399caadf77920, type: 3}
-      propertyPath: lifeText
-      value: 
-      objectReference: {fileID: 1396641410}
-    - target: {fileID: 6461108754819404704, guid: 7851900d86284c742a3399caadf77920, type: 3}
-      propertyPath: lifesPlayer1
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 6478774761800991317, guid: 7851900d86284c742a3399caadf77920, type: 3}
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 519420031}
-    - target: {fileID: 6478774761800991321, guid: 7851900d86284c742a3399caadf77920, type: 3}
-      propertyPath: m_TagString
-      value: Untagged
-      objectReference: {fileID: 0}
     - target: {fileID: 7655315278556673485, guid: 7851900d86284c742a3399caadf77920, type: 3}
       propertyPath: m_RootOrder
       value: 8

@@ -56,6 +56,9 @@ public class ItemManager : MonoBehaviour
            case "Dynamite":
                 Instantiate(item[6], new Vector3(positionObject.position.x, positionObject.position.y, 1f), Quaternion.identity);
            break;
+           case "Life":
+                Instantiate(item[7], new Vector3(positionObject.position.x, positionObject.position.y, 1f), Quaternion.identity);
+                break;
            default:
                 Instantiate(item[0], new Vector3(positionObject.position.x, positionObject.position.y, 1f), Quaternion.identity);
            break; 

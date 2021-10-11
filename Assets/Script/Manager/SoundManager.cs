@@ -80,6 +80,9 @@ public class SoundManager : MonoBehaviour
             case "CountDown":
                 audio.PlayOneShot(sound[10], 1f);
             break;
+            case "Life":
+                audio.PlayOneShot(sound[11], 1f);
+            break;
         }
     }
 }

@@ -110,6 +110,7 @@ public class item : MonoBehaviour
             {
 
                 lm.life(1);
+                SoundManager.sm.play("Life");
 
             }
             else

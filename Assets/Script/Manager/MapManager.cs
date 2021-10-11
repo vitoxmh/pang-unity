@@ -19,6 +19,7 @@ public class MapManager : MonoBehaviour
     public Text countText;
     public Text textCountry;
     public Text textStage;
+    public GameObject pointSelect;
 
 
     void Start()
@@ -85,12 +86,10 @@ public class MapManager : MonoBehaviour
         textStage.text = "STAGE     " +ConfigGame.cg.stages[indexPositionMap];
 
 
-        Debug.Log(ConfigGame.cg.stages[indexPositionMap]+"===="+ setStageMap);
-
         if (Input.GetKeyDown(KeyCode.Return))
         {
 
-            SceneManager.LoadScene(setStageMap);
+            startGame();
 
         }
 
@@ -143,8 +142,20 @@ public class MapManager : MonoBehaviour
     {
 
 
-        SceneManager.LoadScene(setStageMap);
+        
+
+        pointSelect.GetComponent<MapSelection>().select(setStageMap);
 
 
     }
+
+
+
+
+  
+
+
+
+
+
 }

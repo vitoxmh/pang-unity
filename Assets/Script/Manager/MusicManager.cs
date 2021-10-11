@@ -52,7 +52,7 @@ public class MusicManager : MonoBehaviour
     {
        
 
-        
+        /*
         switch (Mymusic)
         {
             case "MrFuji":
@@ -88,11 +88,11 @@ public class MusicManager : MonoBehaviour
            case "AngkorWat":
                 audio.PlayOneShot(music[10], 1f);
            break;
-                
-
-
-
-        }
+           case "Australia":
+                audio.PlayOneShot(music[11], 1f);
+           break;
+        
+        }*/
 
     }
 }

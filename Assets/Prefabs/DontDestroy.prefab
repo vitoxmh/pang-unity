@@ -148,6 +148,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -632
       objectReference: {fileID: 0}
+    - target: {fileID: 7524565945302066723, guid: 714cdfe19680a2c4e854eda3155bffaa, type: 3}
+      propertyPath: m_Text
+      value: HI:10000
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 714cdfe19680a2c4e854eda3155bffaa, type: 3}
 --- !u!224 &6478774761800991320 stripped
@@ -171,6 +175,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7524565945881044694, guid: 714cdfe19680a2c4e854eda3155bffaa, type: 3}
   m_PrefabInstance: {fileID: 3568429313027325250}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &6478774760371034977 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7524565945302066723, guid: 714cdfe19680a2c4e854eda3155bffaa, type: 3}
+  m_PrefabInstance: {fileID: 3568429313027325250}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6478774761044640924 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7524565946241956318, guid: 714cdfe19680a2c4e854eda3155bffaa, type: 3}
@@ -236,17 +251,29 @@ PrefabInstance:
     m_TransformParent: {fileID: 7655315278556673485}
     m_Modifications:
     - target: {fileID: 580775309765023642, guid: 7adde2e8be0384f49899620390b56ae7, type: 3}
+      propertyPath: hiScore
+      value: 100000
+      objectReference: {fileID: 0}
+    - target: {fileID: 580775309765023642, guid: 7adde2e8be0384f49899620390b56ae7, type: 3}
+      propertyPath: textHiScore
+      value: 
+      objectReference: {fileID: 6478774760371034977}
+    - target: {fileID: 580775309765023642, guid: 7adde2e8be0384f49899620390b56ae7, type: 3}
       propertyPath: ScorePlayer01
       value: 
       objectReference: {fileID: 6478774760238464919}
     - target: {fileID: 5006273321556144244, guid: 7adde2e8be0384f49899620390b56ae7, type: 3}
       propertyPath: sound.Array.size
-      value: 11
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 5006273321556144244, guid: 7adde2e8be0384f49899620390b56ae7, type: 3}
       propertyPath: sound.Array.data[10]
       value: 
       objectReference: {fileID: 8300000, guid: 902dc485c8227fc4fafd199d82fcfc3f, type: 3}
+    - target: {fileID: 5006273321556144244, guid: 7adde2e8be0384f49899620390b56ae7, type: 3}
+      propertyPath: sound.Array.data[11]
+      value: 
+      objectReference: {fileID: 8300000, guid: c5b8ff8965e5b8248969d7d020aaeeb6, type: 3}
     - target: {fileID: 6309595039004531836, guid: 7adde2e8be0384f49899620390b56ae7, type: 3}
       propertyPath: m_Name
       value: ManagerFixed
@@ -295,13 +322,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6309595040597675505, guid: 7adde2e8be0384f49899620390b56ae7, type: 3}
+      propertyPath: music.Array.size
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 6309595040597675505, guid: 7adde2e8be0384f49899620390b56ae7, type: 3}
+      propertyPath: music.Array.data[11]
+      value: 
+      objectReference: {fileID: 8300000, guid: e7644d155e1c4e6479784d83b7dd73d2, type: 3}
     - target: {fileID: 7349720415035879214, guid: 7adde2e8be0384f49899620390b56ae7, type: 3}
       propertyPath: txtGameOver
       value: 
       objectReference: {fileID: 6478774762064053967}
     - target: {fileID: 7349720415035879214, guid: 7adde2e8be0384f49899620390b56ae7, type: 3}
       propertyPath: stage.Array.size
-      value: 13
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 7349720415035879214, guid: 7adde2e8be0384f49899620390b56ae7, type: 3}
       propertyPath: stage.Array.data[9]
@@ -309,7 +344,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7349720415035879214, guid: 7adde2e8be0384f49899620390b56ae7, type: 3}
       propertyPath: stage.Array.data[10]
-      value: 4-11
+      value: End
       objectReference: {fileID: 0}
     - target: {fileID: 7349720415035879214, guid: 7adde2e8be0384f49899620390b56ae7, type: 3}
       propertyPath: stage.Array.data[11]

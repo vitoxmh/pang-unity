@@ -28,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4077583726159980922}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.821779, y: 1.7164916, z: -10.29}
+  m_LocalPosition: {x: -5.821779, y: 1.7164916, z: -7}
   m_LocalScale: {x: 5, y: 6, z: 4}
   m_Children: []
   m_Father: {fileID: 0}
@@ -104,7 +104,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!58 &8290887319071112004
 CircleCollider2D:
@@ -141,7 +141,7 @@ MonoBehaviour:
   - {fileID: 2995121909577618481, guid: 5f4617cb1a8d3b34ca71c91abe0af5f5, type: 3}
   isFreeze: 0
   stateSlow: 0
-  colorBall: 0
+  colorBall: 2
   directionBallLeft: 0
   sizeBall: 0
   scoreBall: 0

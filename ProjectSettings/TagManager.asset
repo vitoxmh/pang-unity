@@ -33,6 +33,8 @@ TagManager:
   - NumberLife
   - Ball2
   - PointMap
+  - blockVertical
+  - newLadder
   layers:
   - Default
   - TransparentFX

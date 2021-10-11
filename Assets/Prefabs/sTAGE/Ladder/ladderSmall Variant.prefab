@@ -17,7 +17,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8467600995669934348, guid: 0b48a587dc1582f4ab54275d44f63711, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.275
+      value: -0.009
       objectReference: {fileID: 0}
     - target: {fileID: 8467600997006299912, guid: 0b48a587dc1582f4ab54275d44f63711, type: 3}
       propertyPath: m_RootOrder
@@ -25,11 +25,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8467600997006299912, guid: 0b48a587dc1582f4ab54275d44f63711, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0.758
       objectReference: {fileID: 0}
     - target: {fileID: 8467600997006299912, guid: 0b48a587dc1582f4ab54275d44f63711, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.847
+      value: -1.86
       objectReference: {fileID: 0}
     - target: {fileID: 8467600997006299912, guid: 0b48a587dc1582f4ab54275d44f63711, type: 3}
       propertyPath: m_LocalPosition.z
@@ -65,15 +65,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8467600997006299913, guid: 0b48a587dc1582f4ab54275d44f63711, type: 3}
       propertyPath: m_Size.y
-      value: 0.78
+      value: 0.61
       objectReference: {fileID: 0}
     - target: {fileID: 8467600997006299914, guid: 0b48a587dc1582f4ab54275d44f63711, type: 3}
       propertyPath: m_Size.y
-      value: 0.65065396
+      value: 0.45334005
       objectReference: {fileID: 0}
     - target: {fileID: 8467600997006299914, guid: 0b48a587dc1582f4ab54275d44f63711, type: 3}
       propertyPath: m_Offset.y
-      value: -0.33722967
+      value: -0.23857275
       objectReference: {fileID: 0}
     - target: {fileID: 8467600997006299914, guid: 0b48a587dc1582f4ab54275d44f63711, type: 3}
       propertyPath: m_AutoTiling
@@ -81,7 +81,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8467600997006299914, guid: 0b48a587dc1582f4ab54275d44f63711, type: 3}
       propertyPath: m_SpriteTilingProperty.newSize.y
-      value: 0.78
+      value: 0.61
       objectReference: {fileID: 0}
     - target: {fileID: 8467600997006299915, guid: 0b48a587dc1582f4ab54275d44f63711, type: 3}
       propertyPath: m_Name
