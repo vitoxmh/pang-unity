@@ -346,7 +346,7 @@ public class PlayerController : MonoBehaviour
 
             if(hit.collider.tag == "ladderTop" && vertical < 0.0f)
             {
-
+       
                
                 posLadder = hit.collider.gameObject.transform.position;
                 hit.collider.gameObject.GetComponentInChildren<BoxCollider2D >().enabled = false;
@@ -427,8 +427,10 @@ public class PlayerController : MonoBehaviour
     }
 
 
-    private void OnTriggerStay2D(Collider2D col)
+    private void OnTriggerStay2D(Collider2D other)
     {
+
+
 
 
     }
@@ -453,7 +455,6 @@ public class PlayerController : MonoBehaviour
                 rg.gravityScale = 0;
 
            
-
             }
             
 

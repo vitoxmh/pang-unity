@@ -10,7 +10,7 @@ public class MusicManager : MonoBehaviour
     public AudioClip[] music;
     public int setMusic;
     private AudioSource audio;
-
+    public bool mute;
 
     private void Awake()
     {
@@ -50,49 +50,51 @@ public class MusicManager : MonoBehaviour
 
     public void play(string Mymusic)
     {
-       
 
-        /*
-        switch (Mymusic)
+        if (!mute)
         {
-            case "MrFuji":
-                audio.PlayOneShot(music[0], 1f);
-             break;
-            case "Barcelona":
-                audio.PlayOneShot(music[1], 1f);
-            break;
-            case "Esmerald":
-                audio.PlayOneShot(music[2], 1f);
-            break; 
-            case "StageComplete":
-                audio.PlayOneShot(music[3], 1f);
-            break;
-            case "Continue":
-                audio.PlayOneShot(music[4], 1f);
-            break;
-            case "GameOver":
-                audio.PlayOneShot(music[5], 1f);
-            break;
-            case "GettingLate":
-                audio.PlayOneShot(music[6], 1f);
-            break;
-            case "OutOfTime":
-                audio.PlayOneShot(music[7], 1f);
-            break;
-            case "End":
-                audio.PlayOneShot(music[8], 1f);
-            break;
-            case "MrKeirin":
-                audio.PlayOneShot(music[9], 1f);
-           break;
-           case "AngkorWat":
-                audio.PlayOneShot(music[10], 1f);
-           break;
-           case "Australia":
-                audio.PlayOneShot(music[11], 1f);
-           break;
-        
-        }*/
+
+            switch (Mymusic)
+            {
+                case "MrFuji":
+                    audio.PlayOneShot(music[0], 1f);
+                    break;
+                case "Barcelona":
+                    audio.PlayOneShot(music[1], 1f);
+                    break;
+                case "Esmerald":
+                    audio.PlayOneShot(music[2], 1f);
+                    break;
+                case "StageComplete":
+                    audio.PlayOneShot(music[3], 1f);
+                    break;
+                case "Continue":
+                    audio.PlayOneShot(music[4], 1f);
+                    break;
+                case "GameOver":
+                    audio.PlayOneShot(music[5], 1f);
+                    break;
+                case "GettingLate":
+                    audio.PlayOneShot(music[6], 1f);
+                    break;
+                case "OutOfTime":
+                    audio.PlayOneShot(music[7], 1f);
+                    break;
+                case "End":
+                    audio.PlayOneShot(music[8], 1f);
+                    break;
+                case "MrKeirin":
+                    audio.PlayOneShot(music[9], 1f);
+                    break;
+                case "AngkorWat":
+                    audio.PlayOneShot(music[10], 1f);
+                    break;
+                case "Australia":
+                    audio.PlayOneShot(music[11], 1f);
+                    break;
+
+            }
+        }
 
     }
 }

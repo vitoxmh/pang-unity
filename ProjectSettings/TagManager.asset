@@ -34,7 +34,13 @@ TagManager:
   - Ball2
   - PointMap
   - blockVertical
-  - newLadder
+  - ladde2
+  - ladderTop2
+  - ladderExit2
+  - ladderFooter2
+  - ladderTopExit2
+  - breakLadder
+  - ladder2
   layers:
   - Default
   - TransparentFX
