@@ -22,7 +22,6 @@ public class PlayerController : MonoBehaviour
     public float exitHop = 3f;
     public bool Grounded;
     public Vector2 posLadder;
-    private Sprite[] textures;
     private SpriteRenderer sr;
     public int downLadder;
     public int maxShot;
@@ -52,7 +51,6 @@ public class PlayerController : MonoBehaviour
     {
         rg = GetComponent<Rigidbody2D>();
         Animator = GetComponent<Animator>();
-        textures = Resources.LoadAll<Sprite>("Sprites/player/upladder");
         sr = GetComponent<SpriteRenderer>();
         downLadder = 0;
         ladderFooter = false;
@@ -273,7 +271,7 @@ public class PlayerController : MonoBehaviour
                         }
                         else
                         {
-                            transform.Translate(-2 * Time.deltaTime * 0.5f, 0, 0);
+                            transform.Translate(-2 * Time.deltaTime * 0.6f, 0, 0);
                             rg.gravityScale = 3;
                         }
                     }
@@ -289,7 +287,7 @@ public class PlayerController : MonoBehaviour
                     {
                         transform.Translate(0, 0, 0);
                     }
-                    else
+                    else 
                     {
                         if (!fly && !onLadder) { 
                             
@@ -297,7 +295,9 @@ public class PlayerController : MonoBehaviour
                             rg.gravityScale = 1;
 
                         } else{
-                            transform.Translate(2 * Time.deltaTime * 0.5f, 0, 0);
+
+
+                            transform.Translate(2 * Time.deltaTime * 0.6f, 0, 0);
                             rg.gravityScale = 3;
                         }
                     }
@@ -381,17 +381,17 @@ public class PlayerController : MonoBehaviour
         {
 
             deltaStop = Time.time + timeStop;
-            Instantiate(armPreFabs[3], new Vector3(transform.position.x, transform.position.y+0.81f, -1f), Quaternion.identity);
+            Instantiate(armPreFabs[3], new Vector3(transform.position.x, transform.position.y+0.81f, transform.position.z+1f), Quaternion.identity);
             if (typeArms == 2)
             {
-                Instantiate(armPreFabs[typeArms], new Vector3(transform.position.x, transform.position.y, 1f), Quaternion.identity);
+                Instantiate(armPreFabs[typeArms], new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
                 //GameObject.FindGameObjectWithTag("SoundManager").GetComponent<SoundManager>().play("FireBullet");
                 SoundManager.sm.play("FireBullet");
 
             }
             else
             {
-                Instantiate(armPreFabs[typeArms], new Vector3(transform.position.x, transform.position.y - 0.6f, 1f), Quaternion.identity);
+                Instantiate(armPreFabs[typeArms], new Vector3(transform.position.x, transform.position.y - 0.6f, transform.position.z+1f), Quaternion.identity);
                 //GameObject.FindGameObjectWithTag("SoundManager").GetComponent<SoundManager>().play("Firehook");
                 SoundManager.sm.play("Firehook");
 
@@ -404,10 +404,10 @@ public class PlayerController : MonoBehaviour
         {
 
             deltaStop = Time.time + timeStop;
-            Instantiate(armPreFabs[3], new Vector3(transform.position.x, transform.position.y+ 0.81f, -1f), Quaternion.identity);
+            Instantiate(armPreFabs[3], new Vector3(transform.position.x, transform.position.y+ 0.81f, transform.position.z + 1f), Quaternion.identity);
             if (typeArms == 2)
             {
-                Instantiate(armPreFabs[typeArms], new Vector3(transform.position.x, transform.position.y, 1f), Quaternion.identity);
+                Instantiate(armPreFabs[typeArms], new Vector3(transform.position.x, transform.position.y, transform.position.z + 1f), Quaternion.identity);
                 //GameObject.FindGameObjectWithTag("SoundManager").GetComponent<SoundManager>().play("FireBullet");
                 SoundManager.sm.play("FireBullet");
 
@@ -442,7 +442,7 @@ public class PlayerController : MonoBehaviour
         if (other.tag == "ladder")
         {
             onLadder = true;
-            //posLadder = new Vector2(other.gameObject.transform.position.x + 0.05f, transform.position.y);
+
             posLadder = other.gameObject.transform.position;
 
             if(GameManager.gm.Lose)
@@ -499,7 +499,7 @@ public class PlayerController : MonoBehaviour
         {
 
             rg.velocity *= -1;
-            //rg.velocity = new Vector2(2f, 5f);
+           
             nRebote++;
         }
 
@@ -640,6 +640,13 @@ public class PlayerController : MonoBehaviour
             Debug.Log("En escalera");
 
             fly = false;
+        }
+
+        if (col.gameObject.tag == "block") {
+
+            Grounded = true;
+
+
         }
 
 

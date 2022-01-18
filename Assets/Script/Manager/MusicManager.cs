@@ -91,7 +91,22 @@ public class MusicManager : MonoBehaviour
                     break;
                 case "Australia":
                     audio.PlayOneShot(music[11], 1f);
-                    break;
+                break;
+                case "TajMahaL":
+                    audio.PlayOneShot(music[12], 1f);
+                break;
+                case "Leningrad":
+                    audio.PlayOneShot(music[13], 1f);
+                break;
+                case "Paris":
+                    audio.PlayOneShot(music[14], 1f);
+                break;
+                case "London":
+                    audio.PlayOneShot(music[15], 1f); 
+                break;
+
+
+
 
             }
         }

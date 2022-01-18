@@ -155,6 +155,7 @@ public class GameManager : MonoBehaviour
 
     private void nBall()
     {
+        Debug.Log("bALS" + GameObject.FindGameObjectsWithTag("ball").Length);
 
         if(GameObject.FindGameObjectsWithTag("ball").Length == 0)
         {
