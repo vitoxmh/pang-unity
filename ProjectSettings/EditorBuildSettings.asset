@@ -87,6 +87,21 @@ EditorBuildSettings:
     path: Assets/Scenes/9-25.unity
     guid: 8c0990bb1e6948a44b4cd7f0c5d0d241
   - enabled: 1
+    path: Assets/Scenes/9-26.unity
+    guid: 8b766b720a82fa24fadafa32441045c8
+  - enabled: 1
+    path: Assets/Scenes/9-27.unity
+    guid: 21335e021084dac4bb43a44014ff193d
+  - enabled: 1
+    path: Assets/Scenes/10-28.unity
+    guid: 6f1a012977fc42e418c1a375ea2ad6f2
+  - enabled: 1
+    path: Assets/Scenes/10-29.unity
+    guid: b21250c3e8b2c494fb55fb6fc2f8927f
+  - enabled: 1
+    path: Assets/Scenes/10-30.unity
+    guid: 9196765a089270747839ffd61896b356
+  - enabled: 1
     path: Assets/Scenes/ChangeStage.unity
     guid: 55da546fac3603a45b68fa94590633fd
   - enabled: 1

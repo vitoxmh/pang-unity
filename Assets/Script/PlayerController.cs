@@ -271,7 +271,7 @@ public class PlayerController : MonoBehaviour
                         }
                         else
                         {
-                            transform.Translate(-2 * Time.deltaTime * 0.6f, 0, 0);
+                            transform.Translate(-2 * Time.deltaTime * 1.3f, 0, 0);
                             rg.gravityScale = 3;
                         }
                     }
@@ -297,7 +297,7 @@ public class PlayerController : MonoBehaviour
                         } else{
 
 
-                            transform.Translate(2 * Time.deltaTime * 0.6f, 0, 0);
+                            transform.Translate(2 * Time.deltaTime * 1.3f, 0, 0);
                             rg.gravityScale = 3;
                         }
                     }

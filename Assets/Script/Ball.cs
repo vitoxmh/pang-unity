@@ -172,6 +172,7 @@ public class Ball : MonoBehaviour
                 scoreBall = 200;
 
                 break;
+    
         }
 
     }

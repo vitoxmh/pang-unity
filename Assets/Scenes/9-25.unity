@@ -865,7 +865,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1801186265310121612, guid: 92bf40d5602d9b349af34f1ed9cb1d9e, type: 3}
       propertyPath: endCountry
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1801186265310121612, guid: 92bf40d5602d9b349af34f1ed9cb1d9e, type: 3}
       propertyPath: musicStage

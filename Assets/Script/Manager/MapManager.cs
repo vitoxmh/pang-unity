@@ -78,6 +78,8 @@ public class MapManager : MonoBehaviour
 
         setStageMap = stage[indexPositionMap];
 
+        Debug.Log("<=============="+ setStageMap);
+ 
         setPoitMap = positionMap[indexPositionMap];
         pointMapItem.transform.position = setPoitMap;
 

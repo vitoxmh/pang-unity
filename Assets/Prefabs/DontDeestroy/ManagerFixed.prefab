@@ -205,10 +205,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6017042409823568704, guid: cb45bb716b26a914c83b0ea3b6c860fe, type: 3}
-      propertyPath: stage.Array.size
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 6017042409823568704, guid: cb45bb716b26a914c83b0ea3b6c860fe, type: 3}
       propertyPath: stage.Array.data[6]
       value: 3-7
       objectReference: {fileID: 0}

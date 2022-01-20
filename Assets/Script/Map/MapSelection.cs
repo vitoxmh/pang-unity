@@ -36,7 +36,7 @@ public class MapSelection : MonoBehaviour
 
     public void nextEscene()
     {
-
+        Debug.Log("Mapa seleccionado"+sceneMap);
         SceneManager.LoadScene(sceneMap);
     }
      
