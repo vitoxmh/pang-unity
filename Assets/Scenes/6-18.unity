@@ -1662,7 +1662,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1502298382584141129, guid: 106c758ca6df3a14fbb26331e04c0091, type: 3}
       propertyPath: m_TagString
-      value: block
+      value: piso
       objectReference: {fileID: 0}
     - target: {fileID: 1502298382584141133, guid: 106c758ca6df3a14fbb26331e04c0091, type: 3}
       propertyPath: m_RootOrder
@@ -1723,7 +1723,7 @@ GameObject:
   - component: {fileID: 1432220493}
   m_Layer: 0
   m_Name: ladderLarge
-  m_TagString: block
+  m_TagString: piso
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2085,7 +2085,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1502298382584141129, guid: 106c758ca6df3a14fbb26331e04c0091, type: 3}
       propertyPath: m_TagString
-      value: block
+      value: piso
       objectReference: {fileID: 0}
     - target: {fileID: 1502298382584141133, guid: 106c758ca6df3a14fbb26331e04c0091, type: 3}
       propertyPath: m_RootOrder
@@ -2287,7 +2287,7 @@ GameObject:
   - component: {fileID: 1684737762}
   m_Layer: 0
   m_Name: ladderLarge2.fw
-  m_TagString: block
+  m_TagString: piso
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2588,13 +2588,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6478774760371034979, guid: 7851900d86284c742a3399caadf77920, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -73.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6478774761591647785, guid: 7851900d86284c742a3399caadf77920, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -55.00003
+      objectReference: {fileID: 0}
     - target: {fileID: 6478774761800991317, guid: 7851900d86284c742a3399caadf77920, type: 3}
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 519420031}
     - target: {fileID: 6478774762027287974, guid: 7851900d86284c742a3399caadf77920, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -170.03996
+      value: -170.03998
       objectReference: {fileID: 0}
     - target: {fileID: 7655315278556673485, guid: 7851900d86284c742a3399caadf77920, type: 3}
       propertyPath: m_RootOrder

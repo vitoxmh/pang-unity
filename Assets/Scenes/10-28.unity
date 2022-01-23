@@ -1040,7 +1040,7 @@ GameObject:
   - component: {fileID: 908681319}
   m_Layer: 0
   m_Name: block01 (1)
-  m_TagString: block
+  m_TagString: piso
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1342,7 +1342,7 @@ GameObject:
   - component: {fileID: 1544476486}
   m_Layer: 0
   m_Name: block01 (2)
-  m_TagString: block
+  m_TagString: piso
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1924,11 +1924,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6478774760371034979, guid: 7851900d86284c742a3399caadf77920, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -73.50002
+      value: -73.50003
       objectReference: {fileID: 0}
     - target: {fileID: 6478774761591647785, guid: 7851900d86284c742a3399caadf77920, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -55.000053
+      value: -55.00006
       objectReference: {fileID: 0}
     - target: {fileID: 6478774761800991317, guid: 7851900d86284c742a3399caadf77920, type: 3}
       propertyPath: m_Camera

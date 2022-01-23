@@ -261,7 +261,7 @@ GameObject:
   - component: {fileID: 67268875}
   m_Layer: 0
   m_Name: BlockLadder
-  m_TagString: block
+  m_TagString: piso
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -781,7 +781,7 @@ GameObject:
   - component: {fileID: 453540674}
   m_Layer: 0
   m_Name: BlockLadder
-  m_TagString: block
+  m_TagString: piso
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1031,6 +1031,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: blocx3GoldNoBroken Variant (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1006905384961985642, guid: 5118257429d471c48af4bfdad85ebb0f, type: 3}
+      propertyPath: m_TagString
+      value: piso
+      objectReference: {fileID: 0}
     - target: {fileID: 1006905384961985646, guid: 5118257429d471c48af4bfdad85ebb0f, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -1146,7 +1150,7 @@ Transform:
   - {fileID: 100636218}
   - {fileID: 619229794}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &619229793
 GameObject:
@@ -1513,7 +1517,7 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: a06609f69fe25044ba8e4b33f9261f4a, type: 3}
     - target: {fileID: 6506117139601319423, guid: 393cfba87b1a71d43872a2c2c65909d5, type: 3}
       propertyPath: m_RootOrder
-      value: 13
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 6506117139601319423, guid: 393cfba87b1a71d43872a2c2c65909d5, type: 3}
       propertyPath: m_LocalScale.x
@@ -1833,7 +1837,7 @@ GameObject:
   - component: {fileID: 914663285}
   m_Layer: 0
   m_Name: lastfloor
-  m_TagString: block
+  m_TagString: piso
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2338,7 +2342,7 @@ Transform:
   - {fileID: 914663283}
   - {fileID: 812475051}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1319367264
 PrefabInstance:
@@ -2567,6 +2571,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: blocx3GoldNoBroken Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 1006905384961985642, guid: 5118257429d471c48af4bfdad85ebb0f, type: 3}
+      propertyPath: m_TagString
+      value: piso
+      objectReference: {fileID: 0}
     - target: {fileID: 1006905384961985646, guid: 5118257429d471c48af4bfdad85ebb0f, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -2738,6 +2746,14 @@ PrefabInstance:
     - target: {fileID: 5062161936178379604, guid: b881f7324730373459b0b5c1cfd84c4d, type: 3}
       propertyPath: m_Name
       value: BlockX4Gold Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 5062161936178379605, guid: b881f7324730373459b0b5c1cfd84c4d, type: 3}
+      propertyPath: getIten
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5062161936178379605, guid: b881f7324730373459b0b5c1cfd84c4d, type: 3}
+      propertyPath: typeItem
+      value: Hook
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b881f7324730373459b0b5c1cfd84c4d, type: 3}
@@ -3524,7 +3540,7 @@ GameObject:
   - component: {fileID: 1989081889}
   m_Layer: 0
   m_Name: BlockLadder
-  m_TagString: block
+  m_TagString: piso
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4065,11 +4081,11 @@ PrefabInstance:
       objectReference: {fileID: 519420031}
     - target: {fileID: 6478774762027287974, guid: 7851900d86284c742a3399caadf77920, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -170.04
+      value: -170.03998
       objectReference: {fileID: 0}
     - target: {fileID: 7655315278556673485, guid: 7851900d86284c742a3399caadf77920, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7655315278556673485, guid: 7851900d86284c742a3399caadf77920, type: 3}
       propertyPath: m_LocalPosition.x

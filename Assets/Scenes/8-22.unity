@@ -741,6 +741,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: blocx4GoldNoBroken Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 3310664740099199932, guid: 0677aff2c1ab1e2478015c1a08dbf96b, type: 3}
+      propertyPath: m_TagString
+      value: piso
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0677aff2c1ab1e2478015c1a08dbf96b, type: 3}
 --- !u!1001 &763591414

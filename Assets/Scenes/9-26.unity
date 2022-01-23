@@ -1779,7 +1779,7 @@ GameObject:
   - component: {fileID: 1659607248}
   m_Layer: 0
   m_Name: block01
-  m_TagString: block
+  m_TagString: piso
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2186,7 +2186,7 @@ GameObject:
   - component: {fileID: 1978895885}
   m_Layer: 0
   m_Name: 9-26
-  m_TagString: block
+  m_TagString: piso
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

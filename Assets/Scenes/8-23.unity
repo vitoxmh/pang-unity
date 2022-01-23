@@ -1241,6 +1241,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: blocx3BlueNoBroken Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 5750633886370580882, guid: cf871f85bc141f342b89e172b35c622f, type: 3}
+      propertyPath: m_TagString
+      value: piso
+      objectReference: {fileID: 0}
     - target: {fileID: 5750633886370580886, guid: cf871f85bc141f342b89e172b35c622f, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -1588,7 +1592,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6478774761591647785, guid: 7851900d86284c742a3399caadf77920, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -55.000053
+      value: -55.00006
       objectReference: {fileID: 0}
     - target: {fileID: 6478774761800991317, guid: 7851900d86284c742a3399caadf77920, type: 3}
       propertyPath: m_Camera

@@ -458,6 +458,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: blocx2RedNoBroken
       objectReference: {fileID: 0}
+    - target: {fileID: 1980168126458191644, guid: 7f428fb3d7c67c94c9fe59f951605bdc, type: 3}
+      propertyPath: m_TagString
+      value: piso
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7f428fb3d7c67c94c9fe59f951605bdc, type: 3}
 --- !u!1001 &415029750
@@ -1144,6 +1148,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: blocx2RedNoBroken (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1980168126458191644, guid: 7f428fb3d7c67c94c9fe59f951605bdc, type: 3}
+      propertyPath: m_TagString
+      value: piso
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7f428fb3d7c67c94c9fe59f951605bdc, type: 3}
 --- !u!4 &1216959101 stripped
@@ -1442,13 +1450,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6478774760371034979, guid: 7851900d86284c742a3399caadf77920, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -73.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6478774761591647785, guid: 7851900d86284c742a3399caadf77920, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -55.00003
+      objectReference: {fileID: 0}
     - target: {fileID: 6478774761800991317, guid: 7851900d86284c742a3399caadf77920, type: 3}
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 519420031}
     - target: {fileID: 6478774762027287974, guid: 7851900d86284c742a3399caadf77920, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -170.03996
+      value: -170.03998
       objectReference: {fileID: 0}
     - target: {fileID: 7655315278556673485, guid: 7851900d86284c742a3399caadf77920, type: 3}
       propertyPath: m_RootOrder

@@ -902,7 +902,7 @@ GameObject:
   - component: {fileID: 865496743}
   m_Layer: 0
   m_Name: 8-24 (1)
-  m_TagString: block
+  m_TagString: piso
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
