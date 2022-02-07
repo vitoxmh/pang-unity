@@ -41,6 +41,7 @@ TagManager:
   - ladderTopExit2
   - breakLadder
   - ladder2
+  - ESPACIOPISO
   layers:
   - Default
   - TransparentFX

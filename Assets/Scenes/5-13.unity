@@ -4331,25 +4331,9 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1596763520, guid: d52d5b99c07bf964c9b3123c5404caa6, type: 3}
-      propertyPath: m_Size.y
-      value: 0.24383426
-      objectReference: {fileID: 0}
-    - target: {fileID: 1596763520, guid: d52d5b99c07bf964c9b3123c5404caa6, type: 3}
-      propertyPath: m_Offset.x
-      value: -0.026845925
-      objectReference: {fileID: 0}
-    - target: {fileID: 1596763520, guid: d52d5b99c07bf964c9b3123c5404caa6, type: 3}
-      propertyPath: m_Offset.y
-      value: -0.038119614
-      objectReference: {fileID: 0}
     - target: {fileID: 8262906427136710917, guid: d52d5b99c07bf964c9b3123c5404caa6, type: 3}
       propertyPath: m_Name
       value: Player1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8262906427136710917, guid: d52d5b99c07bf964c9b3123c5404caa6, type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8262906427136710937, guid: d52d5b99c07bf964c9b3123c5404caa6, type: 3}
       propertyPath: m_RootOrder
@@ -4393,10 +4377,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8262906427136710937, guid: d52d5b99c07bf964c9b3123c5404caa6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8262906427136710939, guid: d52d5b99c07bf964c9b3123c5404caa6, type: 3}
-      propertyPath: m_CollisionDetection
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

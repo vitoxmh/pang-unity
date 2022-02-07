@@ -330,7 +330,7 @@ public class PlayerController : MonoBehaviour
         if (hit.collider != null)
         {
       
-            if (hit.collider.tag == "piso" || hit.collider.tag == "ladderTop" || hit.collider.tag == "block" || hit.collider.tag == "ladderFooter")
+            if (hit.collider.tag == "piso" || hit.collider.tag == "ladderTop" || hit.collider.tag == "block" || hit.collider.tag == "ladderFooter" || hit.collider.tag == "ESPACIOPISO")
             {
 
                 Grounded = true;

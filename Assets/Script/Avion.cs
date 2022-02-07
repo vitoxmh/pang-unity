@@ -26,11 +26,11 @@ public class Avion : MonoBehaviour
         string map = ConfigGame.cg.stages[ConfigGame.cg.positionMap];
         map = map.Replace("~", "-");
 
-        Debug.Log("DFDFDFF"+ map);
-      
+        Debug.Log("Posicion Mapa" + map);
+
         nextCountry(map);
 
-      
+        Debug.Log("Estado Mapa"+ ConfigGame.cg.positionMap);
 
         if (GameObject.Find("DontDestroy"))
         {
@@ -51,7 +51,7 @@ public class Avion : MonoBehaviour
     public void nextCountry(string country)
     {
 
-        
+
 
 
         switch (country)
@@ -59,39 +59,87 @@ public class Avion : MonoBehaviour
 
             case "1-3":
 
-                nextPonit(0f,2f,3f,1);
+                nextPonit(0f, 2f, 3f, 1);
 
-                break;
+            break;
 
 
-            case "4-6":
+            case "2-6":
 
                 nextPonit(66.771f, 2f, 2.5f, 2);
 
-            break;
+                break;
 
-            case "7-9":
+            case "3-9":
 
                 nextPonit(180f, 1f, 2.5f, 3);
 
-            break;
+                break;
 
-            case "10-12":
+            case "4-12":
 
                 nextPonit(114.268f, 2f, 3f, 4);
 
-            break;
-            case "13-15":
+                break;
+            case "5-15":
 
                 nextPonit(-47.434f, 2f, 3f, 5);
 
-            break;
+                break;
 
-            case "16-18":
+            case "6-18":
 
                 nextPonit(-47.434f, 2f, 5f, 6);
 
             break;
+
+
+            case "7-21":
+
+                nextPonit(12.05f, 2f, 5f, 6);
+
+            break;
+
+            case "8-24":
+
+                nextPonit(345.931f, 2f, 5f, 6);
+
+            break;
+
+
+            case "9-27":
+
+                nextPonit(59.4f, 2f, 5f, 6);
+
+            break;
+
+
+            case "10-30":
+
+                nextPonit(182.60f, 2f, 5f, 6);
+                
+
+                break;
+
+            case "11-33":
+
+                nextPonit(183.078f, 2f, 5f, 6);
+                
+
+            break;
+            case "12-36":
+
+                nextPonit(148.609f, 2f, 5f, 6);
+
+
+             break;
+
+            case "13-39":
+
+                nextPonit(182.60f, 2f, 5f, 6);
+
+
+             break;
 
 
         }
@@ -107,7 +155,7 @@ public class Avion : MonoBehaviour
     {
 
         Transform mapPointA = GameObject.Find(ConfigGame.cg.stages[ConfigGame.cg.positionMap].Replace("~", "-")).transform;
-
+        Debug.Log(ConfigGame.cg.stages[(ConfigGame.cg.positionMap + 1)].Replace("~", "-") + "<===============");
         Transform mapPointB = GameObject.Find(ConfigGame.cg.stages[(ConfigGame.cg.positionMap + 1)].Replace("~", "-")).transform;
 
 
@@ -143,12 +191,9 @@ public class Avion : MonoBehaviour
         country.text = ConfigGame.cg.country[ConfigGame.cg.positionMap].ToString();
         nextCountryMap.text = "STAGE " + ConfigGame.cg.stages[ConfigGame.cg.positionMap].ToString();
 
-        yield return new WaitForSeconds(1f);
-
+        yield return new WaitForSeconds(1.5f);
         ManagerStage.ms.currentStage++;
-
         SceneManager.LoadScene(ManagerStage.ms.stage[ManagerStage.ms.currentStage]);
-        Debug.Log("sTAGE " + ManagerStage.ms.stage[ManagerStage.ms.currentStage]);
 
     }
 
@@ -184,6 +229,6 @@ public class Avion : MonoBehaviour
     }
 
 
-  
+
 
 }
