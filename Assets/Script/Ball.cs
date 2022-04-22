@@ -23,6 +23,7 @@ public class Ball : MonoBehaviour
     private Vector3 size;
     private float speedBall;
     public float ballBounce;
+    public float ballBounceSpecial;
     public float timeInvisible;
     private float deltaInvisible;
     private int maxExplotion;
@@ -172,7 +173,14 @@ public class Ball : MonoBehaviour
                 scoreBall = 200;
 
                 break;
-    
+        }
+
+
+        if(ballBounceSpecial != 0f)
+        {
+
+            ballBounce = ballBounceSpecial;
+
         }
 
     }

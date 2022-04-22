@@ -1707,7 +1707,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1801186265310121612, guid: 92bf40d5602d9b349af34f1ed9cb1d9e, type: 3}
       propertyPath: endCountry
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1801186265310121612, guid: 92bf40d5602d9b349af34f1ed9cb1d9e, type: 3}
       propertyPath: musicStage
@@ -2958,7 +2958,7 @@ PrefabInstance:
       objectReference: {fileID: 519420031}
     - target: {fileID: 6478774762027287974, guid: 7851900d86284c742a3399caadf77920, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -170.04
+      value: -170.03998
       objectReference: {fileID: 0}
     - target: {fileID: 7355984370513180401, guid: 7851900d86284c742a3399caadf77920, type: 3}
       propertyPath: music.Array.size

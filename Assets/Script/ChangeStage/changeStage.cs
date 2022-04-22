@@ -68,6 +68,7 @@ public class changeStage : MonoBehaviour
         textStage.text = "STAGE " + currentStage + " COMPLETE";
 
         // AUMENTA EN 1 Y ASI SABER A QUE ETAPA DEBE SEGUIR
+        Debug.Log("Mapa  <<<<<====> " + ManagerStage.ms.currentStage+"<<<<<<"+ManagerStage.ms.stage[ManagerStage.ms.currentStage]);
         ManagerStage.ms.currentStage++;
 
         // CALCULA EL BONUS DE BOLAS ROTAS.
@@ -98,7 +99,7 @@ public class changeStage : MonoBehaviour
         int randomChangeStage = Random.Range(0, maxStage);
 
 
-        Debug.Log("Stage Random" + randomChangeStage + " mAXIMO " + maxStage);
+        //Debug.Log("Stage Random" + randomChangeStage + " mAXIMO " + maxStage);
 
 
         stagesChange[randomChangeStage].SetActive(true);
@@ -106,6 +107,7 @@ public class changeStage : MonoBehaviour
         // TIENE UN TIEMPO DE 3.5 SEGUNDOS
         yield return new WaitForSeconds(3.5f);
         // CARGA LA SIGUIENTE ESCENA
+        Debug.Log("Mapa  ====> "+ManagerStage.ms.currentStage+"===========>"+ManagerStage.ms.stage[ManagerStage.ms.currentStage]);
         SceneManager.LoadScene(ManagerStage.ms.stage[ManagerStage.ms.currentStage]);
 
     }

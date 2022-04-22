@@ -172,7 +172,7 @@ public class PlayerController : MonoBehaviour
 
         if (ladderFooter)
         {
-            if(vertical > 0)
+            if(vertical > 0 && horizontal == 0f)
             {
                 transform.position = new Vector3(posLadder.x, transform.position.y + 0.05f, transform.position.z);
                  
@@ -344,7 +344,7 @@ public class PlayerController : MonoBehaviour
             }
 
 
-            if(hit.collider.tag == "ladderTop" && vertical < 0.0f)
+            if(hit.collider.tag == "ladderTop" && vertical < 0.0f && horizontal == 0f)
             {
        
                

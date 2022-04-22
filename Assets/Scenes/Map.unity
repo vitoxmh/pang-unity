@@ -216,7 +216,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5276734440269908259, guid: a090897741afe774f8d4a0fa75f8b7bd, type: 3}
       propertyPath: stages.Array.data[9]
-      value: 10~28
+      value: 10~30
       objectReference: {fileID: 0}
     - target: {fileID: 5276734440269908259, guid: a090897741afe774f8d4a0fa75f8b7bd, type: 3}
       propertyPath: country.Array.data[5]
@@ -913,7 +913,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 4859a85c09828ff41b2cfbc586ce6968, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b96bf3400a6c03849b40e5c25d7a73e7, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -965,7 +965,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 28.28003, y: -37.99997}
+  m_AnchoredPosition: {x: 28.28003, y: -37.999985}
   m_SizeDelta: {x: 115.57, y: 85.74}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1885180286

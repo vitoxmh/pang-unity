@@ -96,50 +96,72 @@ public class Avion : MonoBehaviour
 
             case "7-21":
 
-                nextPonit(12.05f, 2f, 5f, 6);
+                nextPonit(12.05f, 2f, 5f, 7);
 
             break;
 
             case "8-24":
 
-                nextPonit(345.931f, 2f, 5f, 6);
+                nextPonit(345.931f, 2f, 5f, 8);
 
             break;
 
 
             case "9-27":
 
-                nextPonit(59.4f, 2f, 5f, 6);
+                nextPonit(59.4f, 2f, 5f, 9);
 
             break;
 
 
             case "10-30":
 
-                nextPonit(182.60f, 2f, 5f, 6);
+                nextPonit(-176.817f, 2f, 5f, 10);
                 
 
                 break;
 
             case "11-33":
 
-                nextPonit(183.078f, 2f, 5f, 6);
+                nextPonit(-216.053f, 2f, 5f, 11);
                 
 
             break;
             case "12-36":
 
-                nextPonit(148.609f, 2f, 5f, 6);
+                nextPonit(-269.031f, 2f, 5f, 12);
 
 
              break;
 
             case "13-39":
 
-                nextPonit(182.60f, 2f, 5f, 6);
+                nextPonit(-384.887f, 2f, 5f, 13);
 
 
              break;
+
+            case "14-42":
+
+                nextPonit(48.973f, 2f, 5f, 14);
+
+
+             break;
+
+
+            case "15-45":
+
+                nextPonit(115.64f, 2f, 5f, 15);
+
+
+             break;
+
+            case "16-48":
+
+                nextPonit(-388.624f, 2f, 5f, 15);
+
+
+              break;
 
 
         }
@@ -155,7 +177,7 @@ public class Avion : MonoBehaviour
     {
 
         Transform mapPointA = GameObject.Find(ConfigGame.cg.stages[ConfigGame.cg.positionMap].Replace("~", "-")).transform;
-        Debug.Log(ConfigGame.cg.stages[(ConfigGame.cg.positionMap + 1)].Replace("~", "-") + "<===============");
+
         Transform mapPointB = GameObject.Find(ConfigGame.cg.stages[(ConfigGame.cg.positionMap + 1)].Replace("~", "-")).transform;
 
 
