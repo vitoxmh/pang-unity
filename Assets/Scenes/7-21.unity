@@ -625,7 +625,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2768131215028735677, guid: 1107494828a45794cb3b29d67bf91de6, type: 3}
       propertyPath: m_Size.x
-      value: 0.047825813
+      value: 0.06832886
       objectReference: {fileID: 0}
     - target: {fileID: 2768131215028735677, guid: 1107494828a45794cb3b29d67bf91de6, type: 3}
       propertyPath: m_Size.y
@@ -633,7 +633,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2768131215028735677, guid: 1107494828a45794cb3b29d67bf91de6, type: 3}
       propertyPath: m_Offset.x
-      value: -0.0071998835
+      value: -0.06665921
       objectReference: {fileID: 0}
     - target: {fileID: 2768131215028735677, guid: 1107494828a45794cb3b29d67bf91de6, type: 3}
       propertyPath: m_Offset.y
@@ -821,7 +821,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2768131215028735677, guid: 1107494828a45794cb3b29d67bf91de6, type: 3}
       propertyPath: m_Size.x
-      value: 0.047825813
+      value: 0.0929327
       objectReference: {fileID: 0}
     - target: {fileID: 2768131215028735677, guid: 1107494828a45794cb3b29d67bf91de6, type: 3}
       propertyPath: m_Size.y
@@ -829,7 +829,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2768131215028735677, guid: 1107494828a45794cb3b29d67bf91de6, type: 3}
       propertyPath: m_Offset.x
-      value: -0.0071998835
+      value: 0.085063934
       objectReference: {fileID: 0}
     - target: {fileID: 2768131215028735677, guid: 1107494828a45794cb3b29d67bf91de6, type: 3}
       propertyPath: m_Offset.y
@@ -3236,7 +3236,7 @@ PrefabInstance:
       objectReference: {fileID: 519420031}
     - target: {fileID: 6478774762027287974, guid: 7851900d86284c742a3399caadf77920, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -170.03998
+      value: -170.04
       objectReference: {fileID: 0}
     - target: {fileID: 7355984370513180401, guid: 7851900d86284c742a3399caadf77920, type: 3}
       propertyPath: music.Array.size

@@ -143,7 +143,7 @@ public class LifeManager : MonoBehaviour
 
 
         }
-        Debug.Log("vIDASSS" + lifesPlayer1);
+        
         lifeText.text = lifesPlayer1.ToString();
 
 

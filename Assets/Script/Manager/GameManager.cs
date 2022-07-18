@@ -18,6 +18,7 @@ public class GameManager : MonoBehaviour
     GameObject lm;
     private bool GettingLateTime;
     private bool OutOfTime;
+    private bool DeadTime;
 
 
     private void Awake()
@@ -38,7 +39,9 @@ public class GameManager : MonoBehaviour
 
         GettingLateTime = false;
         OutOfTime = false;
-      
+        DeadTime = false;
+
+
 
     }
 
@@ -96,6 +99,7 @@ public class GameManager : MonoBehaviour
         ManagerScore.ms.totalBallStage = 0;
         ManagerScore.ms.combo = 0;
 
+
     }
 
 
@@ -115,6 +119,7 @@ public class GameManager : MonoBehaviour
 
             lm.GetComponent<LifeManager>().continueGame();
             GameManager.gm.Lose = true;
+            PlayManager.pm.isPlaying = false;
             
         }
         else
@@ -139,7 +144,7 @@ public class GameManager : MonoBehaviour
         nBall();
 
 
-        if (Input.GetKeyDown(KeyCode.Return) && ManagerCoin.mc.coin > 0)
+        if (Input.GetKeyDown(KeyCode.Return) && ManagerCoin.mc.coin > 0 && !PlayManager.pm.isPlaying)
         {
 
             MusicManager.mn.stop();
@@ -147,6 +152,7 @@ public class GameManager : MonoBehaviour
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
             ManagerCoin.mc.coin--;
             LifeManager.lm.reset();
+            PlayManager.pm.isPlaying = true;
         }
 
 
@@ -155,7 +161,7 @@ public class GameManager : MonoBehaviour
 
     private void nBall()
     {
-        Debug.Log("bALS" + GameObject.FindGameObjectsWithTag("ball").Length);
+   
 
         if(GameObject.FindGameObjectsWithTag("ball").Length == 0)
         {
@@ -231,6 +237,19 @@ public class GameManager : MonoBehaviour
                 MusicManager.mn.play("OutOfTime");
                 FreezeTimeText.GetComponent<Text>().color = Color.red;
                 OutOfTime = true;
+            }
+
+
+
+            if (seconds < 1 && !DeadTime)
+            {
+
+                GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().dead();
+
+    
+
+                DeadTime = true;
+
             }
 
             FreezeTimeText.text = "TIME:" + seconds.ToString("000");

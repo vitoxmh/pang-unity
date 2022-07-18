@@ -267,7 +267,7 @@ public class Ball : MonoBehaviour
             newBall.GetComponent<Ball>().directionBallLeft = true;
             newBall.GetComponent<Ball>().sizeBall += 1;
 
-            newBall01 = Instantiate(newBall, rb.position + Vector2.left, Quaternion.identity);
+            newBall01 = Instantiate(newBall, rb.position, Quaternion.identity);
 
             newBall.GetComponent<Ball>().directionBallLeft = false;
             newBall02 = Instantiate(newBall, rb.position, Quaternion.identity);
@@ -293,6 +293,12 @@ public class Ball : MonoBehaviour
     void OnTriggerEnter2D(Collider2D col)
     {
 
+
+        if (col.CompareTag("ESPACIOPISO"))
+        {
+            Debug.Log("dssssssssss");
+
+        }
 
 
         if (col.CompareTag("arma") || col.CompareTag("shield"))
@@ -327,8 +333,6 @@ public class Ball : MonoBehaviour
 
 
             }
-
-
 
             GameObject newExplotion = Instantiate(explotionPreFabs[colorBall], rb.position, Quaternion.identity);
             newExplotion.transform.localScale = size;

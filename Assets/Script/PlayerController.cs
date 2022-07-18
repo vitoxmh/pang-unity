@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-   
+    public static PlayerController pc;
+
     public float Speed;
     public float timeStop;
     private float deltaStop;
@@ -35,7 +36,7 @@ public class PlayerController : MonoBehaviour
     public bool wallLeft;
     public bool wallRigth;
     public bool fly;
-    public bool newLadder; 
+    public bool newLadder;
 
 
     /************************************
@@ -46,6 +47,15 @@ public class PlayerController : MonoBehaviour
         2: Fire
         3: UpLadder
     */
+
+
+    void Awake()
+    {
+        //gameObject.layer uses only integers, but we can turn a layer name into a layer integer using LayerMask.NameToLayer()
+        int LayerIgnoreRaycast = LayerMask.NameToLayer("Player");
+        gameObject.layer = LayerIgnoreRaycast;
+        Debug.Log("Current layer: " + gameObject.layer);
+    }
 
     void Start()
     {
@@ -572,8 +582,6 @@ public class PlayerController : MonoBehaviour
             
             SoundManager.sm.play("GetItem");
 
-
-
         }
 
 
@@ -637,8 +645,7 @@ public class PlayerController : MonoBehaviour
 
         if (col.gameObject.tag == "ladderTop" || col.gameObject.tag == "block" || col.gameObject.tag == "piso" || col.gameObject.tag == "blockVertical")
         {
-            Debug.Log("En escalera");
-
+          
             fly = false;
         }
 
